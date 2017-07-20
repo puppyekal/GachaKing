@@ -16,6 +16,14 @@ public class UI : MonoBehaviour {
     public GameObject Inven_Home;
     public GameObject Inven_Face;
 
+    //********************************
+    public GameObject Area_1;
+    public GameObject Area_2;
+    public GameObject Area_3;
+    public GameObject Area_4;
+    public GameObject Area_5;
+    //********************************
+
     int Check = 0;//0=메인, 1=업적, 2=상점, 3=인벤토리
 
     // Use this for initialization
@@ -134,4 +142,29 @@ public class UI : MonoBehaviour {
         Inven_Home.SetActive(false);
         Inven_Face.SetActive(true);
     }
+
+    //****************************
+    public void PressKey(int nKey)
+    {
+        switch (nKey)
+        {
+            case 1:
+                Debug.Log(1);
+                break;
+            case 2:
+                Debug.Log(2);
+                break;
+            case 3:
+                Debug.Log(3);
+                break;
+            case 4:
+                Debug.Log(4);
+                break;
+            case 5:
+                Debug.Log(5);
+                break;
+
+        }
+    }
+    //*******************************
 }
