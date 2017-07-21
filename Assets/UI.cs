@@ -12,6 +12,9 @@ public class UI : MonoBehaviour {
     public GameObject Store_Skill;
     public GameObject Store_Home;
     public GameObject Store_Face;
+    
+
+
 
     public GameObject Inven_Home;
     public GameObject Inven_Face;
