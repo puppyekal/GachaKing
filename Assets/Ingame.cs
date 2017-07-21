@@ -26,6 +26,10 @@ public class Ingame : MonoBehaviour {
     //방꾸미기 활성화
     public bool Area_st = false;
 
+
+
+
+
     //가챠통 상태
     public bool Gacha_Tong_0_st = false;
     public bool Gacha_Tong_1_st = false;
