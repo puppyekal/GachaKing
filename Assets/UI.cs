@@ -33,6 +33,8 @@ public class UI : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
+
+
 	}
     //메뉴
     public void Menu_Set_True()
