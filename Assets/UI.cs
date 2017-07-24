@@ -1,10 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-
-
-
 
 public class UI : MonoBehaviour {
 
@@ -16,11 +12,6 @@ public class UI : MonoBehaviour {
     public GameObject Store_Skill;
     public GameObject Store_Home;
     public GameObject Store_Face;
-    
-
-
-
-
 
     public GameObject Inven_Home;
     public GameObject Inven_Face;
@@ -39,8 +30,6 @@ public class UI : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
-
-
 	}
     //메뉴
     public void Menu_Set_True()
