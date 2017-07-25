@@ -40,34 +40,19 @@ public class Ingame : MonoBehaviour {
 
     //가챠통 10개
     public int[] Gacha_Initial = new int[10];
-    //가챠통안 10000개
-    public int[,] Gacha_Tong = new int[10, 10000];
 
     // Use this for initialization
     void Start () {
-        for (int i = 0 ; i < 10; i++) {
-            Initialize(i);
-        }
-
         for (int i = 0; i < 10; i++)
         {
-            Gacha_Initial[i] = i;
+            Gacha_Initial[i] = 9999;
         }
-
+        
     }
 	
 	// Update is called once per frame
 	void Update () {
   
-    }
-
-    //가챠통 초기화
-    public void Initialize(int i) {
-        for (int j = 0; j < 10000; j++)
-        {
-              Gacha_Tong [i, j] = j;
-        }
-      
     }
     //버튼
     public void PressKey(int nKey)
@@ -92,6 +77,145 @@ public class Ingame : MonoBehaviour {
             case 10000:
                 //방 눌렀을 때
                 Debug.Log(10000);
+                if (Gacha_Tong_0_st == true)
+                {
+                    int Gacha_Ball;
+                    Gacha_Ball = Random.Range(0, Gacha_Initial[0]);
+                    if (Gacha_Ball != 0)
+                    {
+                        Gacha_Initial[0] = Gacha_Initial[0] - 1;
+                    }
+                    else if (Gacha_Ball == 0) {
+                        Gacha_Tong_0_st = false;
+                        Gacha_Initial[0] = 9999;
+                    }
+                }
+                if (Gacha_Tong_1_st == true)
+                {
+                    int Gacha_Ball;
+                    Gacha_Ball = Random.Range(0, Gacha_Initial[1]);
+                    if (Gacha_Ball != 0)
+                    {
+                        Gacha_Initial[1] = Gacha_Initial[1] - 1;
+                    }
+                    else if (Gacha_Ball == 0)
+                    {
+                        Gacha_Tong_1_st = false;
+                        Gacha_Initial[1] = 9999;
+                    }
+                }
+                if (Gacha_Tong_2_st == true)
+                {
+                    int Gacha_Ball;
+                    Gacha_Ball = Random.Range(0, Gacha_Initial[2]);
+                    if (Gacha_Ball != 0)
+                    {
+                        Gacha_Initial[2] = Gacha_Initial[2] - 1;
+                    }
+                    else if (Gacha_Ball == 0)
+                    {
+                        Gacha_Tong_2_st = false;
+                        Gacha_Initial[2] = 9999;
+                    }
+                }
+                if (Gacha_Tong_3_st == true)
+                {
+                    int Gacha_Ball;
+                    Gacha_Ball = Random.Range(0, Gacha_Initial[3]);
+                    if (Gacha_Ball != 0)
+                    {
+                        Gacha_Initial[3] = Gacha_Initial[3] - 1;
+                    }
+                    else if (Gacha_Ball == 0)
+                    {
+                        Gacha_Tong_3_st = false;
+                        Gacha_Initial[3] = 9999;
+                    }
+                }
+                if (Gacha_Tong_4_st == true)
+                {
+                    int Gacha_Ball;
+                    Gacha_Ball = Random.Range(0, Gacha_Initial[4]);
+                    if (Gacha_Ball != 0)
+                    {
+                        Gacha_Initial[4] = Gacha_Initial[4] - 1;
+                    }
+                    else if (Gacha_Ball == 0)
+                    {
+                        Gacha_Tong_4_st = false;
+                        Gacha_Initial[4] = 9999;
+                    }
+                }
+                if (Gacha_Tong_5_st == true)
+                {
+                    int Gacha_Ball;
+                    Gacha_Ball = Random.Range(0, Gacha_Initial[5]);
+                    if (Gacha_Ball != 0)
+                    {
+                        Gacha_Initial[5] = Gacha_Initial[5] - 1;
+                    }
+                    else if (Gacha_Ball == 0)
+                    {
+                        Gacha_Tong_5_st = false;
+                        Gacha_Initial[5] = 9999;
+                    }
+                }
+                if (Gacha_Tong_6_st == true)
+                {
+                    int Gacha_Ball;
+                    Gacha_Ball = Random.Range(0, Gacha_Initial[6]);
+                    if (Gacha_Ball != 0)
+                    {
+                        Gacha_Initial[6] = Gacha_Initial[6] - 1;
+                    }
+                    else if (Gacha_Ball == 0)
+                    {
+                        Gacha_Tong_6_st = false;
+                        Gacha_Initial[6] = 9999;
+                    }
+                }
+                if (Gacha_Tong_7_st == true)
+                {
+                    int Gacha_Ball;
+                    Gacha_Ball = Random.Range(0, Gacha_Initial[7]);
+                    if (Gacha_Ball != 0)
+                    {
+                        Gacha_Initial[7] = Gacha_Initial[7] - 1;
+                    }
+                    else if (Gacha_Ball == 0)
+                    {
+                        Gacha_Tong_7_st = false;
+                        Gacha_Initial[7] = 9999;
+                    }
+                }
+                if (Gacha_Tong_8_st == true)
+                {
+                    int Gacha_Ball;
+                    Gacha_Ball = Random.Range(0, Gacha_Initial[8]);
+                    if (Gacha_Ball != 0)
+                    {
+                        Gacha_Initial[8] = Gacha_Initial[8] - 1;
+                    }
+                    else if (Gacha_Ball == 0)
+                    {
+                        Gacha_Tong_8_st = false;
+                        Gacha_Initial[8] = 9999;
+                    }
+                }
+                if (Gacha_Tong_9_st == true)
+                {
+                    int Gacha_Ball;
+                    Gacha_Ball = Random.Range(0, Gacha_Initial[9]);
+                    if (Gacha_Ball != 0)
+                    {
+                        Gacha_Initial[9] = Gacha_Initial[9] - 1;
+                    }
+                    else if (Gacha_Ball == 0)
+                    {
+                        Gacha_Tong_9_st = false;
+                        Gacha_Initial[9] = 9999;
+                    }
+                }
                 break;
 
         }
