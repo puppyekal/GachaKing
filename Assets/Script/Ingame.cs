@@ -43,9 +43,11 @@ public class Ingame : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        Gacha_Tong_0_st = true;
+
         for (int i = 0; i < 10; i++)
         {
-            Gacha_Initial[i] = 9999;
+            Gacha_Initial[i] = 99;
         }
         
     }
@@ -60,26 +62,71 @@ public class Ingame : MonoBehaviour {
         switch (nKey)
         {
             case 1:
-                Debug.Log(1);
+                Debug.Log(1000);
                 break;
             case 2:
-                Debug.Log(2);
+                Debug.Log(2000);
                 break;
             case 3:
-                Debug.Log(3);
+                Debug.Log(3000);
                 break;
             case 4:
-                Debug.Log(4);
+                Debug.Log(4000);
                 break;
             case 5:
-                Debug.Log(5);
+                Debug.Log(5000);
+                break;
+            case 9999:
+                if (Gacha_Tong_0_st == false)
+                {
+                    Gacha_Tong_0_st = true;
+                }
+                else if (Gacha_Tong_1_st == false)
+                {
+                    Gacha_Tong_1_st = true;
+                }
+                else if (Gacha_Tong_2_st == false)
+                {
+                    Gacha_Tong_2_st = true;
+                }
+                else if (Gacha_Tong_3_st == false)
+                {
+                    Gacha_Tong_3_st = true;
+                }
+                else if (Gacha_Tong_4_st == false)
+                {
+                    Gacha_Tong_4_st = true;
+                }
+                else if (Gacha_Tong_5_st == false)
+                {
+                    Gacha_Tong_5_st = true;
+                }
+                else if (Gacha_Tong_6_st == false)
+                {
+                    Gacha_Tong_6_st = true;
+                }
+                else if (Gacha_Tong_7_st == false)
+                {
+                    Gacha_Tong_7_st = true;
+                }
+                else if (Gacha_Tong_8_st == false)
+                {
+                    Gacha_Tong_8_st = true;
+                }
+                else if (Gacha_Tong_9_st == false)
+                {
+                    Gacha_Tong_9_st = true;
+                }
+                else {
+                    //가챠통 10개가 모두 존재할 때
+                }
                 break;
             case 10000:
                 //방 눌렀을 때
-                Debug.Log(10000);
                 if (Gacha_Tong_0_st == true)
                 {
                     int Gacha_Ball;
+                    
                     Gacha_Ball = Random.Range(0, Gacha_Initial[0]);
                     if (Gacha_Ball != 0)
                     {
@@ -87,7 +134,7 @@ public class Ingame : MonoBehaviour {
                     }
                     else if (Gacha_Ball == 0) {
                         Gacha_Tong_0_st = false;
-                        Gacha_Initial[0] = 9999;
+                        Gacha_Initial[0] = 99;
                     }
                 }
                 if (Gacha_Tong_1_st == true)
@@ -101,7 +148,7 @@ public class Ingame : MonoBehaviour {
                     else if (Gacha_Ball == 0)
                     {
                         Gacha_Tong_1_st = false;
-                        Gacha_Initial[1] = 9999;
+                        Gacha_Initial[1] = 99;
                     }
                 }
                 if (Gacha_Tong_2_st == true)
@@ -115,7 +162,7 @@ public class Ingame : MonoBehaviour {
                     else if (Gacha_Ball == 0)
                     {
                         Gacha_Tong_2_st = false;
-                        Gacha_Initial[2] = 9999;
+                        Gacha_Initial[2] = 99;
                     }
                 }
                 if (Gacha_Tong_3_st == true)
@@ -129,7 +176,7 @@ public class Ingame : MonoBehaviour {
                     else if (Gacha_Ball == 0)
                     {
                         Gacha_Tong_3_st = false;
-                        Gacha_Initial[3] = 9999;
+                        Gacha_Initial[3] = 99;
                     }
                 }
                 if (Gacha_Tong_4_st == true)
@@ -143,7 +190,7 @@ public class Ingame : MonoBehaviour {
                     else if (Gacha_Ball == 0)
                     {
                         Gacha_Tong_4_st = false;
-                        Gacha_Initial[4] = 9999;
+                        Gacha_Initial[4] = 99;
                     }
                 }
                 if (Gacha_Tong_5_st == true)
@@ -157,7 +204,7 @@ public class Ingame : MonoBehaviour {
                     else if (Gacha_Ball == 0)
                     {
                         Gacha_Tong_5_st = false;
-                        Gacha_Initial[5] = 9999;
+                        Gacha_Initial[5] = 99;
                     }
                 }
                 if (Gacha_Tong_6_st == true)
@@ -171,7 +218,7 @@ public class Ingame : MonoBehaviour {
                     else if (Gacha_Ball == 0)
                     {
                         Gacha_Tong_6_st = false;
-                        Gacha_Initial[6] = 9999;
+                        Gacha_Initial[6] = 99;
                     }
                 }
                 if (Gacha_Tong_7_st == true)
@@ -185,7 +232,7 @@ public class Ingame : MonoBehaviour {
                     else if (Gacha_Ball == 0)
                     {
                         Gacha_Tong_7_st = false;
-                        Gacha_Initial[7] = 9999;
+                        Gacha_Initial[7] = 99;
                     }
                 }
                 if (Gacha_Tong_8_st == true)
@@ -199,7 +246,7 @@ public class Ingame : MonoBehaviour {
                     else if (Gacha_Ball == 0)
                     {
                         Gacha_Tong_8_st = false;
-                        Gacha_Initial[8] = 9999;
+                        Gacha_Initial[8] = 99;
                     }
                 }
                 if (Gacha_Tong_9_st == true)
@@ -213,7 +260,7 @@ public class Ingame : MonoBehaviour {
                     else if (Gacha_Ball == 0)
                     {
                         Gacha_Tong_9_st = false;
-                        Gacha_Initial[9] = 9999;
+                        Gacha_Initial[9] = 99;
                     }
                 }
                 break;
