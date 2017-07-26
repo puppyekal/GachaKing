@@ -16,8 +16,10 @@ public class UI : MonoBehaviour {
     public GameObject Inven_Home;
     public GameObject Inven_Face;
 
-
+   
+    
     int Check = 0;//0=메인, 1=업적, 2=상점, 3=인벤토리
+
 
     // Use this for initialization
     void Start () {
