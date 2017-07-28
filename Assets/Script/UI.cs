@@ -137,6 +137,13 @@ public class UI : MonoBehaviour {
         Inven_Home.SetActive(false);
         Inven_Face.SetActive(true);
     }
-
-
+    /// <summary>
+    /// 상점 구매
+    /// </summary>
+    public void Store_Gacha_Buy()
+    {
+        Store.SetActive(false);
+        Check = 0;
+        //메인화면으로 갔다는 것을 알리기 위한 check
+    }
 }

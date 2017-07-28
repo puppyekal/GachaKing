@@ -15,12 +15,12 @@ public class Text_Event : MonoBehaviour {
     // Use this for initialization
     void Start () {
         Money_Text.GetComponent<Text>().text = "" + Money;
-        Gacha_Num_Text.GetComponent<Text>().text = Gacha_Num + "개";
-        Gacha_Level_Text.GetComponent<Text>().text = "Lv. " + Gacha_Level;
+        Gacha_Num_Text.GetComponent<Text>().text = Gacha_Num + " / 10";
+        Gacha_Level_Text.GetComponent<Text>().text = Gacha_Level + " / 9";
     }
 	
 	// Update is called once per frame
-	void Update () {
-	}
+    void Update(){
 
+    }
 }
