@@ -9,14 +9,50 @@ public class Text_Event : MonoBehaviour {
     public Text Gacha_Num_Text;
     public Text Gacha_Level_Text;
 
+    public Text Gacha_Price_Text;
+
     int Money = 10000000;
     int Gacha_Num = 0;
     int Gacha_Level = 1;
+    int Gacha_Price_Check = 0;//레벨에따른 판매가 변경 확인에 대한 체크
+    int[] Gacha_Price = new int[] { 20000, 80000, 32000, 1280000, 5120000, 20480000, 81920000, 327680000, 1310720000 };
+
     // Use this for initialization
     void Start () {
         Money_Text.GetComponent<Text>().text = "" + Money;
         Gacha_Num_Text.GetComponent<Text>().text = Gacha_Num + " / 10";
         Gacha_Level_Text.GetComponent<Text>().text = Gacha_Level + " / 9";
+
+        switch (Gacha_Price_Check)
+        {
+            case 0:
+                Gacha_Price_Text.GetComponent<Text>().text = Gacha_Price[Gacha_Price_Check] + "(\)";
+                break;
+            case 1:
+                Gacha_Price_Text.GetComponent<Text>().text = Gacha_Price[Gacha_Price_Check] + "//";
+                break;
+            case 2:
+                Gacha_Price_Text.GetComponent<Text>().text = Gacha_Price[Gacha_Price_Check] + "//";
+                break;
+            case 3:
+                Gacha_Price_Text.GetComponent<Text>().text = Gacha_Price[Gacha_Price_Check] + "//";
+                break;
+            case 4:
+                Gacha_Price_Text.GetComponent<Text>().text = Gacha_Price[Gacha_Price_Check] + "//";
+                break;
+            case 5:
+                Gacha_Price_Text.GetComponent<Text>().text = Gacha_Price[Gacha_Price_Check] + "//";
+                break;
+            case 6:
+                Gacha_Price_Text.GetComponent<Text>().text = Gacha_Price[Gacha_Price_Check] + "//";
+                break;
+            case 7:
+                Gacha_Price_Text.GetComponent<Text>().text = Gacha_Price[Gacha_Price_Check] + "//";
+                break;
+            case 8:
+                Gacha_Price_Text.GetComponent<Text>().text = Gacha_Price[Gacha_Price_Check] + "//";
+                break;
+        }
     }
 	
 	// Update is called once per frame

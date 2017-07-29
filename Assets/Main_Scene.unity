@@ -7795,7 +7795,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uAD6C\uB9E4"
+  m_Text: 
 --- !u!222 &501634018
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -22445,7 +22445,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1441266365
 RectTransform:
   m_ObjectHideFlags: 0
@@ -23118,6 +23118,7 @@ MonoBehaviour:
   Money_Text: {fileID: 2081557537}
   Gacha_Num_Text: {fileID: 1523073850}
   Gacha_Level_Text: {fileID: 1313664313}
+  Gacha_Price_Text: {fileID: 501634017}
 --- !u!1 &1485035416
 GameObject:
   m_ObjectHideFlags: 0
