@@ -17,7 +17,6 @@ public class UI : MonoBehaviour {
     public GameObject Inven_Face;
 
    
-    
     int Check = 0;//0=메인, 1=업적, 2=상점, 3=인벤토리
 
 
@@ -144,6 +143,7 @@ public class UI : MonoBehaviour {
     {
         Store.SetActive(false);
         Check = 0;
+        Ingame.Buy_Button = 1;
         //메인화면으로 갔다는 것을 알리기 위한 check
     }
 }
