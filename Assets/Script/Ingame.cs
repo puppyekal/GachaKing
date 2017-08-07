@@ -45,7 +45,7 @@ public class Ingame : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        /*
+        
         Gacha_Tong_0.SetActive(false);
         Gacha_Tong_1.SetActive(false);
         Gacha_Tong_2.SetActive(false);
@@ -56,7 +56,7 @@ public class Ingame : MonoBehaviour {
         Gacha_Tong_7.SetActive(false);
         Gacha_Tong_8.SetActive(false);
         Gacha_Tong_9.SetActive(false);
-        */
+        
         for (int i = 0; i < 10; i++)
         {
             Gacha_Initial[i] = 9;

@@ -3713,16 +3713,16 @@ MonoBehaviour:
   Area_2: {fileID: 843090946}
   Area_3: {fileID: 829193821}
   Area_4: {fileID: 232030627}
-  Gacha_Tong_0: {fileID: 0}
-  Gacha_Tong_1: {fileID: 0}
-  Gacha_Tong_2: {fileID: 0}
-  Gacha_Tong_3: {fileID: 0}
-  Gacha_Tong_4: {fileID: 0}
-  Gacha_Tong_5: {fileID: 0}
-  Gacha_Tong_6: {fileID: 0}
-  Gacha_Tong_7: {fileID: 0}
-  Gacha_Tong_8: {fileID: 0}
-  Gacha_Tong_9: {fileID: 0}
+  Gacha_Tong_0: {fileID: 2109976265}
+  Gacha_Tong_1: {fileID: 1287553603}
+  Gacha_Tong_2: {fileID: 1530586586}
+  Gacha_Tong_3: {fileID: 276061168}
+  Gacha_Tong_4: {fileID: 137449648}
+  Gacha_Tong_5: {fileID: 1098869276}
+  Gacha_Tong_6: {fileID: 1114746310}
+  Gacha_Tong_7: {fileID: 1680086371}
+  Gacha_Tong_8: {fileID: 1364111609}
+  Gacha_Tong_9: {fileID: 2056649548}
   Area_st: 0
   Gacha_Tong_0_st: 0
   Gacha_Tong_1_st: 0
