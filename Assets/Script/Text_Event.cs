@@ -26,7 +26,8 @@ public class Text_Event : MonoBehaviour {
         switch (Gacha_Price_Check)
         {
             case 0:
-                Gacha_Price_Text.GetComponent<Text>().text = Gacha_Price[Gacha_Price_Check] + "(\)";
+                //Gacha_Price_Text.GetComponent<Text>().text = Gacha_Price[Gacha_Price_Check] + "(\)";
+                Gacha_Price_Text.GetComponent<Text>().text = Gacha_Price[Gacha_Price_Check] + "//";
                 break;
             case 1:
                 Gacha_Price_Text.GetComponent<Text>().text = Gacha_Price[Gacha_Price_Check] + "//";
