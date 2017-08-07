@@ -19,10 +19,6 @@ public class Text_Event : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        Money_Text.GetComponent<Text>().text = "" + Money;
-        Gacha_Num_Text.GetComponent<Text>().text = Gacha_Num + " / 10";
-        Gacha_Level_Text.GetComponent<Text>().text = Gacha_Level + " / 9";
-
         switch (Gacha_Price_Check)
         {
             case 0:
@@ -58,6 +54,13 @@ public class Text_Event : MonoBehaviour {
 	
 	// Update is called once per frame
     void Update(){
+        Money_Text.GetComponent<Text>().text = "" + Money;
+        Gacha_Num_Text.GetComponent<Text>().text = Gacha_Num + " / 10";
+        Gacha_Level_Text.GetComponent<Text>().text = Gacha_Level + " / 9";
+    }
 
+    public void Store_Gacha_Buy()//가챠 구매시 돈 감소
+    {
+        Money = Money - Gacha_Price[Gacha_Price_Check];
     }
 }
