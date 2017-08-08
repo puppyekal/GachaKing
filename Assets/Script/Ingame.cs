@@ -136,6 +136,7 @@ public class Ingame : MonoBehaviour {
             else
             {
                 Debug.Log("Gacha_Tong_All true");
+                Buy_Button = 0;
                 //가챠통 10개가 모두 존재할 때
             }
         }
