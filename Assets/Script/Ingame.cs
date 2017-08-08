@@ -89,60 +89,70 @@ public class Ingame : MonoBehaviour {
                 Debug.Log("Gacha_Tong0 true");
                 Buy_Button = 0;
                 Gacha_Tong_0_st = true;
+                Gacha_Tong_0.SetActive(true);
             }
             else if (Gacha_Tong_1_st == false)
             {
                 Debug.Log("Gacha_Tong1 true");
                 Buy_Button = 0;
                 Gacha_Tong_1_st = true;
+                Gacha_Tong_1.SetActive(true);
             }
             else if (Gacha_Tong_2_st == false)
             {
                 Debug.Log("Gacha_Tong2 true");
                 Buy_Button = 0;
                 Gacha_Tong_2_st = true;
+                Gacha_Tong_2.SetActive(true);
             }
             else if (Gacha_Tong_3_st == false)
             {
                 Debug.Log("Gacha_Tong3 true");
                 Buy_Button = 0;
                 Gacha_Tong_3_st = true;
+                Gacha_Tong_3.SetActive(true);
             }
             else if (Gacha_Tong_4_st == false)
             {
                 Debug.Log("Gacha_Tong4 true");
                 Buy_Button = 0;
                 Gacha_Tong_4_st = true;
+                Gacha_Tong_4.SetActive(true);
             }
             else if (Gacha_Tong_5_st == false)
             {
                 Debug.Log("Gacha_Tong5 true");
                 Buy_Button = 0;
                 Gacha_Tong_5_st = true;
+                Gacha_Tong_5.SetActive(true);
             }
             else if (Gacha_Tong_6_st == false)
             {
                 Debug.Log("Gacha_Tong6 true");
                 Buy_Button = 0;
                 Gacha_Tong_6_st = true;
+                Gacha_Tong_6.SetActive(true);
             }
             else if (Gacha_Tong_7_st == false)
             {
                 Debug.Log("Gacha_Tong7 true");
                 Buy_Button = 0;
                 Gacha_Tong_7_st = true;
+                Gacha_Tong_7.SetActive(true);
             }
             else if (Gacha_Tong_8_st == false)
             {
                 Debug.Log("Gacha_Tong8 true");
                 Buy_Button = 0;
                 Gacha_Tong_8_st = true;
+                Gacha_Tong_8.SetActive(true);
             }
             else if (Gacha_Tong_9_st == false)
             {
                 Debug.Log("Gacha_Tong9 true");
                 Buy_Button = 0;
                 Gacha_Tong_9_st = true;
+                Gacha_Tong_9.SetActive(true);
             }
             else
             {
@@ -189,6 +199,7 @@ public class Ingame : MonoBehaviour {
                         Debug.Log("Gacha_Tong0 = ");
                         Debug.Log(Gacha_Ball);
                         Gacha_Tong_0_st = false;
+                        Gacha_Tong_0.SetActive(false);
                         Gacha_Initial[0] = 9;
                     }
                 }
@@ -207,6 +218,7 @@ public class Ingame : MonoBehaviour {
                         Debug.Log("Gacha_Tong1 = ");
                         Debug.Log(Gacha_Ball);
                         Gacha_Tong_1_st = false;
+                        Gacha_Tong_1.SetActive(false);
                         Gacha_Initial[1] = 9;
                     }
                 }
@@ -225,6 +237,7 @@ public class Ingame : MonoBehaviour {
                         Debug.Log("Gacha_Tong3 = ");
                         Debug.Log(Gacha_Ball);
                         Gacha_Tong_2_st = false;
+                        Gacha_Tong_2.SetActive(false);
                         Gacha_Initial[2] = 9;
                     }
                 }
@@ -243,6 +256,7 @@ public class Ingame : MonoBehaviour {
                         Debug.Log("Gacha_Tong4 = ");
                         Debug.Log(Gacha_Ball);
                         Gacha_Tong_3_st = false;
+                        Gacha_Tong_3.SetActive(false);
                         Gacha_Initial[3] = 9;
                     }
                 }
@@ -261,6 +275,7 @@ public class Ingame : MonoBehaviour {
                         Debug.Log("Gacha_Tong4 = ");
                         Debug.Log(Gacha_Ball);
                         Gacha_Tong_4_st = false;
+                        Gacha_Tong_4.SetActive(false);
                         Gacha_Initial[4] = 9;
                     }
                 }
@@ -279,6 +294,7 @@ public class Ingame : MonoBehaviour {
                         Debug.Log("Gacha_Tong5 = ");
                         Debug.Log(Gacha_Ball);
                         Gacha_Tong_5_st = false;
+                        Gacha_Tong_5.SetActive(false);
                         Gacha_Initial[5] = 9;
                     }
                 }
@@ -297,6 +313,7 @@ public class Ingame : MonoBehaviour {
                         Debug.Log("Gacha_Tong6 = ");
                         Debug.Log(Gacha_Ball);
                         Gacha_Tong_6_st = false;
+                        Gacha_Tong_6.SetActive(false);
                         Gacha_Initial[6] = 9;
                     }
                 }
@@ -315,6 +332,7 @@ public class Ingame : MonoBehaviour {
                         Debug.Log("Gacha_Tong7 = ");
                         Debug.Log(Gacha_Ball);
                         Gacha_Tong_7_st = false;
+                        Gacha_Tong_7.SetActive(false);
                         Gacha_Initial[7] = 9;
                     }
                 }
@@ -333,6 +351,7 @@ public class Ingame : MonoBehaviour {
                         Debug.Log("Gacha_Tong8 = ");
                         Debug.Log(Gacha_Ball);
                         Gacha_Tong_8_st = false;
+                        Gacha_Tong_8.SetActive(false);
                         Gacha_Initial[8] = 9;
                     }
                 }
@@ -351,6 +370,7 @@ public class Ingame : MonoBehaviour {
                         Debug.Log("Gacha_Tong9 = ");
                         Debug.Log(Gacha_Ball);
                         Gacha_Tong_9_st = false;
+                        Gacha_Tong_9.SetActive(false);
                         Gacha_Initial[9] = 9;
                     }
                 }
