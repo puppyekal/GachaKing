@@ -45,7 +45,18 @@ public class Ingame : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        
+        /*
+        Gacha_Tong_0 = GameObject.Find("Gacha_Tong_1");
+        Gacha_Tong_1 = GameObject.Find("Gacha_Tong_2");
+        Gacha_Tong_2 = GameObject.Find("Gacha_Tong_3");
+        Gacha_Tong_3 = GameObject.Find("Gacha_Tong_4");
+        Gacha_Tong_4 = GameObject.Find("Gacha_Tong_5");
+        Gacha_Tong_5 = GameObject.Find("Gacha_Tong_6");
+        Gacha_Tong_6 = GameObject.Find("Gacha_Tong_7");
+        Gacha_Tong_7 = GameObject.Find("Gacha_Tong_8");
+        Gacha_Tong_8 = GameObject.Find("Gacha_Tong_9");
+        Gacha_Tong_9 = GameObject.Find("Gacha_Tong_10");
+        */
         Gacha_Tong_0.SetActive(false);
         Gacha_Tong_1.SetActive(false);
         Gacha_Tong_2.SetActive(false);
@@ -56,7 +67,6 @@ public class Ingame : MonoBehaviour {
         Gacha_Tong_7.SetActive(false);
         Gacha_Tong_8.SetActive(false);
         Gacha_Tong_9.SetActive(false);
-        
         for (int i = 0; i < 10; i++)
         {
             Gacha_Initial[i] = 9;
@@ -66,6 +76,7 @@ public class Ingame : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
         if (Buy_Button == 1) {
             Set_Gacha_Tong();
         }
