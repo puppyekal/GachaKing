@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class UI : MonoBehaviour {
 
@@ -16,9 +18,11 @@ public class UI : MonoBehaviour {
     public GameObject Inven_Home;
     public GameObject Inven_Face;
 
-   
-    int Check = 0;//0=메인, 1=업적, 2=상점, 3=인벤토리
+    public Image Gacha_Num;//가챠통 수량 게이지
+    public Image Gacha_Level;//가챠통 레벨 게이지
 
+    int Check = 0;//0=메인, 1=업적, 2=상점, 3=인벤토리
+    float temp;
 
     // Use this for initialization
     void Start () {
@@ -30,8 +34,13 @@ public class UI : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+        SetGuage(temp);
 	}
+
+    public void SetGuage(float temp)
+    {
+        Gacha_Num.fillAmount = temp / 10;
+    }
     //메뉴
     public void Menu_Set_True()
     {
@@ -146,4 +155,6 @@ public class UI : MonoBehaviour {
         Ingame.Buy_Button = 1;
         //메인화면으로 갔다는 것을 알리기 위한 check
     }
+
+
 }

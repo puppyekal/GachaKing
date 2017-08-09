@@ -206,6 +206,7 @@ public class Ingame : MonoBehaviour {
                 if (Gacha_Tong_1_st == true)
                 {
                     int Gacha_Ball;
+
                     Gacha_Ball = Random.Range(0, Gacha_Initial[1]);
                     if (Gacha_Ball != 0)
                     {
@@ -225,6 +226,7 @@ public class Ingame : MonoBehaviour {
                 if (Gacha_Tong_2_st == true)
                 {
                     int Gacha_Ball;
+
                     Gacha_Ball = Random.Range(0, Gacha_Initial[2]);
                     if (Gacha_Ball != 0)
                     {
@@ -244,6 +246,7 @@ public class Ingame : MonoBehaviour {
                 if (Gacha_Tong_3_st == true)
                 {
                     int Gacha_Ball;
+
                     Gacha_Ball = Random.Range(0, Gacha_Initial[3]);
                     if (Gacha_Ball != 0)
                     {
@@ -263,6 +266,7 @@ public class Ingame : MonoBehaviour {
                 if (Gacha_Tong_4_st == true)
                 {
                     int Gacha_Ball;
+
                     Gacha_Ball = Random.Range(0, Gacha_Initial[4]);
                     if (Gacha_Ball != 0)
                     {
@@ -282,6 +286,7 @@ public class Ingame : MonoBehaviour {
                 if (Gacha_Tong_5_st == true)
                 {
                     int Gacha_Ball;
+
                     Gacha_Ball = Random.Range(0, Gacha_Initial[5]);
                     if (Gacha_Ball != 0)
                     {
@@ -301,6 +306,7 @@ public class Ingame : MonoBehaviour {
                 if (Gacha_Tong_6_st == true)
                 {
                     int Gacha_Ball;
+
                     Gacha_Ball = Random.Range(0, Gacha_Initial[6]);
                     if (Gacha_Ball != 0)
                     {
