@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ingame : MonoBehaviour {
+public class Ingame : MonoBehaviour
+{
 
     static public int Buy_Button;
 
@@ -40,23 +41,15 @@ public class Ingame : MonoBehaviour {
     public bool Gacha_Tong_8_st = false;
     public bool Gacha_Tong_9_st = false;
 
+    public int Gacha_Tong_Num = 0;
+
     //가챠통 10개
     public int[] Gacha_Initial = new int[10];
 
     // Use this for initialization
-    void Start () {
-        /*
-        Gacha_Tong_0 = GameObject.Find("Gacha_Tong_1");
-        Gacha_Tong_1 = GameObject.Find("Gacha_Tong_2");
-        Gacha_Tong_2 = GameObject.Find("Gacha_Tong_3");
-        Gacha_Tong_3 = GameObject.Find("Gacha_Tong_4");
-        Gacha_Tong_4 = GameObject.Find("Gacha_Tong_5");
-        Gacha_Tong_5 = GameObject.Find("Gacha_Tong_6");
-        Gacha_Tong_6 = GameObject.Find("Gacha_Tong_7");
-        Gacha_Tong_7 = GameObject.Find("Gacha_Tong_8");
-        Gacha_Tong_8 = GameObject.Find("Gacha_Tong_9");
-        Gacha_Tong_9 = GameObject.Find("Gacha_Tong_10");
-        */
+    void Start()
+    {
+
         Gacha_Tong_0.SetActive(false);
         Gacha_Tong_1.SetActive(false);
         Gacha_Tong_2.SetActive(false);
@@ -67,27 +60,33 @@ public class Ingame : MonoBehaviour {
         Gacha_Tong_7.SetActive(false);
         Gacha_Tong_8.SetActive(false);
         Gacha_Tong_9.SetActive(false);
+
         for (int i = 0; i < 10; i++)
         {
             Gacha_Initial[i] = 9;
         }
-        
-    }
-	
-	// Update is called once per frame
-	void Update () {
 
-        if (Buy_Button == 1) {
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+        if (Buy_Button == 1)
+        {
             Set_Gacha_Tong();
         }
     }
     //가챠통 구매 버튼 눌렸을 때
-    public void Set_Gacha_Tong() {
-        if (Buy_Button == 1) {
+    public void Set_Gacha_Tong()
+    {
+        if (Buy_Button == 1)
+        {
             if (Gacha_Tong_0_st == false)
             {
                 Debug.Log("Gacha_Tong0 true");
                 Buy_Button = 0;
+                Gacha_Tong_Num++;
                 Gacha_Tong_0_st = true;
                 Gacha_Tong_0.SetActive(true);
             }
@@ -95,6 +94,7 @@ public class Ingame : MonoBehaviour {
             {
                 Debug.Log("Gacha_Tong1 true");
                 Buy_Button = 0;
+                Gacha_Tong_Num++;
                 Gacha_Tong_1_st = true;
                 Gacha_Tong_1.SetActive(true);
             }
@@ -102,6 +102,7 @@ public class Ingame : MonoBehaviour {
             {
                 Debug.Log("Gacha_Tong2 true");
                 Buy_Button = 0;
+                Gacha_Tong_Num++;
                 Gacha_Tong_2_st = true;
                 Gacha_Tong_2.SetActive(true);
             }
@@ -109,6 +110,7 @@ public class Ingame : MonoBehaviour {
             {
                 Debug.Log("Gacha_Tong3 true");
                 Buy_Button = 0;
+                Gacha_Tong_Num++;
                 Gacha_Tong_3_st = true;
                 Gacha_Tong_3.SetActive(true);
             }
@@ -116,6 +118,7 @@ public class Ingame : MonoBehaviour {
             {
                 Debug.Log("Gacha_Tong4 true");
                 Buy_Button = 0;
+                Gacha_Tong_Num++;
                 Gacha_Tong_4_st = true;
                 Gacha_Tong_4.SetActive(true);
             }
@@ -123,6 +126,7 @@ public class Ingame : MonoBehaviour {
             {
                 Debug.Log("Gacha_Tong5 true");
                 Buy_Button = 0;
+                Gacha_Tong_Num++;
                 Gacha_Tong_5_st = true;
                 Gacha_Tong_5.SetActive(true);
             }
@@ -130,6 +134,7 @@ public class Ingame : MonoBehaviour {
             {
                 Debug.Log("Gacha_Tong6 true");
                 Buy_Button = 0;
+                Gacha_Tong_Num++;
                 Gacha_Tong_6_st = true;
                 Gacha_Tong_6.SetActive(true);
             }
@@ -137,6 +142,7 @@ public class Ingame : MonoBehaviour {
             {
                 Debug.Log("Gacha_Tong7 true");
                 Buy_Button = 0;
+                Gacha_Tong_Num++;
                 Gacha_Tong_7_st = true;
                 Gacha_Tong_7.SetActive(true);
             }
@@ -144,6 +150,7 @@ public class Ingame : MonoBehaviour {
             {
                 Debug.Log("Gacha_Tong8 true");
                 Buy_Button = 0;
+                Gacha_Tong_Num++;
                 Gacha_Tong_8_st = true;
                 Gacha_Tong_8.SetActive(true);
             }
@@ -151,6 +158,7 @@ public class Ingame : MonoBehaviour {
             {
                 Debug.Log("Gacha_Tong9 true");
                 Buy_Button = 0;
+                Gacha_Tong_Num++;
                 Gacha_Tong_9_st = true;
                 Gacha_Tong_9.SetActive(true);
             }
@@ -187,7 +195,7 @@ public class Ingame : MonoBehaviour {
                 if (Gacha_Tong_0_st == true)
                 {
                     int Gacha_Ball;
-                    
+
                     Gacha_Ball = Random.Range(0, Gacha_Initial[0]);
                     if (Gacha_Ball != 0)
                     {
@@ -195,9 +203,11 @@ public class Ingame : MonoBehaviour {
                         Debug.Log(Gacha_Ball);
                         Gacha_Initial[0] = Gacha_Initial[0] - 1;
                     }
-                    else if (Gacha_Ball == 0) {
+                    else if (Gacha_Ball == 0)
+                    {
                         Debug.Log("Gacha_Tong0 = ");
                         Debug.Log(Gacha_Ball);
+                        Gacha_Tong_Num--;
                         Gacha_Tong_0_st = false;
                         Gacha_Tong_0.SetActive(false);
                         Gacha_Initial[0] = 9;
@@ -206,7 +216,6 @@ public class Ingame : MonoBehaviour {
                 if (Gacha_Tong_1_st == true)
                 {
                     int Gacha_Ball;
-
                     Gacha_Ball = Random.Range(0, Gacha_Initial[1]);
                     if (Gacha_Ball != 0)
                     {
@@ -218,6 +227,7 @@ public class Ingame : MonoBehaviour {
                     {
                         Debug.Log("Gacha_Tong1 = ");
                         Debug.Log(Gacha_Ball);
+                        Gacha_Tong_Num--;
                         Gacha_Tong_1_st = false;
                         Gacha_Tong_1.SetActive(false);
                         Gacha_Initial[1] = 9;
@@ -226,7 +236,6 @@ public class Ingame : MonoBehaviour {
                 if (Gacha_Tong_2_st == true)
                 {
                     int Gacha_Ball;
-
                     Gacha_Ball = Random.Range(0, Gacha_Initial[2]);
                     if (Gacha_Ball != 0)
                     {
@@ -238,6 +247,7 @@ public class Ingame : MonoBehaviour {
                     {
                         Debug.Log("Gacha_Tong3 = ");
                         Debug.Log(Gacha_Ball);
+                        Gacha_Tong_Num--;
                         Gacha_Tong_2_st = false;
                         Gacha_Tong_2.SetActive(false);
                         Gacha_Initial[2] = 9;
@@ -246,7 +256,6 @@ public class Ingame : MonoBehaviour {
                 if (Gacha_Tong_3_st == true)
                 {
                     int Gacha_Ball;
-
                     Gacha_Ball = Random.Range(0, Gacha_Initial[3]);
                     if (Gacha_Ball != 0)
                     {
@@ -258,6 +267,7 @@ public class Ingame : MonoBehaviour {
                     {
                         Debug.Log("Gacha_Tong4 = ");
                         Debug.Log(Gacha_Ball);
+                        Gacha_Tong_Num--;
                         Gacha_Tong_3_st = false;
                         Gacha_Tong_3.SetActive(false);
                         Gacha_Initial[3] = 9;
@@ -266,7 +276,6 @@ public class Ingame : MonoBehaviour {
                 if (Gacha_Tong_4_st == true)
                 {
                     int Gacha_Ball;
-
                     Gacha_Ball = Random.Range(0, Gacha_Initial[4]);
                     if (Gacha_Ball != 0)
                     {
@@ -278,6 +287,7 @@ public class Ingame : MonoBehaviour {
                     {
                         Debug.Log("Gacha_Tong4 = ");
                         Debug.Log(Gacha_Ball);
+                        Gacha_Tong_Num--;
                         Gacha_Tong_4_st = false;
                         Gacha_Tong_4.SetActive(false);
                         Gacha_Initial[4] = 9;
@@ -286,7 +296,6 @@ public class Ingame : MonoBehaviour {
                 if (Gacha_Tong_5_st == true)
                 {
                     int Gacha_Ball;
-
                     Gacha_Ball = Random.Range(0, Gacha_Initial[5]);
                     if (Gacha_Ball != 0)
                     {
@@ -298,6 +307,7 @@ public class Ingame : MonoBehaviour {
                     {
                         Debug.Log("Gacha_Tong5 = ");
                         Debug.Log(Gacha_Ball);
+                        Gacha_Tong_Num--;
                         Gacha_Tong_5_st = false;
                         Gacha_Tong_5.SetActive(false);
                         Gacha_Initial[5] = 9;
@@ -306,7 +316,6 @@ public class Ingame : MonoBehaviour {
                 if (Gacha_Tong_6_st == true)
                 {
                     int Gacha_Ball;
-
                     Gacha_Ball = Random.Range(0, Gacha_Initial[6]);
                     if (Gacha_Ball != 0)
                     {
@@ -318,6 +327,7 @@ public class Ingame : MonoBehaviour {
                     {
                         Debug.Log("Gacha_Tong6 = ");
                         Debug.Log(Gacha_Ball);
+                        Gacha_Tong_Num--;
                         Gacha_Tong_6_st = false;
                         Gacha_Tong_6.SetActive(false);
                         Gacha_Initial[6] = 9;
@@ -337,6 +347,7 @@ public class Ingame : MonoBehaviour {
                     {
                         Debug.Log("Gacha_Tong7 = ");
                         Debug.Log(Gacha_Ball);
+                        Gacha_Tong_Num--;
                         Gacha_Tong_7_st = false;
                         Gacha_Tong_7.SetActive(false);
                         Gacha_Initial[7] = 9;
@@ -356,6 +367,7 @@ public class Ingame : MonoBehaviour {
                     {
                         Debug.Log("Gacha_Tong8 = ");
                         Debug.Log(Gacha_Ball);
+                        Gacha_Tong_Num--;
                         Gacha_Tong_8_st = false;
                         Gacha_Tong_8.SetActive(false);
                         Gacha_Initial[8] = 9;
@@ -375,6 +387,7 @@ public class Ingame : MonoBehaviour {
                     {
                         Debug.Log("Gacha_Tong9 = ");
                         Debug.Log(Gacha_Ball);
+                        Gacha_Tong_Num--;
                         Gacha_Tong_9_st = false;
                         Gacha_Tong_9.SetActive(false);
                         Gacha_Initial[9] = 9;
@@ -384,5 +397,5 @@ public class Ingame : MonoBehaviour {
 
         }
     }
-    
+
 }
