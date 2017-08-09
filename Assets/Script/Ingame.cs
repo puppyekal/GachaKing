@@ -6,6 +6,7 @@ public class Ingame : MonoBehaviour
 {
 
     static public int Buy_Button;
+    static public int Gacha_Tong_Num = 0;
 
     //방꾸미기 구역
     public GameObject Area_0;
@@ -41,7 +42,6 @@ public class Ingame : MonoBehaviour
     public bool Gacha_Tong_8_st = false;
     public bool Gacha_Tong_9_st = false;
 
-    public int Gacha_Tong_Num = 0;
 
     //가챠통 10개
     public int[] Gacha_Initial = new int[10];

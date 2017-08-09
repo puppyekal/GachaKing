@@ -22,7 +22,6 @@ public class UI : MonoBehaviour {
     public Image Gacha_Level;//가챠통 레벨 게이지
 
     int Check = 0;//0=메인, 1=업적, 2=상점, 3=인벤토리
-    float temp;
 
     // Use this for initialization
     void Start () {
@@ -34,12 +33,13 @@ public class UI : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        SetGuage(temp);
+        SetGuage(Ingame.Gacha_Tong_Num);
 	}
 
     public void SetGuage(float temp)
     {
         Gacha_Num.fillAmount = temp / 10;
+        Gacha_Level.fillAmount = Text_Event.Gacha_Level / 9;
     }
     //메뉴
     public void Menu_Set_True()
