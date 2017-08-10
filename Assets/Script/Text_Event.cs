@@ -11,7 +11,7 @@ public class Text_Event : MonoBehaviour {
 
     public Text Gacha_Price_Text;
 
-    int Money = 10000000;
+    static public int Money = 10000000;
     public static int Gacha_Level = 1;
     int Gacha_Price_Check = 0;//레벨에따른 판매가 변경 확인에 대한 체크
     int[] Gacha_Price = new int[] { 20000, 80000, 32000, 1280000, 5120000, 20480000, 81920000, 327680000, 1310720000 };
