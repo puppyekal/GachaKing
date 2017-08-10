@@ -7,6 +7,8 @@ public class Ingame : MonoBehaviour
 
     static public int Buy_Button;
     static public int Gacha_Tong_Num = 0;
+    static public int Click_Num = 0;
+
     public int Gacha_Tong_Level = 1;
 
     //방꾸미기 구역
@@ -380,9 +382,9 @@ public class Ingame : MonoBehaviour
             case 10000:
                 //방 눌렀을 때
 
-               
-                //-------------
 
+                //-------------
+                Click_Num++;
                 if (Gacha_Tong_0_st == true)
                 {
                     Text_Event.Money = Text_Event.Money - Gacha_Initial_Try[0];
