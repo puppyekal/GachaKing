@@ -5,13 +5,14 @@ using UnityEngine.UI;
 
 public class Store_Home : MonoBehaviour
 {
-    public GameObject Button_EX;
+ //   public GameObject Button_EX;
     public Button example;
 
     // Use this for initialization
     void Start()
     {
         example.interactable = false;
+        Debug.Log(123);
     }
 
     // Update is called once per frame
@@ -21,6 +22,5 @@ public class Store_Home : MonoBehaviour
         {
             example.interactable = true;
         }
-
     }
 }

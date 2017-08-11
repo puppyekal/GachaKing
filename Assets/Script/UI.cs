@@ -155,6 +155,10 @@ public class UI : MonoBehaviour {
         Ingame.Buy_Button = 1;
         //메인화면으로 갔다는 것을 알리기 위한 check
     }
-
+    public void Inventory_Select()
+    {
+        Inventory.SetActive(false);
+        Check = 0;
+    }
 
 }
