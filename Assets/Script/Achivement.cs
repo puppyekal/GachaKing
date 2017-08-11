@@ -48,7 +48,7 @@ public class Achivement : MonoBehaviour
             Achivement_EX_text.GetComponent<Text>().text = click + "/ 30";
             Achivement_EX_Image.fillAmount = (float)click / 30;
         }
-        else if (click > 30) 
+       if (click == 30) 
         {
             Debug.Log(Achivement_EX_cnt);
             Achivement_EX_cnt = 1;

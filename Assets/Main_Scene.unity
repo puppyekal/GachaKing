@@ -11392,7 +11392,6 @@ GameObject:
   - component: {fileID: 710779908}
   - component: {fileID: 710779910}
   - component: {fileID: 710779909}
-  - component: {fileID: 710779911}
   m_Layer: 5
   m_Name: Achivement
   m_TagString: Untagged
@@ -11453,34 +11452,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 710779907}
---- !u!114 &710779911
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 710779907}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d004feb5366307745b23c4edbf6d589c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Achivement_EX_text: {fileID: 1572171353}
-  Achivement_EX_Image: {fileID: 2029427088}
-  Achivement1: {fileID: 0}
-  Achivement2: {fileID: 0}
-  Achivement3: {fileID: 0}
-  Achivement4: {fileID: 0}
-  Achivement5: {fileID: 0}
-  Achivement6: {fileID: 0}
-  Achivement7: {fileID: 0}
-  Achivement8: {fileID: 0}
-  Achivement9: {fileID: 0}
-  Achivement10: {fileID: 0}
-  Achivement11: {fileID: 0}
-  Achivement12: {fileID: 0}
-  Achivement13: {fileID: 0}
-  Achivement14: {fileID: 0}
-  Achivement15: {fileID: 0}
 --- !u!1 &714486455
 GameObject:
   m_ObjectHideFlags: 0
@@ -26165,6 +26136,7 @@ GameObject:
   - component: {fileID: 1483905908}
   - component: {fileID: 1483905910}
   - component: {fileID: 1483905911}
+  - component: {fileID: 1483905912}
   m_Layer: 0
   m_Name: UI
   m_TagString: Untagged
@@ -26235,6 +26207,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Button_EX: {fileID: 0}
   example: {fileID: 608546007}
+--- !u!114 &1483905912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1483905907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d004feb5366307745b23c4edbf6d589c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Achivement_EX_text: {fileID: 1572171353}
+  Achivement_EX_Image: {fileID: 2029427088}
+  Achivement1: {fileID: 0}
+  Achivement2: {fileID: 0}
+  Achivement3: {fileID: 0}
+  Achivement4: {fileID: 0}
+  Achivement5: {fileID: 0}
+  Achivement6: {fileID: 0}
+  Achivement7: {fileID: 0}
+  Achivement8: {fileID: 0}
+  Achivement9: {fileID: 0}
+  Achivement10: {fileID: 0}
+  Achivement11: {fileID: 0}
+  Achivement12: {fileID: 0}
+  Achivement13: {fileID: 0}
+  Achivement14: {fileID: 0}
+  Achivement15: {fileID: 0}
 --- !u!1 &1485035416
 GameObject:
   m_ObjectHideFlags: 0
