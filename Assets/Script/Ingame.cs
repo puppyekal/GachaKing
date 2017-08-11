@@ -397,7 +397,7 @@ public class Ingame : MonoBehaviour
                     }
                     else if (Gacha_Ball == 0)
                     {
-                        Debug.Log("Gacha_Tong0 남은개수 = " + Gacha_Initial[0] + " 뽑힌숫자 = " + Gacha_Ball + " Money + " + Gacha_Initial_Zero[0]);
+                        Debug.Log("Gacha_Tong0 남은개수 = " + Gacha_Initial[0] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[0] + " Money + " + Gacha_Initial_Zero[0]);
                         Gacha_Tong_Num--;
                         Text_Event.Money = Text_Event.Money + Gacha_Initial_Zero[0];
                         Gacha_Tong_0_st = false;
@@ -417,7 +417,7 @@ public class Ingame : MonoBehaviour
                     }
                     else if (Gacha_Ball == 0)
                     {
-                        Debug.Log("Gacha_Tong1 남은개수 = " + Gacha_Initial[1] + " 뽑힌숫자 = " + Gacha_Ball + " Money + " + Gacha_Initial_Zero[1]);
+                        Debug.Log("Gacha_Tong1 남은개수 = " + Gacha_Initial[1] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[1] + " Money + " + Gacha_Initial_Zero[1]);
                         Gacha_Tong_Num--;
                         Text_Event.Money = Text_Event.Money + Gacha_Initial_Zero[1];
                         Gacha_Tong_1_st = false;
@@ -437,7 +437,7 @@ public class Ingame : MonoBehaviour
                     }
                     else if (Gacha_Ball == 0)
                     {
-                        Debug.Log("Gacha_Tong2 남은개수 = " + Gacha_Initial[2] + " 뽑힌숫자 = " + Gacha_Ball + " Money + " + Gacha_Initial_Zero[2]);
+                        Debug.Log("Gacha_Tong2 남은개수 = " + Gacha_Initial[2] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[2] + " Money + " + Gacha_Initial_Zero[2]);
                         Gacha_Tong_Num--;
                         Text_Event.Money = Text_Event.Money + Gacha_Initial_Zero[2];
                         Gacha_Tong_2_st = false;
@@ -457,7 +457,7 @@ public class Ingame : MonoBehaviour
                     }
                     else if (Gacha_Ball == 0)
                     {
-                        Debug.Log("Gacha_Tong3 남은개수 = " + Gacha_Initial[3] + " 뽑힌숫자 = " + Gacha_Ball + " Money + " + Gacha_Initial_Zero[3]);
+                        Debug.Log("Gacha_Tong3 남은개수 = " + Gacha_Initial[3] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[3] + " Money + " + Gacha_Initial_Zero[3]);
                         Gacha_Tong_Num--;
                         Text_Event.Money = Text_Event.Money + Gacha_Initial_Zero[3];
                         Gacha_Tong_3_st = false;
@@ -477,7 +477,7 @@ public class Ingame : MonoBehaviour
                     }
                     else if (Gacha_Ball == 0)
                     {
-                        Debug.Log("Gacha_Tong4 남은개수 = " + Gacha_Initial[4] + " 뽑힌숫자 = " + Gacha_Ball + " Money + " + Gacha_Initial_Zero[4]);
+                        Debug.Log("Gacha_Tong4 남은개수 = " + Gacha_Initial[4] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[4] + " Money + " + Gacha_Initial_Zero[4]);
                         Gacha_Tong_Num--;
                         Text_Event.Money = Text_Event.Money + Gacha_Initial_Zero[4];
                         Gacha_Tong_4_st = false;
@@ -497,7 +497,7 @@ public class Ingame : MonoBehaviour
                     }
                     else if (Gacha_Ball == 0)
                     {
-                        Debug.Log("Gacha_Tong5 남은개수 = " + Gacha_Initial[5] + " 뽑힌숫자 = " + Gacha_Ball + " Money + " + Gacha_Initial_Zero[5]);
+                        Debug.Log("Gacha_Tong5 남은개수 = " + Gacha_Initial[5] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[5] + " Money + " + Gacha_Initial_Zero[5]);
                         Gacha_Tong_Num--;
                         Text_Event.Money = Text_Event.Money + Gacha_Initial_Zero[5];
                         Gacha_Tong_5_st = false;
@@ -517,7 +517,7 @@ public class Ingame : MonoBehaviour
                     }
                     else if (Gacha_Ball == 0)
                     {
-                        Debug.Log("Gacha_Tong6 남은개수 = " + Gacha_Initial[6] + " 뽑힌숫자 = " + Gacha_Ball + " Money + " + Gacha_Initial_Zero[6]);
+                        Debug.Log("Gacha_Tong6 남은개수 = " + Gacha_Initial[6] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[6] + " Money + " + Gacha_Initial_Zero[6]);
                         Gacha_Tong_Num--;
                         Text_Event.Money = Text_Event.Money + Gacha_Initial_Zero[6];
                         Gacha_Tong_6_st = false;
@@ -537,7 +537,7 @@ public class Ingame : MonoBehaviour
                     }
                     else if (Gacha_Ball == 0)
                     {
-                        Debug.Log("Gacha_Tong7 남은개수 = " + Gacha_Initial[7] + " 뽑힌숫자 = " + Gacha_Ball + " Money + " + Gacha_Initial_Zero[7]);
+                        Debug.Log("Gacha_Tong7 남은개수 = " + Gacha_Initial[7] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[7] + " Money + " + Gacha_Initial_Zero[7]);
                         Gacha_Tong_Num--;
                         Text_Event.Money = Text_Event.Money + Gacha_Initial_Zero[7];
                         Gacha_Tong_7_st = false;
@@ -557,7 +557,7 @@ public class Ingame : MonoBehaviour
                     }
                     else if (Gacha_Ball == 0)
                     {
-                        Debug.Log("Gacha_Tong8 남은개수 = " + Gacha_Initial[8] + " 뽑힌숫자 = " + Gacha_Ball + " Money + " + Gacha_Initial_Zero[8]);
+                        Debug.Log("Gacha_Tong8 남은개수 = " + Gacha_Initial[8] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[8] + " Money + " + Gacha_Initial_Zero[8]);
                         Gacha_Tong_Num--;
                         Text_Event.Money = Text_Event.Money + Gacha_Initial_Zero[8];
                         Gacha_Tong_8_st = false;
@@ -577,7 +577,7 @@ public class Ingame : MonoBehaviour
                     }
                     else if (Gacha_Ball == 0)
                     {
-                        Debug.Log("Gacha_Tong9 남은개수 = " + Gacha_Initial[9] + " 뽑힌숫자 = " + Gacha_Ball + " Money + " + Gacha_Initial_Zero[9]);
+                        Debug.Log("Gacha_Tong9 남은개수 = " + Gacha_Initial[9] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[9] + " Money + " + Gacha_Initial_Zero[9]);
                         Gacha_Tong_Num--;
                         Text_Event.Money = Text_Event.Money + Gacha_Initial_Zero[9];
                         Gacha_Tong_9_st = false;
