@@ -21,13 +21,6 @@ public class Store_Home : MonoBehaviour
         {
             example.interactable = true;
         }
-    }
 
-    public void Home_Item()
-    {
-        if (Achivement.Achivement_EX_cnt == 1)
-        {
-            example.interactable = true;
-        }
     }
 }
