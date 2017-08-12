@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Ingame : MonoBehaviour
 {
@@ -11,6 +12,18 @@ public class Ingame : MonoBehaviour
     static public int Gacha_Tong_Twice = 1;
 
     public int Gacha_Tong_Level = 1;
+
+    //가챠통 남은수량%
+    public Text Gacha_Tong_0_Text;
+    public Text Gacha_Tong_1_Text;
+    public Text Gacha_Tong_2_Text;
+    public Text Gacha_Tong_3_Text;
+    public Text Gacha_Tong_4_Text;
+    public Text Gacha_Tong_5_Text;
+    public Text Gacha_Tong_6_Text;
+    public Text Gacha_Tong_7_Text;
+    public Text Gacha_Tong_8_Text;
+    public Text Gacha_Tong_9_Text;
 
     //방꾸미기 구역
     public GameObject Area_0;
@@ -440,6 +453,8 @@ public class Ingame : MonoBehaviour
                         }
                     }
 
+                    Gacha_Tong_0_Text.GetComponent<Text>().text = 100 * Gacha_Initial[0]  / Gacha_Ball_Num[Gacha_Tong_Level - 1] + "%";
+
                 }
                 if (Gacha_Tong_1_st == true)
                 {
@@ -481,6 +496,8 @@ public class Ingame : MonoBehaviour
                         }
 
                     }
+
+                    Gacha_Tong_1_Text.GetComponent<Text>().text = 100 * Gacha_Initial[1] / Gacha_Ball_Num[Gacha_Tong_Level - 1] + "%";
                 }
                 if (Gacha_Tong_2_st == true)
                 {
@@ -522,6 +539,7 @@ public class Ingame : MonoBehaviour
                         }
 
                     }
+                    Gacha_Tong_2_Text.GetComponent<Text>().text = 100 * Gacha_Initial[2] / Gacha_Ball_Num[Gacha_Tong_Level - 1] + "%";
                 }
                 if (Gacha_Tong_3_st == true)
                 {
@@ -562,7 +580,7 @@ public class Ingame : MonoBehaviour
 
                         }
                     }
-
+                    Gacha_Tong_3_Text.GetComponent<Text>().text = 100 * Gacha_Initial[3] / Gacha_Ball_Num[Gacha_Tong_Level - 1] + "%";
                 }
                 if (Gacha_Tong_4_st == true)
                 {
@@ -603,7 +621,7 @@ public class Ingame : MonoBehaviour
 
                         }
                     }
-
+                    Gacha_Tong_4_Text.GetComponent<Text>().text = 100 * Gacha_Initial[4] / Gacha_Ball_Num[Gacha_Tong_Level - 1] + "%";
                 }
                 if (Gacha_Tong_5_st == true)
                 {
@@ -644,7 +662,7 @@ public class Ingame : MonoBehaviour
 
                         }
                     }
-
+                    Gacha_Tong_5_Text.GetComponent<Text>().text = 100 * Gacha_Initial[5] / Gacha_Ball_Num[Gacha_Tong_Level - 1] + "%";
                 }
                 if (Gacha_Tong_6_st == true)
                 {
@@ -685,7 +703,7 @@ public class Ingame : MonoBehaviour
 
                         }
                     }
-
+                    Gacha_Tong_6_Text.GetComponent<Text>().text = 100 * Gacha_Initial[6] / Gacha_Ball_Num[Gacha_Tong_Level - 1] + "%";
                 }
                 if (Gacha_Tong_7_st == true)
                 {
@@ -726,6 +744,7 @@ public class Ingame : MonoBehaviour
 
                         }
                     }
+                    Gacha_Tong_7_Text.GetComponent<Text>().text = 100 * Gacha_Initial[7] / Gacha_Ball_Num[Gacha_Tong_Level - 1] + "%";
                 }
                 if (Gacha_Tong_8_st == true)
                 {
@@ -766,6 +785,7 @@ public class Ingame : MonoBehaviour
 
                         }
                     }
+                    Gacha_Tong_8_Text.GetComponent<Text>().text = 100 * Gacha_Initial[8] / Gacha_Ball_Num[Gacha_Tong_Level - 1] + "%";
                 }
                 if (Gacha_Tong_9_st == true)
                 {
@@ -806,6 +826,7 @@ public class Ingame : MonoBehaviour
 
                         }
                     }
+                    Gacha_Tong_9_Text.GetComponent<Text>().text = 100 * Gacha_Initial[9] / Gacha_Ball_Num[Gacha_Tong_Level - 1] + "%";
                 }
                 break;
 
