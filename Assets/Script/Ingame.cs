@@ -13,6 +13,12 @@ public class Ingame : MonoBehaviour
 
     public int Gacha_Tong_Level = 1;
 
+    public float timer;
+    public int waitingTime;
+
+    public float timer_cooling_time;
+    public int waiting_cooling_time;
+
     //가챠통 남은수량%
     public Text Gacha_Tong_0_Text;
     public Text Gacha_Tong_1_Text;
@@ -44,6 +50,8 @@ public class Ingame : MonoBehaviour
     public GameObject Gacha_Tong_8;
     public GameObject Gacha_Tong_9;
 
+    //가챠 자동클릭 버튼
+    public GameObject Gacha_Automatic_Click_Button;
     //방꾸미기 활성화
     public bool Area_st = false;
 
@@ -59,7 +67,7 @@ public class Ingame : MonoBehaviour
     public bool Gacha_Tong_8_st = false;
     public bool Gacha_Tong_9_st = false;
 
-
+    public bool Gacha_Automatic_Click = false;
     //가챠통 10개
     public int[] Gacha_Initial = new int[10];
     public int[] Gacha_Initial_Try = new int[10];
@@ -84,6 +92,12 @@ public class Ingame : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        timer_cooling_time = 0.0f;
+        waiting_cooling_time = 60;
+
+        timer = 0.0f;
+        waitingTime = 2;
+
         Gacha_Tong_0.SetActive(false);
         Gacha_Tong_1.SetActive(false);
         Gacha_Tong_2.SetActive(false);
@@ -163,7 +177,149 @@ public class Ingame : MonoBehaviour
     void Update()
     {
         Gacha_Tong_Level = Text_Event.Gacha_Level;
+        Gacha_Tong_Initial();
+        if (Buy_Button == 1)
+        {
+            Set_Gacha_Tong();
+        }
 
+        //가챠자동클릭 시스템
+        if (Gacha_Automatic_Click == true) {
+            timer += Time.deltaTime;
+            if (timer > waitingTime)
+            {
+                Gacha_System();
+                timer = 0;
+            }
+        }
+    }
+    //가챠통 구매 버튼 눌렸을 때
+    public void Set_Gacha_Tong()
+    {
+        if (Buy_Button == 1)
+        {
+            if (Gacha_Tong_0_st == false)
+            {
+                Debug.Log("Gacha_Tong0 true");
+                Buy_Button = 0;
+                Gacha_Tong_Num++;
+                Gacha_Tong_0_st = true;
+                Gacha_Tong_0.SetActive(true);
+            }
+            else if (Gacha_Tong_1_st == false)
+            {
+                Debug.Log("Gacha_Tong1 true");
+                Buy_Button = 0;
+                Gacha_Tong_Num++;
+                Gacha_Tong_1_st = true;
+                Gacha_Tong_1.SetActive(true);
+            }
+            else if (Gacha_Tong_2_st == false)
+            {
+                Debug.Log("Gacha_Tong2 true");
+                Buy_Button = 0;
+                Gacha_Tong_Num++;
+                Gacha_Tong_2_st = true;
+                Gacha_Tong_2.SetActive(true);
+            }
+            else if (Gacha_Tong_3_st == false)
+            {
+                Debug.Log("Gacha_Tong3 true");
+                Buy_Button = 0;
+                Gacha_Tong_Num++;
+                Gacha_Tong_3_st = true;
+                Gacha_Tong_3.SetActive(true);
+            }
+            else if (Gacha_Tong_4_st == false)
+            {
+                Debug.Log("Gacha_Tong4 true");
+                Buy_Button = 0;
+                Gacha_Tong_Num++;
+                Gacha_Tong_4_st = true;
+                Gacha_Tong_4.SetActive(true);
+            }
+            else if (Gacha_Tong_5_st == false)
+            {
+                Debug.Log("Gacha_Tong5 true");
+                Buy_Button = 0;
+                Gacha_Tong_Num++;
+                Gacha_Tong_5_st = true;
+                Gacha_Tong_5.SetActive(true);
+            }
+            else if (Gacha_Tong_6_st == false)
+            {
+                Debug.Log("Gacha_Tong6 true");
+                Buy_Button = 0;
+                Gacha_Tong_Num++;
+                Gacha_Tong_6_st = true;
+                Gacha_Tong_6.SetActive(true);
+            }
+            else if (Gacha_Tong_7_st == false)
+            {
+                Debug.Log("Gacha_Tong7 true");
+                Buy_Button = 0;
+                Gacha_Tong_Num++;
+                Gacha_Tong_7_st = true;
+                Gacha_Tong_7.SetActive(true);
+            }
+            else if (Gacha_Tong_8_st == false)
+            {
+                Debug.Log("Gacha_Tong8 true");
+                Buy_Button = 0;
+                Gacha_Tong_Num++;
+                Gacha_Tong_8_st = true;
+                Gacha_Tong_8.SetActive(true);
+            }
+            else if (Gacha_Tong_9_st == false)
+            {
+                Debug.Log("Gacha_Tong9 true");
+                Buy_Button = 0;
+                Gacha_Tong_Num++;
+                Gacha_Tong_9_st = true;
+                Gacha_Tong_9.SetActive(true);
+            }
+            else
+            {
+                Debug.Log("Gacha_Tong_All true");
+                Buy_Button = 0;
+                //가챠통 10개가 모두 존재할 때
+            }
+        }
+    }
+    //버튼
+    public void PressKey(int nKey)
+    {
+        switch (nKey)
+        {
+            case 1:
+                Debug.Log(1000);
+                break;
+            case 2:
+                Debug.Log(2000);
+                break;
+            case 3:
+                Debug.Log(3000);
+                break;
+            case 4:
+                Debug.Log(4000);
+                break;
+            case 5:
+                Debug.Log(5000);
+                break;
+            case 9999:
+                //자동클릭 버프버튼
+                Debug.Log(9999);
+                Gacha_Automatic_Click = true;
+                break;
+            case 10000:
+                //방 눌렀을 때
+                Gacha_System();
+                break;
+
+        }
+    }
+    //가챠통 정보 초기화
+    public void Gacha_Tong_Initial(){
         //갸차통0
         if (Gacha_Tong_0_st == false)
         {
@@ -304,549 +460,426 @@ public class Ingame : MonoBehaviour
                 }
             }
         }
-
-        if (Buy_Button == 1)
-        {
-            Set_Gacha_Tong();
-        }
     }
-    //가챠통 구매 버튼 눌렸을 때
-    public void Set_Gacha_Tong()
+    //가챠 시스템
+    public void Gacha_System()
     {
-        if (Buy_Button == 1)
+        //-------------
+        Click_Num++;
+
+        if (Gacha_Tong_0_st == true)
         {
-            if (Gacha_Tong_0_st == false)
+            Text_Event.Money = Text_Event.Money - Gacha_Initial_Try[0];
+            int Gacha_Ball;
+            Gacha_Ball = Random.Range(0, Gacha_Initial[0]);
+            if (Gacha_Ball != 0)
             {
-                Debug.Log("Gacha_Tong0 true");
-                Buy_Button = 0;
-                Gacha_Tong_Num++;
-                Gacha_Tong_0_st = true;
-                Gacha_Tong_0.SetActive(true);
+                Debug.Log("Gacha_Tong0 남은개수 = " + Gacha_Initial[0] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[0]);
+                Gacha_Initial[0] = Gacha_Initial[0] - 1;
             }
-            else if (Gacha_Tong_1_st == false)
+            else if (Gacha_Ball == 0)
             {
-                Debug.Log("Gacha_Tong1 true");
-                Buy_Button = 0;
-                Gacha_Tong_Num++;
-                Gacha_Tong_1_st = true;
-                Gacha_Tong_1.SetActive(true);
-            }
-            else if (Gacha_Tong_2_st == false)
-            {
-                Debug.Log("Gacha_Tong2 true");
-                Buy_Button = 0;
-                Gacha_Tong_Num++;
-                Gacha_Tong_2_st = true;
-                Gacha_Tong_2.SetActive(true);
-            }
-            else if (Gacha_Tong_3_st == false)
-            {
-                Debug.Log("Gacha_Tong3 true");
-                Buy_Button = 0;
-                Gacha_Tong_Num++;
-                Gacha_Tong_3_st = true;
-                Gacha_Tong_3.SetActive(true);
-            }
-            else if (Gacha_Tong_4_st == false)
-            {
-                Debug.Log("Gacha_Tong4 true");
-                Buy_Button = 0;
-                Gacha_Tong_Num++;
-                Gacha_Tong_4_st = true;
-                Gacha_Tong_4.SetActive(true);
-            }
-            else if (Gacha_Tong_5_st == false)
-            {
-                Debug.Log("Gacha_Tong5 true");
-                Buy_Button = 0;
-                Gacha_Tong_Num++;
-                Gacha_Tong_5_st = true;
-                Gacha_Tong_5.SetActive(true);
-            }
-            else if (Gacha_Tong_6_st == false)
-            {
-                Debug.Log("Gacha_Tong6 true");
-                Buy_Button = 0;
-                Gacha_Tong_Num++;
-                Gacha_Tong_6_st = true;
-                Gacha_Tong_6.SetActive(true);
-            }
-            else if (Gacha_Tong_7_st == false)
-            {
-                Debug.Log("Gacha_Tong7 true");
-                Buy_Button = 0;
-                Gacha_Tong_Num++;
-                Gacha_Tong_7_st = true;
-                Gacha_Tong_7.SetActive(true);
-            }
-            else if (Gacha_Tong_8_st == false)
-            {
-                Debug.Log("Gacha_Tong8 true");
-                Buy_Button = 0;
-                Gacha_Tong_Num++;
-                Gacha_Tong_8_st = true;
-                Gacha_Tong_8.SetActive(true);
-            }
-            else if (Gacha_Tong_9_st == false)
-            {
-                Debug.Log("Gacha_Tong9 true");
-                Buy_Button = 0;
-                Gacha_Tong_Num++;
-                Gacha_Tong_9_st = true;
-                Gacha_Tong_9.SetActive(true);
-            }
-            else
-            {
-                Debug.Log("Gacha_Tong_All true");
-                Buy_Button = 0;
-                //가챠통 10개가 모두 존재할 때
-            }
-        }
-    }
-    //버튼
-    public void PressKey(int nKey)
-    {
-        switch (nKey)
-        {
-            case 1:
-                Debug.Log(1000);
-                break;
-            case 2:
-                Debug.Log(2000);
-                break;
-            case 3:
-                Debug.Log(3000);
-                break;
-            case 4:
-                Debug.Log(4000);
-                break;
-            case 5:
-                Debug.Log(5000);
-                break;
-            case 10000:
-                //방 눌렀을 때
+                Debug.Log("Gacha_Tong0 남은개수 = " + Gacha_Initial[0] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[0] + " Money + " + Gacha_Initial_Zero[0]);
+                Gacha_Tong_Num--;
+                Text_Event.Money = Text_Event.Money + Gacha_Initial_Zero[0];
+                Gacha_Tong_0_st = false;
+                Gacha_Tong_0.SetActive(false);
 
-
-                //-------------
-                Click_Num++;
-
-                if (Gacha_Tong_0_st == true)
+            }
+            //일정확률시 두번
+            int Twice;
+            Twice = Random.Range(1, 100);
+            if (Twice <= Gacha_Ball_Twice[Gacha_Tong_Twice] && Gacha_Tong_0_st == true)
+            {
+                if (Gacha_Ball != 0)
                 {
-                    Text_Event.Money = Text_Event.Money - Gacha_Initial_Try[0];
-                    int Gacha_Ball;
-                    Gacha_Ball = Random.Range(0, Gacha_Initial[0]);
-                    if (Gacha_Ball != 0)
-                    {
-                        Debug.Log("Gacha_Tong0 남은개수 = " + Gacha_Initial[0] + " 뽑힌숫자 = "+ Gacha_Ball + " Money - " + Gacha_Initial_Try[0]);
-                        Gacha_Initial[0] = Gacha_Initial[0] - 1;
-                    }
-                    else if (Gacha_Ball == 0)
-                    {
-                        Debug.Log("Gacha_Tong0 남은개수 = " + Gacha_Initial[0] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[0] + " Money + " + Gacha_Initial_Zero[0]);
-                        Gacha_Tong_Num--;
-                        Text_Event.Money = Text_Event.Money + Gacha_Initial_Zero[0];
-                        Gacha_Tong_0_st = false;
-                        Gacha_Tong_0.SetActive(false);
-                        
-                    }
-                    //일정확률시 두번
-                    int Twice;
-                    Twice = Random.Range(1, 100);
-                    if (Twice <= Gacha_Ball_Twice[Gacha_Tong_Twice] && Gacha_Tong_0_st == true)
-                    {
-                        if (Gacha_Ball != 0)
-                        {
-                            Debug.Log("Gacha_Tong0 남은개수 = " + Gacha_Initial[0] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[0]);
-                            Gacha_Initial[0] = Gacha_Initial[0] - 1;
-                        }
-                        else if (Gacha_Ball == 0)
-                        {
-                            Debug.Log("Gacha_Tong0 남은개수 = " + Gacha_Initial[0] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[0] + " Money + " + Gacha_Initial_Zero[0]);
-                            Gacha_Tong_Num--;
-                            Text_Event.Money = Text_Event.Money + Gacha_Initial_Zero[0];
-                            Gacha_Tong_0_st = false;
-                            Gacha_Tong_0.SetActive(false);
-                        }
-                    }
-
-                    Gacha_Tong_0_Text.GetComponent<Text>().text = 100 * Gacha_Initial[0]  / Gacha_Current_Level[0] + "%";
-
+                    Debug.Log("Gacha_Tong0 남은개수 = " + Gacha_Initial[0] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[0]);
+                    Gacha_Initial[0] = Gacha_Initial[0] - 1;
                 }
-                if (Gacha_Tong_1_st == true)
+                else if (Gacha_Ball == 0)
                 {
-                    Text_Event.Money = Text_Event.Money - Gacha_Initial_Try[1];
-                    int Gacha_Ball;
-                    Gacha_Ball = Random.Range(0, Gacha_Initial[1]);
-                    if (Gacha_Ball != 0)
-                    {
-                        Debug.Log("Gacha_Tong1 남은개수 = " + Gacha_Initial[1] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[1]);
-                        Gacha_Initial[1] = Gacha_Initial[1] - 1;
-                    }
-                    else if (Gacha_Ball == 0)
-                    {
-                        Debug.Log("Gacha_Tong1 남은개수 = " + Gacha_Initial[1] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[1] + " Money + " + Gacha_Initial_Zero[1]);
-                        Gacha_Tong_Num--;
-                        Text_Event.Money = Text_Event.Money + Gacha_Initial_Zero[1];
-                        Gacha_Tong_1_st = false;
-                        Gacha_Tong_1.SetActive(false);
-                        
-                    }
-                    //일정확률시 두번
-                    int Twice;
-                    Twice = Random.Range(1, 100);
-                    if (Twice <= Gacha_Ball_Twice[Gacha_Tong_Twice] && Gacha_Tong_0_st == true)
-                    {
-                        if (Gacha_Ball != 0)
-                        {
-                            Debug.Log("Gacha_Tong1 남은개수 = " + Gacha_Initial[1] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[1]);
-                            Gacha_Initial[1] = Gacha_Initial[1] - 1;
-                        }
-                        else if (Gacha_Ball == 0)
-                        {
-                            Debug.Log("Gacha_Tong1 남은개수 = " + Gacha_Initial[1] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[1] + " Money + " + Gacha_Initial_Zero[1]);
-                            Gacha_Tong_Num--;
-                            Text_Event.Money = Text_Event.Money + Gacha_Initial_Zero[1];
-                            Gacha_Tong_1_st = false;
-                            Gacha_Tong_1.SetActive(false);
-
-                        }
-
-                    }
-
-                    Gacha_Tong_1_Text.GetComponent<Text>().text = 100 * Gacha_Initial[1] / Gacha_Current_Level[1] + "%";
+                    Debug.Log("Gacha_Tong0 남은개수 = " + Gacha_Initial[0] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[0] + " Money + " + Gacha_Initial_Zero[0]);
+                    Gacha_Tong_Num--;
+                    Text_Event.Money = Text_Event.Money + Gacha_Initial_Zero[0];
+                    Gacha_Tong_0_st = false;
+                    Gacha_Tong_0.SetActive(false);
                 }
-                if (Gacha_Tong_2_st == true)
-                {
-                    Text_Event.Money = Text_Event.Money - Gacha_Initial_Try[2];
-                    int Gacha_Ball;
-                    Gacha_Ball = Random.Range(0, Gacha_Initial[2]);
-                    if (Gacha_Ball != 0)
-                    {
-                        Debug.Log("Gacha_Tong2 남은개수 = " + Gacha_Initial[2] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[2]);
-                        Gacha_Initial[2] = Gacha_Initial[2] - 1;
-                    }
-                    else if (Gacha_Ball == 0)
-                    {
-                        Debug.Log("Gacha_Tong2 남은개수 = " + Gacha_Initial[2] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[2] + " Money + " + Gacha_Initial_Zero[2]);
-                        Gacha_Tong_Num--;
-                        Text_Event.Money = Text_Event.Money + Gacha_Initial_Zero[2];
-                        Gacha_Tong_2_st = false;
-                        Gacha_Tong_2.SetActive(false);
-                      
-                    }
-                    //일정확률시 두번
-                    int Twice;
-                    Twice = Random.Range(1, 100);
-                    if (Twice <= Gacha_Ball_Twice[Gacha_Tong_Twice] && Gacha_Tong_0_st == true)
-                    {
-                        if (Gacha_Ball != 0)
-                        {
-                            Debug.Log("Gacha_Tong2 남은개수 = " + Gacha_Initial[2] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[2]);
-                            Gacha_Initial[2] = Gacha_Initial[2] - 1;
-                        }
-                        else if (Gacha_Ball == 0)
-                        {
-                            Debug.Log("Gacha_Tong2 남은개수 = " + Gacha_Initial[2] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[2] + " Money + " + Gacha_Initial_Zero[2]);
-                            Gacha_Tong_Num--;
-                            Text_Event.Money = Text_Event.Money + Gacha_Initial_Zero[2];
-                            Gacha_Tong_2_st = false;
-                            Gacha_Tong_2.SetActive(false);
+            }
 
-                        }
-
-                    }
-                    Gacha_Tong_2_Text.GetComponent<Text>().text = 100 * Gacha_Initial[2] / Gacha_Current_Level[2] + "%";
-                }
-                if (Gacha_Tong_3_st == true)
-                {
-                    Text_Event.Money = Text_Event.Money - Gacha_Initial_Try[3];
-                    int Gacha_Ball;
-                    Gacha_Ball = Random.Range(0, Gacha_Initial[3]);
-                    if (Gacha_Ball != 0)
-                    {
-                        Debug.Log("Gacha_Tong3 남은개수 = " + Gacha_Initial[3] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[3]);
-                        Gacha_Initial[3] = Gacha_Initial[3] - 1;
-                    }
-                    else if (Gacha_Ball == 0)
-                    {
-                        Debug.Log("Gacha_Tong3 남은개수 = " + Gacha_Initial[3] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[3] + " Money + " + Gacha_Initial_Zero[3]);
-                        Gacha_Tong_Num--;
-                        Text_Event.Money = Text_Event.Money + Gacha_Initial_Zero[3];
-                        Gacha_Tong_3_st = false;
-                        Gacha_Tong_3.SetActive(false);
-                       
-                    }
-                    //일정확률시 두번
-                    int Twice;
-                    Twice = Random.Range(1, 100);
-                    if (Twice <= Gacha_Ball_Twice[Gacha_Tong_Twice] && Gacha_Tong_0_st == true)
-                    {
-                        if (Gacha_Ball != 0)
-                        {
-                            Debug.Log("Gacha_Tong3 남은개수 = " + Gacha_Initial[3] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[3]);
-                            Gacha_Initial[3] = Gacha_Initial[3] - 1;
-                        }
-                        else if (Gacha_Ball == 0)
-                        {
-                            Debug.Log("Gacha_Tong3 남은개수 = " + Gacha_Initial[3] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[3] + " Money + " + Gacha_Initial_Zero[3]);
-                            Gacha_Tong_Num--;
-                            Text_Event.Money = Text_Event.Money + Gacha_Initial_Zero[3];
-                            Gacha_Tong_3_st = false;
-                            Gacha_Tong_3.SetActive(false);
-
-                        }
-                    }
-                    Gacha_Tong_3_Text.GetComponent<Text>().text = 100 * Gacha_Initial[3] / Gacha_Current_Level[3] + "%";
-                }
-                if (Gacha_Tong_4_st == true)
-                {
-                    Text_Event.Money = Text_Event.Money - Gacha_Initial_Try[4];
-                    int Gacha_Ball;
-                    Gacha_Ball = Random.Range(0, Gacha_Initial[4]);
-                    if (Gacha_Ball != 0)
-                    {
-                        Debug.Log("Gacha_Tong4 남은개수 = " + Gacha_Initial[4] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[4]);
-                        Gacha_Initial[4] = Gacha_Initial[4] - 1;
-                    }
-                    else if (Gacha_Ball == 0)
-                    {
-                        Debug.Log("Gacha_Tong4 남은개수 = " + Gacha_Initial[4] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[4] + " Money + " + Gacha_Initial_Zero[4]);
-                        Gacha_Tong_Num--;
-                        Text_Event.Money = Text_Event.Money + Gacha_Initial_Zero[4];
-                        Gacha_Tong_4_st = false;
-                        Gacha_Tong_4.SetActive(false);
-                       
-                    }
-                    //일정확률시 두번
-                    int Twice;
-                    Twice = Random.Range(1, 100);
-                    if (Twice <= Gacha_Ball_Twice[Gacha_Tong_Twice] && Gacha_Tong_0_st == true)
-                    {
-                        if (Gacha_Ball != 0)
-                        {
-                            Debug.Log("Gacha_Tong4 남은개수 = " + Gacha_Initial[4] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[4]);
-                            Gacha_Initial[4] = Gacha_Initial[4] - 1;
-                        }
-                        else if (Gacha_Ball == 0)
-                        {
-                            Debug.Log("Gacha_Tong4 남은개수 = " + Gacha_Initial[4] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[4] + " Money + " + Gacha_Initial_Zero[4]);
-                            Gacha_Tong_Num--;
-                            Text_Event.Money = Text_Event.Money + Gacha_Initial_Zero[4];
-                            Gacha_Tong_4_st = false;
-                            Gacha_Tong_4.SetActive(false);
-
-                        }
-                    }
-                    Gacha_Tong_4_Text.GetComponent<Text>().text = 100 * Gacha_Initial[4] / Gacha_Current_Level[4] + "%";
-                }
-                if (Gacha_Tong_5_st == true)
-                {
-                    Text_Event.Money = Text_Event.Money - Gacha_Initial_Try[5];
-                    int Gacha_Ball;
-                    Gacha_Ball = Random.Range(0, Gacha_Initial[5]);
-                    if (Gacha_Ball != 0)
-                    {
-                        Debug.Log("Gacha_Tong5 남은개수 = " + Gacha_Initial[5] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[5]);
-                        Gacha_Initial[5] = Gacha_Initial[5] - 1;
-                    }
-                    else if (Gacha_Ball == 0)
-                    {
-                        Debug.Log("Gacha_Tong5 남은개수 = " + Gacha_Initial[5] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[5] + " Money + " + Gacha_Initial_Zero[5]);
-                        Gacha_Tong_Num--;
-                        Text_Event.Money = Text_Event.Money + Gacha_Initial_Zero[5];
-                        Gacha_Tong_5_st = false;
-                        Gacha_Tong_5.SetActive(false);
-                       
-                    }
-                    //일정확률시 두번
-                    int Twice;
-                    Twice = Random.Range(1, 100);
-                    if (Twice <= Gacha_Ball_Twice[Gacha_Tong_Twice] && Gacha_Tong_0_st == true)
-                    {
-                        if (Gacha_Ball != 0)
-                        {
-                            Debug.Log("Gacha_Tong5 남은개수 = " + Gacha_Initial[5] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[5]);
-                            Gacha_Initial[5] = Gacha_Initial[5] - 1;
-                        }
-                        else if (Gacha_Ball == 0)
-                        {
-                            Debug.Log("Gacha_Tong5 남은개수 = " + Gacha_Initial[5] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[5] + " Money + " + Gacha_Initial_Zero[5]);
-                            Gacha_Tong_Num--;
-                            Text_Event.Money = Text_Event.Money + Gacha_Initial_Zero[5];
-                            Gacha_Tong_5_st = false;
-                            Gacha_Tong_5.SetActive(false);
-
-                        }
-                    }
-                    Gacha_Tong_5_Text.GetComponent<Text>().text = 100 * Gacha_Initial[5] / Gacha_Current_Level[5] + "%";
-                }
-                if (Gacha_Tong_6_st == true)
-                {
-                    Text_Event.Money = Text_Event.Money - Gacha_Initial_Try[6];
-                    int Gacha_Ball;
-                    Gacha_Ball = Random.Range(0, Gacha_Initial[6]);
-                    if (Gacha_Ball != 0)
-                    {
-                        Debug.Log("Gacha_Tong6 남은개수 = " + Gacha_Initial[6] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[6]);
-                        Gacha_Initial[6] = Gacha_Initial[6] - 1;
-                    }
-                    else if (Gacha_Ball == 0)
-                    {
-                        Debug.Log("Gacha_Tong6 남은개수 = " + Gacha_Initial[6] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[6] + " Money + " + Gacha_Initial_Zero[6]);
-                        Gacha_Tong_Num--;
-                        Text_Event.Money = Text_Event.Money + Gacha_Initial_Zero[6];
-                        Gacha_Tong_6_st = false;
-                        Gacha_Tong_6.SetActive(false);
-                       
-                    }
-                    //일정확률시 두번
-                    int Twice;
-                    Twice = Random.Range(1, 100);
-                    if (Twice <= Gacha_Ball_Twice[Gacha_Tong_Twice] && Gacha_Tong_0_st == true)
-                    {
-                        if (Gacha_Ball != 0)
-                        {
-                            Debug.Log("Gacha_Tong6 남은개수 = " + Gacha_Initial[6] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[6]);
-                            Gacha_Initial[6] = Gacha_Initial[6] - 1;
-                        }
-                        else if (Gacha_Ball == 0)
-                        {
-                            Debug.Log("Gacha_Tong6 남은개수 = " + Gacha_Initial[6] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[6] + " Money + " + Gacha_Initial_Zero[6]);
-                            Gacha_Tong_Num--;
-                            Text_Event.Money = Text_Event.Money + Gacha_Initial_Zero[6];
-                            Gacha_Tong_6_st = false;
-                            Gacha_Tong_6.SetActive(false);
-
-                        }
-                    }
-                    Gacha_Tong_6_Text.GetComponent<Text>().text = 100 * Gacha_Initial[6] / Gacha_Current_Level[6] + "%";
-                }
-                if (Gacha_Tong_7_st == true)
-                {
-                    Text_Event.Money = Text_Event.Money - Gacha_Initial_Try[7];
-                    int Gacha_Ball;
-                    Gacha_Ball = Random.Range(0, Gacha_Initial[7]);
-                    if (Gacha_Ball != 0)
-                    {
-                        Debug.Log("Gacha_Tong7 남은개수 = " + Gacha_Initial[7] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[7]);
-                        Gacha_Initial[7] = Gacha_Initial[7] - 1;
-                    }
-                    else if (Gacha_Ball == 0)
-                    {
-                        Debug.Log("Gacha_Tong7 남은개수 = " + Gacha_Initial[7] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[7] + " Money + " + Gacha_Initial_Zero[7]);
-                        Gacha_Tong_Num--;
-                        Text_Event.Money = Text_Event.Money + Gacha_Initial_Zero[7];
-                        Gacha_Tong_7_st = false;
-                        Gacha_Tong_7.SetActive(false);
-                       
-                    }
-                    //일정확률시 두번
-                    int Twice;
-                    Twice = Random.Range(1, 100);
-                    if (Twice <= Gacha_Ball_Twice[Gacha_Tong_Twice] && Gacha_Tong_0_st == true)
-                    {
-                        if (Gacha_Ball != 0)
-                        {
-                            Debug.Log("Gacha_Tong7 남은개수 = " + Gacha_Initial[7] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[7]);
-                            Gacha_Initial[7] = Gacha_Initial[7] - 1;
-                        }
-                        else if (Gacha_Ball == 0)
-                        {
-                            Debug.Log("Gacha_Tong7 남은개수 = " + Gacha_Initial[7] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[7] + " Money + " + Gacha_Initial_Zero[7]);
-                            Gacha_Tong_Num--;
-                            Text_Event.Money = Text_Event.Money + Gacha_Initial_Zero[7];
-                            Gacha_Tong_7_st = false;
-                            Gacha_Tong_7.SetActive(false);
-
-                        }
-                    }
-                    Gacha_Tong_7_Text.GetComponent<Text>().text = 100 * Gacha_Initial[7] / Gacha_Current_Level[7]  + "%";
-                }
-                if (Gacha_Tong_8_st == true)
-                {
-                    Text_Event.Money = Text_Event.Money - Gacha_Initial_Try[8];
-                    int Gacha_Ball;
-                    Gacha_Ball = Random.Range(0, Gacha_Initial[8]);
-                    if (Gacha_Ball != 0)
-                    {
-                        Debug.Log("Gacha_Tong8 남은개수 = " + Gacha_Initial[8] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[8]);
-                        Gacha_Initial[8] = Gacha_Initial[8] - 1;
-                    }
-                    else if (Gacha_Ball == 0)
-                    {
-                        Debug.Log("Gacha_Tong8 남은개수 = " + Gacha_Initial[8] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[8] + " Money + " + Gacha_Initial_Zero[8]);
-                        Gacha_Tong_Num--;
-                        Text_Event.Money = Text_Event.Money + Gacha_Initial_Zero[8];
-                        Gacha_Tong_8_st = false;
-                        Gacha_Tong_8.SetActive(false);
-                       
-                    }
-                    //일정확률시 두번
-                    int Twice;
-                    Twice = Random.Range(1, 100);
-                    if (Twice <= Gacha_Ball_Twice[Gacha_Tong_Twice] && Gacha_Tong_0_st == true)
-                    {
-                        if (Gacha_Ball != 0)
-                        {
-                            Debug.Log("Gacha_Tong8 남은개수 = " + Gacha_Initial[8] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[8]);
-                            Gacha_Initial[8] = Gacha_Initial[8] - 1;
-                        }
-                        else if (Gacha_Ball == 0)
-                        {
-                            Debug.Log("Gacha_Tong8 남은개수 = " + Gacha_Initial[8] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[8] + " Money + " + Gacha_Initial_Zero[8]);
-                            Gacha_Tong_Num--;
-                            Text_Event.Money = Text_Event.Money + Gacha_Initial_Zero[8];
-                            Gacha_Tong_8_st = false;
-                            Gacha_Tong_8.SetActive(false);
-
-                        }
-                    }
-                    Gacha_Tong_8_Text.GetComponent<Text>().text = 100 * Gacha_Initial[8] / Gacha_Current_Level[8] + "%";
-                }
-                if (Gacha_Tong_9_st == true)
-                {
-                    Text_Event.Money = Text_Event.Money - Gacha_Initial_Try[9];
-                    int Gacha_Ball;
-                    Gacha_Ball = Random.Range(0, Gacha_Initial[9]);
-                    if (Gacha_Ball != 0)
-                    {
-                        Debug.Log("Gacha_Tong9 남은개수 = " + Gacha_Initial[9] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[9]);
-                        Gacha_Initial[9] = Gacha_Initial[9] - 1;
-                    }
-                    else if (Gacha_Ball == 0)
-                    {
-                        Debug.Log("Gacha_Tong9 남은개수 = " + Gacha_Initial[9] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[9] + " Money + " + Gacha_Initial_Zero[9]);
-                        Gacha_Tong_Num--;
-                        Text_Event.Money = Text_Event.Money + Gacha_Initial_Zero[9];
-                        Gacha_Tong_9_st = false;
-                        Gacha_Tong_9.SetActive(false);
-                        
-                    }
-                    //일정확률시 두번
-                    int Twice;
-                    Twice = Random.Range(1, 100);
-                    if (Twice <= Gacha_Ball_Twice[Gacha_Tong_Twice] && Gacha_Tong_0_st == true)
-                    {
-                        if (Gacha_Ball != 0)
-                        {
-                            Debug.Log("Gacha_Tong9 남은개수 = " + Gacha_Initial[9] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[9]);
-                            Gacha_Initial[9] = Gacha_Initial[9] - 1;
-                        }
-                        else if (Gacha_Ball == 0)
-                        {
-                            Debug.Log("Gacha_Tong9 남은개수 = " + Gacha_Initial[9] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[9] + " Money + " + Gacha_Initial_Zero[9]);
-                            Gacha_Tong_Num--;
-                            Text_Event.Money = Text_Event.Money + Gacha_Initial_Zero[9];
-                            Gacha_Tong_9_st = false;
-                            Gacha_Tong_9.SetActive(false);
-
-                        }
-                    }
-                    Gacha_Tong_9_Text.GetComponent<Text>().text = 100 * Gacha_Initial[9] / Gacha_Current_Level[9] + "%";
-                }
-                break;
+            Gacha_Tong_0_Text.GetComponent<Text>().text = 100 * Gacha_Initial[0] / Gacha_Current_Level[0] + "%";
 
         }
-    }
+        if (Gacha_Tong_1_st == true)
+        {
+            Text_Event.Money = Text_Event.Money - Gacha_Initial_Try[1];
+            int Gacha_Ball;
+            Gacha_Ball = Random.Range(0, Gacha_Initial[1]);
+            if (Gacha_Ball != 0)
+            {
+                Debug.Log("Gacha_Tong1 남은개수 = " + Gacha_Initial[1] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[1]);
+                Gacha_Initial[1] = Gacha_Initial[1] - 1;
+            }
+            else if (Gacha_Ball == 0)
+            {
+                Debug.Log("Gacha_Tong1 남은개수 = " + Gacha_Initial[1] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[1] + " Money + " + Gacha_Initial_Zero[1]);
+                Gacha_Tong_Num--;
+                Text_Event.Money = Text_Event.Money + Gacha_Initial_Zero[1];
+                Gacha_Tong_1_st = false;
+                Gacha_Tong_1.SetActive(false);
 
+            }
+            //일정확률시 두번
+            int Twice;
+            Twice = Random.Range(1, 100);
+            if (Twice <= Gacha_Ball_Twice[Gacha_Tong_Twice] && Gacha_Tong_0_st == true)
+            {
+                if (Gacha_Ball != 0)
+                {
+                    Debug.Log("Gacha_Tong1 남은개수 = " + Gacha_Initial[1] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[1]);
+                    Gacha_Initial[1] = Gacha_Initial[1] - 1;
+                }
+                else if (Gacha_Ball == 0)
+                {
+                    Debug.Log("Gacha_Tong1 남은개수 = " + Gacha_Initial[1] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[1] + " Money + " + Gacha_Initial_Zero[1]);
+                    Gacha_Tong_Num--;
+                    Text_Event.Money = Text_Event.Money + Gacha_Initial_Zero[1];
+                    Gacha_Tong_1_st = false;
+                    Gacha_Tong_1.SetActive(false);
+
+                }
+
+            }
+
+            Gacha_Tong_1_Text.GetComponent<Text>().text = 100 * Gacha_Initial[1] / Gacha_Current_Level[1] + "%";
+        }
+        if (Gacha_Tong_2_st == true)
+        {
+            Text_Event.Money = Text_Event.Money - Gacha_Initial_Try[2];
+            int Gacha_Ball;
+            Gacha_Ball = Random.Range(0, Gacha_Initial[2]);
+            if (Gacha_Ball != 0)
+            {
+                Debug.Log("Gacha_Tong2 남은개수 = " + Gacha_Initial[2] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[2]);
+                Gacha_Initial[2] = Gacha_Initial[2] - 1;
+            }
+            else if (Gacha_Ball == 0)
+            {
+                Debug.Log("Gacha_Tong2 남은개수 = " + Gacha_Initial[2] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[2] + " Money + " + Gacha_Initial_Zero[2]);
+                Gacha_Tong_Num--;
+                Text_Event.Money = Text_Event.Money + Gacha_Initial_Zero[2];
+                Gacha_Tong_2_st = false;
+                Gacha_Tong_2.SetActive(false);
+
+            }
+            //일정확률시 두번
+            int Twice;
+            Twice = Random.Range(1, 100);
+            if (Twice <= Gacha_Ball_Twice[Gacha_Tong_Twice] && Gacha_Tong_0_st == true)
+            {
+                if (Gacha_Ball != 0)
+                {
+                    Debug.Log("Gacha_Tong2 남은개수 = " + Gacha_Initial[2] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[2]);
+                    Gacha_Initial[2] = Gacha_Initial[2] - 1;
+                }
+                else if (Gacha_Ball == 0)
+                {
+                    Debug.Log("Gacha_Tong2 남은개수 = " + Gacha_Initial[2] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[2] + " Money + " + Gacha_Initial_Zero[2]);
+                    Gacha_Tong_Num--;
+                    Text_Event.Money = Text_Event.Money + Gacha_Initial_Zero[2];
+                    Gacha_Tong_2_st = false;
+                    Gacha_Tong_2.SetActive(false);
+
+                }
+
+            }
+            Gacha_Tong_2_Text.GetComponent<Text>().text = 100 * Gacha_Initial[2] / Gacha_Current_Level[2] + "%";
+        }
+        if (Gacha_Tong_3_st == true)
+        {
+            Text_Event.Money = Text_Event.Money - Gacha_Initial_Try[3];
+            int Gacha_Ball;
+            Gacha_Ball = Random.Range(0, Gacha_Initial[3]);
+            if (Gacha_Ball != 0)
+            {
+                Debug.Log("Gacha_Tong3 남은개수 = " + Gacha_Initial[3] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[3]);
+                Gacha_Initial[3] = Gacha_Initial[3] - 1;
+            }
+            else if (Gacha_Ball == 0)
+            {
+                Debug.Log("Gacha_Tong3 남은개수 = " + Gacha_Initial[3] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[3] + " Money + " + Gacha_Initial_Zero[3]);
+                Gacha_Tong_Num--;
+                Text_Event.Money = Text_Event.Money + Gacha_Initial_Zero[3];
+                Gacha_Tong_3_st = false;
+                Gacha_Tong_3.SetActive(false);
+
+            }
+            //일정확률시 두번
+            int Twice;
+            Twice = Random.Range(1, 100);
+            if (Twice <= Gacha_Ball_Twice[Gacha_Tong_Twice] && Gacha_Tong_0_st == true)
+            {
+                if (Gacha_Ball != 0)
+                {
+                    Debug.Log("Gacha_Tong3 남은개수 = " + Gacha_Initial[3] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[3]);
+                    Gacha_Initial[3] = Gacha_Initial[3] - 1;
+                }
+                else if (Gacha_Ball == 0)
+                {
+                    Debug.Log("Gacha_Tong3 남은개수 = " + Gacha_Initial[3] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[3] + " Money + " + Gacha_Initial_Zero[3]);
+                    Gacha_Tong_Num--;
+                    Text_Event.Money = Text_Event.Money + Gacha_Initial_Zero[3];
+                    Gacha_Tong_3_st = false;
+                    Gacha_Tong_3.SetActive(false);
+
+                }
+            }
+            Gacha_Tong_3_Text.GetComponent<Text>().text = 100 * Gacha_Initial[3] / Gacha_Current_Level[3] + "%";
+        }
+        if (Gacha_Tong_4_st == true)
+        {
+            Text_Event.Money = Text_Event.Money - Gacha_Initial_Try[4];
+            int Gacha_Ball;
+            Gacha_Ball = Random.Range(0, Gacha_Initial[4]);
+            if (Gacha_Ball != 0)
+            {
+                Debug.Log("Gacha_Tong4 남은개수 = " + Gacha_Initial[4] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[4]);
+                Gacha_Initial[4] = Gacha_Initial[4] - 1;
+            }
+            else if (Gacha_Ball == 0)
+            {
+                Debug.Log("Gacha_Tong4 남은개수 = " + Gacha_Initial[4] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[4] + " Money + " + Gacha_Initial_Zero[4]);
+                Gacha_Tong_Num--;
+                Text_Event.Money = Text_Event.Money + Gacha_Initial_Zero[4];
+                Gacha_Tong_4_st = false;
+                Gacha_Tong_4.SetActive(false);
+
+            }
+            //일정확률시 두번
+            int Twice;
+            Twice = Random.Range(1, 100);
+            if (Twice <= Gacha_Ball_Twice[Gacha_Tong_Twice] && Gacha_Tong_0_st == true)
+            {
+                if (Gacha_Ball != 0)
+                {
+                    Debug.Log("Gacha_Tong4 남은개수 = " + Gacha_Initial[4] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[4]);
+                    Gacha_Initial[4] = Gacha_Initial[4] - 1;
+                }
+                else if (Gacha_Ball == 0)
+                {
+                    Debug.Log("Gacha_Tong4 남은개수 = " + Gacha_Initial[4] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[4] + " Money + " + Gacha_Initial_Zero[4]);
+                    Gacha_Tong_Num--;
+                    Text_Event.Money = Text_Event.Money + Gacha_Initial_Zero[4];
+                    Gacha_Tong_4_st = false;
+                    Gacha_Tong_4.SetActive(false);
+
+                }
+            }
+            Gacha_Tong_4_Text.GetComponent<Text>().text = 100 * Gacha_Initial[4] / Gacha_Current_Level[4] + "%";
+        }
+        if (Gacha_Tong_5_st == true)
+        {
+            Text_Event.Money = Text_Event.Money - Gacha_Initial_Try[5];
+            int Gacha_Ball;
+            Gacha_Ball = Random.Range(0, Gacha_Initial[5]);
+            if (Gacha_Ball != 0)
+            {
+                Debug.Log("Gacha_Tong5 남은개수 = " + Gacha_Initial[5] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[5]);
+                Gacha_Initial[5] = Gacha_Initial[5] - 1;
+            }
+            else if (Gacha_Ball == 0)
+            {
+                Debug.Log("Gacha_Tong5 남은개수 = " + Gacha_Initial[5] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[5] + " Money + " + Gacha_Initial_Zero[5]);
+                Gacha_Tong_Num--;
+                Text_Event.Money = Text_Event.Money + Gacha_Initial_Zero[5];
+                Gacha_Tong_5_st = false;
+                Gacha_Tong_5.SetActive(false);
+
+            }
+            //일정확률시 두번
+            int Twice;
+            Twice = Random.Range(1, 100);
+            if (Twice <= Gacha_Ball_Twice[Gacha_Tong_Twice] && Gacha_Tong_0_st == true)
+            {
+                if (Gacha_Ball != 0)
+                {
+                    Debug.Log("Gacha_Tong5 남은개수 = " + Gacha_Initial[5] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[5]);
+                    Gacha_Initial[5] = Gacha_Initial[5] - 1;
+                }
+                else if (Gacha_Ball == 0)
+                {
+                    Debug.Log("Gacha_Tong5 남은개수 = " + Gacha_Initial[5] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[5] + " Money + " + Gacha_Initial_Zero[5]);
+                    Gacha_Tong_Num--;
+                    Text_Event.Money = Text_Event.Money + Gacha_Initial_Zero[5];
+                    Gacha_Tong_5_st = false;
+                    Gacha_Tong_5.SetActive(false);
+
+                }
+            }
+            Gacha_Tong_5_Text.GetComponent<Text>().text = 100 * Gacha_Initial[5] / Gacha_Current_Level[5] + "%";
+        }
+        if (Gacha_Tong_6_st == true)
+        {
+            Text_Event.Money = Text_Event.Money - Gacha_Initial_Try[6];
+            int Gacha_Ball;
+            Gacha_Ball = Random.Range(0, Gacha_Initial[6]);
+            if (Gacha_Ball != 0)
+            {
+                Debug.Log("Gacha_Tong6 남은개수 = " + Gacha_Initial[6] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[6]);
+                Gacha_Initial[6] = Gacha_Initial[6] - 1;
+            }
+            else if (Gacha_Ball == 0)
+            {
+                Debug.Log("Gacha_Tong6 남은개수 = " + Gacha_Initial[6] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[6] + " Money + " + Gacha_Initial_Zero[6]);
+                Gacha_Tong_Num--;
+                Text_Event.Money = Text_Event.Money + Gacha_Initial_Zero[6];
+                Gacha_Tong_6_st = false;
+                Gacha_Tong_6.SetActive(false);
+
+            }
+            //일정확률시 두번
+            int Twice;
+            Twice = Random.Range(1, 100);
+            if (Twice <= Gacha_Ball_Twice[Gacha_Tong_Twice] && Gacha_Tong_0_st == true)
+            {
+                if (Gacha_Ball != 0)
+                {
+                    Debug.Log("Gacha_Tong6 남은개수 = " + Gacha_Initial[6] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[6]);
+                    Gacha_Initial[6] = Gacha_Initial[6] - 1;
+                }
+                else if (Gacha_Ball == 0)
+                {
+                    Debug.Log("Gacha_Tong6 남은개수 = " + Gacha_Initial[6] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[6] + " Money + " + Gacha_Initial_Zero[6]);
+                    Gacha_Tong_Num--;
+                    Text_Event.Money = Text_Event.Money + Gacha_Initial_Zero[6];
+                    Gacha_Tong_6_st = false;
+                    Gacha_Tong_6.SetActive(false);
+
+                }
+            }
+            Gacha_Tong_6_Text.GetComponent<Text>().text = 100 * Gacha_Initial[6] / Gacha_Current_Level[6] + "%";
+        }
+        if (Gacha_Tong_7_st == true)
+        {
+            Text_Event.Money = Text_Event.Money - Gacha_Initial_Try[7];
+            int Gacha_Ball;
+            Gacha_Ball = Random.Range(0, Gacha_Initial[7]);
+            if (Gacha_Ball != 0)
+            {
+                Debug.Log("Gacha_Tong7 남은개수 = " + Gacha_Initial[7] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[7]);
+                Gacha_Initial[7] = Gacha_Initial[7] - 1;
+            }
+            else if (Gacha_Ball == 0)
+            {
+                Debug.Log("Gacha_Tong7 남은개수 = " + Gacha_Initial[7] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[7] + " Money + " + Gacha_Initial_Zero[7]);
+                Gacha_Tong_Num--;
+                Text_Event.Money = Text_Event.Money + Gacha_Initial_Zero[7];
+                Gacha_Tong_7_st = false;
+                Gacha_Tong_7.SetActive(false);
+
+            }
+            //일정확률시 두번
+            int Twice;
+            Twice = Random.Range(1, 100);
+            if (Twice <= Gacha_Ball_Twice[Gacha_Tong_Twice] && Gacha_Tong_0_st == true)
+            {
+                if (Gacha_Ball != 0)
+                {
+                    Debug.Log("Gacha_Tong7 남은개수 = " + Gacha_Initial[7] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[7]);
+                    Gacha_Initial[7] = Gacha_Initial[7] - 1;
+                }
+                else if (Gacha_Ball == 0)
+                {
+                    Debug.Log("Gacha_Tong7 남은개수 = " + Gacha_Initial[7] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[7] + " Money + " + Gacha_Initial_Zero[7]);
+                    Gacha_Tong_Num--;
+                    Text_Event.Money = Text_Event.Money + Gacha_Initial_Zero[7];
+                    Gacha_Tong_7_st = false;
+                    Gacha_Tong_7.SetActive(false);
+
+                }
+            }
+            Gacha_Tong_7_Text.GetComponent<Text>().text = 100 * Gacha_Initial[7] / Gacha_Current_Level[7] + "%";
+        }
+        if (Gacha_Tong_8_st == true)
+        {
+            Text_Event.Money = Text_Event.Money - Gacha_Initial_Try[8];
+            int Gacha_Ball;
+            Gacha_Ball = Random.Range(0, Gacha_Initial[8]);
+            if (Gacha_Ball != 0)
+            {
+                Debug.Log("Gacha_Tong8 남은개수 = " + Gacha_Initial[8] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[8]);
+                Gacha_Initial[8] = Gacha_Initial[8] - 1;
+            }
+            else if (Gacha_Ball == 0)
+            {
+                Debug.Log("Gacha_Tong8 남은개수 = " + Gacha_Initial[8] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[8] + " Money + " + Gacha_Initial_Zero[8]);
+                Gacha_Tong_Num--;
+                Text_Event.Money = Text_Event.Money + Gacha_Initial_Zero[8];
+                Gacha_Tong_8_st = false;
+                Gacha_Tong_8.SetActive(false);
+
+            }
+            //일정확률시 두번
+            int Twice;
+            Twice = Random.Range(1, 100);
+            if (Twice <= Gacha_Ball_Twice[Gacha_Tong_Twice] && Gacha_Tong_0_st == true)
+            {
+                if (Gacha_Ball != 0)
+                {
+                    Debug.Log("Gacha_Tong8 남은개수 = " + Gacha_Initial[8] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[8]);
+                    Gacha_Initial[8] = Gacha_Initial[8] - 1;
+                }
+                else if (Gacha_Ball == 0)
+                {
+                    Debug.Log("Gacha_Tong8 남은개수 = " + Gacha_Initial[8] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[8] + " Money + " + Gacha_Initial_Zero[8]);
+                    Gacha_Tong_Num--;
+                    Text_Event.Money = Text_Event.Money + Gacha_Initial_Zero[8];
+                    Gacha_Tong_8_st = false;
+                    Gacha_Tong_8.SetActive(false);
+
+                }
+            }
+            Gacha_Tong_8_Text.GetComponent<Text>().text = 100 * Gacha_Initial[8] / Gacha_Current_Level[8] + "%";
+        }
+        if (Gacha_Tong_9_st == true)
+        {
+            Text_Event.Money = Text_Event.Money - Gacha_Initial_Try[9];
+            int Gacha_Ball;
+            Gacha_Ball = Random.Range(0, Gacha_Initial[9]);
+            if (Gacha_Ball != 0)
+            {
+                Debug.Log("Gacha_Tong9 남은개수 = " + Gacha_Initial[9] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[9]);
+                Gacha_Initial[9] = Gacha_Initial[9] - 1;
+            }
+            else if (Gacha_Ball == 0)
+            {
+                Debug.Log("Gacha_Tong9 남은개수 = " + Gacha_Initial[9] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[9] + " Money + " + Gacha_Initial_Zero[9]);
+                Gacha_Tong_Num--;
+                Text_Event.Money = Text_Event.Money + Gacha_Initial_Zero[9];
+                Gacha_Tong_9_st = false;
+                Gacha_Tong_9.SetActive(false);
+
+            }
+            //일정확률시 두번
+            int Twice;
+            Twice = Random.Range(1, 100);
+            if (Twice <= Gacha_Ball_Twice[Gacha_Tong_Twice] && Gacha_Tong_0_st == true)
+            {
+                if (Gacha_Ball != 0)
+                {
+                    Debug.Log("Gacha_Tong9 남은개수 = " + Gacha_Initial[9] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[9]);
+                    Gacha_Initial[9] = Gacha_Initial[9] - 1;
+                }
+                else if (Gacha_Ball == 0)
+                {
+                    Debug.Log("Gacha_Tong9 남은개수 = " + Gacha_Initial[9] + " 뽑힌숫자 = " + Gacha_Ball + " Money - " + Gacha_Initial_Try[9] + " Money + " + Gacha_Initial_Zero[9]);
+                    Gacha_Tong_Num--;
+                    Text_Event.Money = Text_Event.Money + Gacha_Initial_Zero[9];
+                    Gacha_Tong_9_st = false;
+                    Gacha_Tong_9.SetActive(false);
+
+                }
+            }
+            Gacha_Tong_9_Text.GetComponent<Text>().text = 100 * Gacha_Initial[9] / Gacha_Current_Level[9] + "%";
+        }
+    }
 }
