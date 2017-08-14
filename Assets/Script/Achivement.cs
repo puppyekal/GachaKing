@@ -82,6 +82,9 @@ public class Achivement : MonoBehaviour
     {
         switch(temp)
         {
+            case 0:
+                Achivement_Class_Text.GetComponent<Text>().text = "초짜";
+                break;
             case 1:
                 Achivement_Class_Text.GetComponent<Text>().text = "늒비";
                 break;
