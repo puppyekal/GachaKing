@@ -22,6 +22,7 @@ public class UI : MonoBehaviour {
     public Image Gacha_Level;//가챠통 레벨 게이지
 
     int Check = 0;//0=메인, 1=업적, 2=상점, 3=인벤토리
+    int Menu_Check = 0;//메뉴 확인
 
     // Use this for initialization
     void Start () {
@@ -34,7 +35,40 @@ public class UI : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         SetGuage(Ingame.Gacha_Tong_Num);
-	}
+
+
+        if (Application.platform == RuntimePlatform.Android)//스마트폰 뒤로가기 인식
+        {
+            if (Input.GetKey(KeyCode.Escape))
+            {
+                if (Menu_Check == 1)
+                {
+                    Menu.SetActive(false);
+                    Menu_Check = 0;
+                }
+                if (Check == 0)
+                {
+                    Application.Quit();
+                }
+                else if (Check == 1)
+                {
+                    Achivement.SetActive(false);
+                    Check = 0;
+                }
+                else if (Check == 2)
+                {
+                    Store.SetActive(false);
+                    Check = 0;
+                }
+                else if (Check == 3) 
+                {
+                    Inventory.SetActive(false);
+                    Check = 0;
+                }
+
+            }
+        }
+    }
 
     public void SetGuage(float temp)
     {
@@ -44,7 +78,16 @@ public class UI : MonoBehaviour {
     //메뉴
     public void Menu_Set_True()
     {
-        Menu.SetActive(true);
+        if (Menu_Check == 0)
+        {
+            Menu.SetActive(true);
+            Menu_Check = 1;
+        }
+        else if (Menu_Check == 1)
+        {
+            Menu.SetActive(false);
+            Menu_Check = 0;
+        }
     }
     //게임으로 돌아가기
     public void BackToGame()
