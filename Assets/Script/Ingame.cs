@@ -176,7 +176,8 @@ public class Ingame : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Gacha_Tong_Level = Text_Event.Gacha_Level;
+        Gacha_Tong_Twice = Text_Event.Passive_Skill;
+        //Text_Event.Gacha_Level;
         Gacha_Tong_Initial();
         if (Buy_Button == 1)
         {
