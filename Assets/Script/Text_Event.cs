@@ -14,6 +14,12 @@ public class Text_Event : MonoBehaviour {
     public Text Gacha_Level_Price_Text;
     public Text Gacha_Price_Text;
 
+
+    //가챠 자동클릭 더블클릭레벨
+    public Text Gacha_Automatic_Click_Text;
+    public Text Gacha_Double_Click_Text;
+
+
     static public int Money = 10000000;
     public static int Gacha_Level = 1;
     public static int Active_Skill = 0;
@@ -90,9 +96,11 @@ public class Text_Event : MonoBehaviour {
     public void Store_Acive()
     {
         Active_Skill++;
+        Gacha_Automatic_Click_Text.GetComponent<Text>().text = Active_Skill + "";
     }
     public void Store_Passive()
     {
         Passive_Skill++;
+        Gacha_Double_Click_Text.GetComponent<Text>().text = Passive_Skill + "";
     }
 }

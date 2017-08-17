@@ -9,15 +9,12 @@ public class Ingame : MonoBehaviour
     static public int Buy_Button;
     static public int Gacha_Tong_Num = 0;
     static public int Click_Num = 0;
-    static public int Gacha_Tong_Twice = 1;
+    public int Gacha_Tong_Twice = 1;
 
     public int Gacha_Tong_Level = 1;
 
     public float timer;
     public int waitingTime;
-
-    public float timer_cooling_time;
-    public int waiting_cooling_time;
 
     //가챠통 남은수량%
     public Text Gacha_Tong_0_Text;
@@ -30,6 +27,7 @@ public class Ingame : MonoBehaviour
     public Text Gacha_Tong_7_Text;
     public Text Gacha_Tong_8_Text;
     public Text Gacha_Tong_9_Text;
+
 
     //방꾸미기 구역
     public GameObject Area_0;
@@ -50,8 +48,6 @@ public class Ingame : MonoBehaviour
     public GameObject Gacha_Tong_8;
     public GameObject Gacha_Tong_9;
 
-    //가챠 자동클릭 버튼
-    public GameObject Gacha_Automatic_Click_Button;
     //방꾸미기 활성화
     public bool Area_st = false;
 
@@ -92,11 +88,9 @@ public class Ingame : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        timer_cooling_time = 0.0f;
-        waiting_cooling_time = 60;
 
         timer = 0.0f;
-        waitingTime = 2;
+        waitingTime = 1000;
 
         Gacha_Tong_0.SetActive(false);
         Gacha_Tong_1.SetActive(false);
@@ -176,7 +170,9 @@ public class Ingame : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         Gacha_Tong_Twice = Text_Event.Passive_Skill;
+
         //Text_Event.Gacha_Level;
         Gacha_Tong_Initial();
         if (Buy_Button == 1)
@@ -184,15 +180,55 @@ public class Ingame : MonoBehaviour
             Set_Gacha_Tong();
         }
 
-        //가챠자동클릭 시스템
-        if (Gacha_Automatic_Click == true) {
-            timer += Time.deltaTime;
-            if (timer > waitingTime)
-            {
-                Gacha_System();
-                timer = 0;
-            }
+        //가챠 자동클릭 레벨
+        if (Text_Event.Active_Skill == 1)
+        {
+            waitingTime = 10;
         }
+        else if (Text_Event.Active_Skill == 2)
+        {
+
+            waitingTime = 9;
+        }
+        else if (Text_Event.Active_Skill == 3)
+        {
+            waitingTime = 8;
+        }
+        else if (Text_Event.Active_Skill == 4)
+        {
+            waitingTime = 7;
+
+        }
+        else if (Text_Event.Active_Skill == 5)
+        {
+            waitingTime = 6;
+        }
+        else if (Text_Event.Active_Skill == 6)
+        {
+            waitingTime = 5;
+        }
+        else if (Text_Event.Active_Skill == 7)
+        {
+            waitingTime = 4;
+        }
+        else if (Text_Event.Active_Skill == 8)
+        {
+            waitingTime = 3;
+        }
+        else if (Text_Event.Active_Skill == 9)
+        {
+            waitingTime = 2;
+        }
+
+        //가챠자동클릭 시스템
+        timer += Time.deltaTime;
+        if (timer > waitingTime)
+        {
+            Gacha_System();
+            timer = 0;
+           
+        }
+        
     }
     //가챠통 구매 버튼 눌렸을 때
     public void Set_Gacha_Tong()
@@ -306,11 +342,6 @@ public class Ingame : MonoBehaviour
                 break;
             case 5:
                 Debug.Log(5000);
-                break;
-            case 9999:
-                //자동클릭 버프버튼
-                Debug.Log(9999);
-                Gacha_Automatic_Click = true;
                 break;
             case 10000:
                 //방 눌렀을 때
