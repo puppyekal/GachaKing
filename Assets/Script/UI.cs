@@ -20,6 +20,8 @@ public class UI : MonoBehaviour {
 
     public Image Gacha_Num;//가챠통 수량 게이지
     public Image Gacha_Level;//가챠통 레벨 게이지
+    public Image Active_Guage;
+    public Image Passive_Guage;
 
     public Button Gacha_Upgrade;
     public Button Gacha_Buy;
@@ -96,6 +98,8 @@ public class UI : MonoBehaviour {
     {
         Gacha_Num.fillAmount = temp / 10;
         Gacha_Level.fillAmount = (float)Text_Event.Gacha_Level / 9;
+        Active_Guage.fillAmount = (float)Text_Event.Active_Skill / 9;
+        Passive_Guage.fillAmount = (float)Text_Event.Passive_Skill / 9;
     }
     //메뉴
     public void Menu_Set_True()

@@ -27019,7 +27019,6 @@ GameObject:
   - component: {fileID: 1483905909}
   - component: {fileID: 1483905908}
   - component: {fileID: 1483905910}
-  - component: {fileID: 1483905911}
   - component: {fileID: 1483905912}
   - component: {fileID: 1483905913}
   m_Layer: 0
@@ -27051,6 +27050,8 @@ MonoBehaviour:
   Inven_Face: {fileID: 1683116657}
   Gacha_Num: {fileID: 29904925}
   Gacha_Level: {fileID: 599381269}
+  Active_Guage: {fileID: 2019104863}
+  Passive_Guage: {fileID: 210372275}
   Gacha_Upgrade: {fileID: 1067557402}
   Gacha_Buy: {fileID: 1293305278}
   Active_Buy: {fileID: 1025340013}
@@ -27090,24 +27091,6 @@ MonoBehaviour:
   Passive_Skill_Price_Text: {fileID: 1916912191}
   Gacha_Automatic_Click_Text: {fileID: 2125782650}
   Gacha_Double_Click_Text: {fileID: 2013028074}
---- !u!114 &1483905911
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1483905907}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6544d7438d7b82d489a526fc0e2e1dbd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  item1: {fileID: 2145501441}
-  item2: {fileID: 959471648}
-  item3: {fileID: 1892644785}
-  item4: {fileID: 771236333}
-  item5: {fileID: 182098809}
-  item6: {fileID: 1983101566}
-  item7: {fileID: 463689523}
 --- !u!114 &1483905912
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27166,13 +27149,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23f5339123ff00b49a333605793091be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Item1: {fileID: 850447955}
-  Item2: {fileID: 1373364923}
-  Item3: {fileID: 1638044437}
-  Item4: {fileID: 182449041}
-  Item5: {fileID: 1565241087}
-  Item6: {fileID: 1386535686}
-  Item7: {fileID: 456441959}
+  Store_item1: {fileID: 2145501441}
+  Store_item2: {fileID: 959471648}
+  Store_item3: {fileID: 1892644785}
+  Store_item4: {fileID: 771236333}
+  Store_item5: {fileID: 182098809}
+  Store_item6: {fileID: 1983101566}
+  Store_item7: {fileID: 463689523}
+  Inventory_Item1: {fileID: 850447955}
+  Inventory_Item2: {fileID: 1373364923}
+  Inventory_Item3: {fileID: 1638044437}
+  Inventory_Item4: {fileID: 182449041}
+  Inventory_Item5: {fileID: 1565241087}
+  Inventory_Item6: {fileID: 1386535686}
+  Inventory_Item7: {fileID: 456441959}
+  Money_Text: {fileID: 2081557537}
 --- !u!1 &1485035416
 GameObject:
   m_ObjectHideFlags: 0

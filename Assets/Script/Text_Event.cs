@@ -154,15 +154,17 @@ public class Text_Event : MonoBehaviour {
     {
         Gacha_Level++;
         Gacha_Price_Check++;
-        Money = Money - (int)Gacha_Price[Gacha_Price_Check + 1];
+        Money = Money - (int)Gacha_Price[Gacha_Price_Check];
     }
     public void Store_Acive()
     {
+        Money = Money - (int)Acive_Price[Active_Skill];
         Active_Skill++;
         Gacha_Automatic_Click_Text.GetComponent<Text>().text = Active_Skill + "";
     }
     public void Store_Passive()
     {
+        Money = Money - (int)Passive_Price[Passive_Skill];
         Passive_Skill++;
         Gacha_Double_Click_Text.GetComponent<Text>().text = Passive_Skill + "";
     }

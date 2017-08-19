@@ -69,32 +69,37 @@ public class Inventory_Home : MonoBehaviour {
     public void Item2_Button()
     {
         Inventory_Item2.SetActive(true);
+        Text_Event.Money -= 33333;
         Store_item2.interactable = false;
-
     }
     public void Item3_Button()
     {
         Inventory_Item3.SetActive(true);
+        Text_Event.Money -= 33333;
         Store_item3.interactable = false;
     }
     public void Item4_Button()
     {
         Inventory_Item4.SetActive(true);
+        Text_Event.Money -= 150000;
         Store_item4.interactable = false;
     }
     public void Item5_Button()
     {
         Inventory_Item5.SetActive(true);
+        Text_Event.Money -= 4200;
         Store_item5.interactable = false;
     }
     public void Item6_Button()
     {
         Inventory_Item6.SetActive(true);
+        Text_Event.Money -= 100000;
         Store_item6.interactable = false;
     }
     public void Item7_Button()
     {
         Inventory_Item7.SetActive(true);
+        Text_Event.Money -= 500000;
         Store_item7.interactable = false;
     }
 }
