@@ -46,11 +46,7 @@ public class UI : MonoBehaviour {
                     Menu.SetActive(false);
                     Menu_Check = 0;
                 }
-                if (Check == 0)
-                {
-                    Application.Quit();
-                }
-                else if (Check == 1)
+                if (Check == 1)
                 {
                     Achivement.SetActive(false);
                     Check = 0;
@@ -93,6 +89,7 @@ public class UI : MonoBehaviour {
     public void BackToGame()
     {
         Menu.SetActive(false);
+        Menu_Check = 0;
     }
     //인생으로 돌아가기
     public void BackToLife()
