@@ -4,8 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Inventory_Home : MonoBehaviour {
-
-    public GameObject Example;
+    
     public GameObject Item1;
     public GameObject Item2;
     public GameObject Item3;
@@ -17,7 +16,6 @@ public class Inventory_Home : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        Example.SetActive(false);
         Item1.SetActive(false);
         Item2.SetActive(false);
         Item3.SetActive(false);
@@ -32,10 +30,6 @@ public class Inventory_Home : MonoBehaviour {
     void Update () {
 		
 	}
-    public void Example_Button()
-    {
-        Example.SetActive(true);
-    }
     public void Item1_Button()
     {
         Item1.SetActive(true);

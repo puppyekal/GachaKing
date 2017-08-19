@@ -21,6 +21,11 @@ public class UI : MonoBehaviour {
     public Image Gacha_Num;//가챠통 수량 게이지
     public Image Gacha_Level;//가챠통 레벨 게이지
 
+    public Button Gacha_Upgrade;
+    public Button Gacha_Buy;
+    public Button Active_Buy;
+    public Button Passive_Buy;
+
     int Check = 0;//0=메인, 1=업적, 2=상점, 3=인벤토리
     int Menu_Check = 0;//메뉴 확인
 
@@ -64,12 +69,33 @@ public class UI : MonoBehaviour {
 
             }
         }
+
+        if (Text_Event.Gacha_Level == 9) 
+        {
+            Gacha_Upgrade.interactable = false;
+        }
+        if (Text_Event.Active_Skill == 9) 
+        {
+            Active_Buy.interactable = false;
+        }
+        if (Text_Event.Passive_Skill == 9) 
+        {
+            Passive_Buy.interactable = false;
+        }
+        if (Ingame.Gacha_Tong_Num == 10) 
+        {
+            Gacha_Buy.interactable = false;
+        }
+        else
+        {
+            Gacha_Buy.interactable = true;
+        }
     }
 
     public void SetGuage(float temp)
     {
         Gacha_Num.fillAmount = temp / 10;
-        Gacha_Level.fillAmount = Text_Event.Gacha_Level / 9;
+        Gacha_Level.fillAmount = (float)Text_Event.Gacha_Level / 9;
     }
     //메뉴
     public void Menu_Set_True()

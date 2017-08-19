@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class Store_Home : MonoBehaviour
 {
     //   public GameObject Button_EX;
-    public Button example;
     public Button item1;
     public Button item2;
     public Button item3;
@@ -19,7 +18,6 @@ public class Store_Home : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        example.interactable = false;
         item1.interactable = false;
         item2.interactable = false;
         item3.interactable = false;
@@ -35,7 +33,6 @@ public class Store_Home : MonoBehaviour
     {
         if (Achivement.Achivement_EX_cnt == 1)
         {
-            example.interactable = true;
             item1.interactable = true;
             item2.interactable = true;
             item3.interactable = true;
