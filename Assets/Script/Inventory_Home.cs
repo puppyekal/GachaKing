@@ -4,62 +4,97 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Inventory_Home : MonoBehaviour {
+
+    public Button Store_item1;
+    public Button Store_item2;
+    public Button Store_item3;
+    public Button Store_item4;
+    public Button Store_item5;
+    public Button Store_item6;
+    public Button Store_item7;
+
+    public GameObject Inventory_Item1;
+    public GameObject Inventory_Item2;
+    public GameObject Inventory_Item3;
+    public GameObject Inventory_Item4;
+    public GameObject Inventory_Item5;
+    public GameObject Inventory_Item6;
+    public GameObject Inventory_Item7;
     
-    public GameObject Item1;
-    public GameObject Item2;
-    public GameObject Item3;
-    public GameObject Item4;
-    public GameObject Item5;
-    public GameObject Item6;
-    public GameObject Item7;
-    public GameObject Item8;
+    public Text Money_Text;
 
     // Use this for initialization
     void Start () {
-        Item1.SetActive(false);
-        Item2.SetActive(false);
-        Item3.SetActive(false);
-        Item4.SetActive(false);
-        Item5.SetActive(false);
-        Item6.SetActive(false);
-        Item7.SetActive(false);
-        Item8.SetActive(false);
+        Store_item1.interactable = false;
+        Store_item2.interactable = false;
+        Store_item3.interactable = false;
+        Store_item4.interactable = false;
+        Store_item5.interactable = false;
+        Store_item6.interactable = false;
+        Store_item7.interactable = false;
+
+        Inventory_Item1.SetActive(false);
+        Inventory_Item2.SetActive(false);
+        Inventory_Item3.SetActive(false);
+        Inventory_Item4.SetActive(false);
+        Inventory_Item5.SetActive(false);
+        Inventory_Item6.SetActive(false);
+        Inventory_Item7.SetActive(false);
     }
 
     // Update is called once per frame
     void Update () {
-		
-	}
+
+        if (Achivement.Achivement_EX_cnt == 1)
+        {
+            Store_item1.interactable = true;
+            Store_item2.interactable = true;
+            Store_item3.interactable = true;
+            Store_item4.interactable = true;
+            Store_item5.interactable = true;
+            Store_item6.interactable = true;
+            Store_item7.interactable = true;
+
+            Achivement.Achivement_EX_cnt = 2;
+        }
+
+        Money_Text.GetComponent<Text>().text = "" + Text_Event.Money;
+    }
     public void Item1_Button()
     {
-        Item1.SetActive(true);
+        Inventory_Item1.SetActive(true);
+        Text_Event.Money -= 33333;
+        Store_item1.interactable = false;
     }
     public void Item2_Button()
     {
-        Item2.SetActive(true);
+        Inventory_Item2.SetActive(true);
+        Store_item2.interactable = false;
+
     }
     public void Item3_Button()
     {
-        Item3.SetActive(true);
+        Inventory_Item3.SetActive(true);
+        Store_item3.interactable = false;
     }
     public void Item4_Button()
     {
-        Item4.SetActive(true);
+        Inventory_Item4.SetActive(true);
+        Store_item4.interactable = false;
     }
     public void Item5_Button()
     {
-        Item5.SetActive(true);
+        Inventory_Item5.SetActive(true);
+        Store_item5.interactable = false;
     }
     public void Item6_Button()
     {
-        Item6.SetActive(true);
+        Inventory_Item6.SetActive(true);
+        Store_item6.interactable = false;
     }
     public void Item7_Button()
     {
-        Item7.SetActive(true);
-    }
-    public void Item8_Button()
-    {
-        Item8.SetActive(true);
+        Inventory_Item7.SetActive(true);
+        Store_item7.interactable = false;
     }
 }

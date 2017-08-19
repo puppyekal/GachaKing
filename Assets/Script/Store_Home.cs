@@ -6,26 +6,24 @@ using UnityEngine.UI;
 public class Store_Home : MonoBehaviour
 {
     //   public GameObject Button_EX;
-    public Button item1;
-    public Button item2;
-    public Button item3;
-    public Button item4;
-    public Button item5;
-    public Button item6;
-    public Button item7;
-    public Button item8;
+    public Button Store_item1;
+    public Button Store_item2;
+    public Button Store_item3;
+    public Button Store_item4;
+    public Button Store_item5;
+    public Button Store_item6;
+    public Button Store_item7;
 
     // Use this for initialization
     void Start()
     {
-        item1.interactable = false;
-        item2.interactable = false;
-        item3.interactable = false;
-        item4.interactable = false;
-        item5.interactable = false;
-        item6.interactable = false;
-        item7.interactable = false;
-        item8.interactable = false;
+        Store_item1.interactable = false;
+        Store_item2.interactable = false;
+        Store_item3.interactable = false;
+        Store_item4.interactable = false;
+        Store_item5.interactable = false;
+        Store_item6.interactable = false;
+        Store_item7.interactable = false;
     }
 
     // Update is called once per frame
@@ -33,14 +31,13 @@ public class Store_Home : MonoBehaviour
     {
         if (Achivement.Achivement_EX_cnt == 1)
         {
-            item1.interactable = true;
-            item2.interactable = true;
-            item3.interactable = true;
-            item4.interactable = true;
-            item5.interactable = true;
-            item6.interactable = true;
-            item7.interactable = true;
-            item8.interactable = true;
+            Store_item1.interactable = true;
+            Store_item2.interactable = true;
+            Store_item3.interactable = true;
+            Store_item4.interactable = true;
+            Store_item5.interactable = true;
+            Store_item6.interactable = true;
+            Store_item7.interactable = true;
         }
     }
 }
