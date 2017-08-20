@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Ingame : MonoBehaviour
 {
+    public Sprite[] Gacha_Tomg_Image = new Sprite[10];
 
     static public int Buy_Button;
     static public int Gacha_Tong_Num = 0;
@@ -47,6 +48,18 @@ public class Ingame : MonoBehaviour
     public GameObject Gacha_Tong_7;
     public GameObject Gacha_Tong_8;
     public GameObject Gacha_Tong_9;
+
+
+    Image Gacha_Tong_0_Image;
+    Image Gacha_Tong_1_Image;
+    Image Gacha_Tong_2_Image;
+    Image Gacha_Tong_3_Image;
+    Image Gacha_Tong_4_Image;
+    Image Gacha_Tong_5_Image;
+    Image Gacha_Tong_6_Image;
+    Image Gacha_Tong_7_Image;
+    Image Gacha_Tong_8_Image;
+    Image Gacha_Tong_9_Image;
 
     //방꾸미기 활성화
     public bool Area_st = false;
@@ -102,6 +115,17 @@ public class Ingame : MonoBehaviour
         Gacha_Tong_7.SetActive(false);
         Gacha_Tong_8.SetActive(false);
         Gacha_Tong_9.SetActive(false);
+
+        Gacha_Tong_0_Image = Gacha_Tong_0.GetComponent<Image>();
+        Gacha_Tong_1_Image = Gacha_Tong_1.GetComponent<Image>();
+        Gacha_Tong_2_Image = Gacha_Tong_2.GetComponent<Image>();
+        Gacha_Tong_3_Image = Gacha_Tong_3.GetComponent<Image>();
+        Gacha_Tong_4_Image = Gacha_Tong_4.GetComponent<Image>();
+        Gacha_Tong_5_Image = Gacha_Tong_5.GetComponent<Image>();
+        Gacha_Tong_6_Image = Gacha_Tong_6.GetComponent<Image>();
+        Gacha_Tong_7_Image = Gacha_Tong_7.GetComponent<Image>();
+        Gacha_Tong_8_Image = Gacha_Tong_8.GetComponent<Image>();
+        Gacha_Tong_9_Image = Gacha_Tong_9.GetComponent<Image>();
 
         for (int i = 0; i < 10; i++)
         {
@@ -170,7 +194,7 @@ public class Ingame : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        Gacha_Tong_Level = Text_Event.Gacha_Level;
         Gacha_Tong_Twice = Text_Event.Passive_Skill;
 
         //Text_Event.Gacha_Level;
@@ -363,6 +387,7 @@ public class Ingame : MonoBehaviour
                     Gacha_Initial[0] = Gacha_Ball_Num[i - 1];
                     Gacha_Initial_Try[0] = Gacha_Ball_Try[i - 1];
                     Gacha_Initial_Zero[0] = Gacha_Ball_Zero[i - 1];
+                    Gacha_Tong_0_Image.sprite = Gacha_Tomg_Image[i - 1];
                 }
             }
         }
@@ -377,6 +402,7 @@ public class Ingame : MonoBehaviour
                     Gacha_Initial[1] = Gacha_Ball_Num[i - 1];
                     Gacha_Initial_Try[1] = Gacha_Ball_Try[i - 1];
                     Gacha_Initial_Zero[1] = Gacha_Ball_Zero[i - 1];
+                    Gacha_Tong_1_Image.sprite = Gacha_Tomg_Image[i - 1];
                 }
             }
         }
@@ -391,6 +417,7 @@ public class Ingame : MonoBehaviour
                     Gacha_Initial[2] = Gacha_Ball_Num[i - 1];
                     Gacha_Initial_Try[2] = Gacha_Ball_Try[i - 1];
                     Gacha_Initial_Zero[2] = Gacha_Ball_Zero[i - 1];
+                    Gacha_Tong_2_Image.sprite = Gacha_Tomg_Image[i - 1];
                 }
             }
         }
@@ -405,6 +432,7 @@ public class Ingame : MonoBehaviour
                     Gacha_Initial[3] = Gacha_Ball_Num[i - 1];
                     Gacha_Initial_Try[3] = Gacha_Ball_Try[i - 1];
                     Gacha_Initial_Zero[3] = Gacha_Ball_Zero[i - 1];
+                    Gacha_Tong_3_Image.sprite = Gacha_Tomg_Image[i - 1];
                 }
             }
         }
@@ -419,6 +447,7 @@ public class Ingame : MonoBehaviour
                     Gacha_Initial[4] = Gacha_Ball_Num[i - 1];
                     Gacha_Initial_Try[4] = Gacha_Ball_Try[i - 1];
                     Gacha_Initial_Zero[4] = Gacha_Ball_Zero[i - 1];
+                    Gacha_Tong_4_Image.sprite = Gacha_Tomg_Image[i - 1];
                 }
             }
         }
@@ -433,6 +462,7 @@ public class Ingame : MonoBehaviour
                     Gacha_Initial[5] = Gacha_Ball_Num[i - 1];
                     Gacha_Initial_Try[5] = Gacha_Ball_Try[i - 1];
                     Gacha_Initial_Zero[5] = Gacha_Ball_Zero[i - 1];
+                    Gacha_Tong_5_Image.sprite = Gacha_Tomg_Image[i - 1];
                 }
             }
         }
@@ -447,6 +477,7 @@ public class Ingame : MonoBehaviour
                     Gacha_Initial[6] = Gacha_Ball_Num[i - 1];
                     Gacha_Initial_Try[6] = Gacha_Ball_Try[i - 1];
                     Gacha_Initial_Zero[6] = Gacha_Ball_Zero[i - 1];
+                    Gacha_Tong_6_Image.sprite = Gacha_Tomg_Image[i - 1];
                 }
             }
         }
@@ -461,6 +492,7 @@ public class Ingame : MonoBehaviour
                     Gacha_Initial[7] = Gacha_Ball_Num[i - 1];
                     Gacha_Initial_Try[7] = Gacha_Ball_Try[i - 1];
                     Gacha_Initial_Zero[7] = Gacha_Ball_Zero[i - 1];
+                    Gacha_Tong_7_Image.sprite = Gacha_Tomg_Image[i - 1];
                 }
             }
         }
@@ -475,6 +507,7 @@ public class Ingame : MonoBehaviour
                     Gacha_Initial[8] = Gacha_Ball_Num[i - 1];
                     Gacha_Initial_Try[8] = Gacha_Ball_Try[i - 1];
                     Gacha_Initial_Zero[8] = Gacha_Ball_Zero[i - 1];
+                    Gacha_Tong_8_Image.sprite = Gacha_Tomg_Image[i - 1];
                 }
             }
         }
@@ -489,6 +522,7 @@ public class Ingame : MonoBehaviour
                     Gacha_Initial[9] = Gacha_Ball_Num[i - 1];
                     Gacha_Initial_Try[9] = Gacha_Ball_Try[i - 1];
                     Gacha_Initial_Zero[9] = Gacha_Ball_Zero[i - 1];
+                    Gacha_Tong_9_Image.sprite = Gacha_Tomg_Image[i - 1];
                 }
             }
         }
