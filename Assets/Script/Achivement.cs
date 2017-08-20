@@ -12,6 +12,8 @@ public class Achivement : MonoBehaviour
 
     public Text Achivement_EX_text;
     public Image Achivement_EX_Image;
+    public Text Achivement_Time_EX_text;
+    public Image Achivement_Time_EX_Image;
 
     public Text Achivement1;
     public Image Achivement1_Guage;
@@ -49,6 +51,9 @@ public class Achivement : MonoBehaviour
     public static int Achivement_Class = 0;//업적 개수 카운팅
 
     static public int Achivement_EX_cnt = 0;
+    static public int Achivement_Time_EX_cnt = 0;
+
+    static public float Play_Time = 0f;
     // Use this for initialization
     void Start()
     {
@@ -60,6 +65,10 @@ public class Achivement : MonoBehaviour
         Acivement_EX(Ingame.Click_Num);
 
         Class(Achivement_Class);
+
+        Play_Time += Time.deltaTime;
+
+        Play_Time_Ach(Play_Time);
     }
     
     public void Acivement_EX(int click)
@@ -67,17 +76,27 @@ public class Achivement : MonoBehaviour
         
         if (click <= 30) 
         {
-            Achivement_EX_text.GetComponent<Text>().text = click + "/ 30";
+            Achivement_EX_text.GetComponent<Text>().text = click + " / 30";
             Achivement_EX_Image.fillAmount = (float)click / 30;
         }
        if (click == 30) 
         {
-            Debug.Log(Achivement_EX_cnt);
             Achivement_EX_cnt = 1;
         }
-
     }
-    
+    public void Play_Time_Ach(float time)
+    {
+        if ((int)time <= 15) 
+        {
+            Achivement_Time_EX_text.GetComponent<Text>().text = (int)time + " / 15";
+            Achivement_Time_EX_Image.fillAmount = (float)time / 15;
+        }
+        if ((int)time == 15) 
+        {
+            Debug.Log("--------------------");
+            Achivement_Time_EX_cnt = 1;
+        }
+    }
     public void Class(int temp)
     {
         switch(temp)

@@ -20,11 +20,11 @@ public class Inventory_Home : MonoBehaviour {
     public GameObject Inventory_Item5;
     public GameObject Inventory_Item6;
     public GameObject Inventory_Item7;
-    
+
     public Text Money_Text;
 
     // Use this for initialization
-    void Start () {
+    void Start() {
         Store_item1.interactable = false;
         Store_item2.interactable = false;
         Store_item3.interactable = false;
@@ -43,7 +43,7 @@ public class Inventory_Home : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update () {
+    void Update() {
 
         if (Achivement.Achivement_EX_cnt == 1)
         {
@@ -62,44 +62,93 @@ public class Inventory_Home : MonoBehaviour {
     }
     public void Item1_Button()
     {
-        Inventory_Item1.SetActive(true);
-        Text_Event.Money -= 33333;
-        Store_item1.interactable = false;
+        if (Text_Event.Money - 33333 < 0)
+        {
+
+        }
+        else
+        {
+            Inventory_Item1.SetActive(true);
+            Text_Event.Money -= 33333;
+            Store_item1.interactable = false;
+        }
     }
     public void Item2_Button()
     {
-        Inventory_Item2.SetActive(true);
-        Text_Event.Money -= 33333;
-        Store_item2.interactable = false;
+        if (Text_Event.Money - 33333 < 0)
+        {
+
+        }
+        else
+        {
+            Inventory_Item2.SetActive(true);
+            Text_Event.Money -= 33333;
+            Store_item2.interactable = false;
+        }
     }
     public void Item3_Button()
     {
-        Inventory_Item3.SetActive(true);
-        Text_Event.Money -= 33333;
-        Store_item3.interactable = false;
+        if (Text_Event.Money - 33333 < 0)
+        {
+
+        }
+        else
+        {
+            Inventory_Item3.SetActive(true);
+            Text_Event.Money -= 33333;
+            Store_item3.interactable = false;
+        }
     }
     public void Item4_Button()
     {
-        Inventory_Item4.SetActive(true);
-        Text_Event.Money -= 150000;
-        Store_item4.interactable = false;
+        if (Text_Event.Money - 150000 < 0)
+        {
+
+        }
+        else
+        {
+            Inventory_Item4.SetActive(true);
+            Text_Event.Money -= 150000;
+            Store_item4.interactable = false;
+        }
     }
     public void Item5_Button()
     {
-        Inventory_Item5.SetActive(true);
-        Text_Event.Money -= 4200;
-        Store_item5.interactable = false;
+        if (Text_Event.Money - 4200 < 0)
+        {
+
+        }
+        else
+        {
+            Inventory_Item5.SetActive(true);
+            Text_Event.Money -= 4200;
+            Store_item5.interactable = false;
+        }
     }
     public void Item6_Button()
     {
-        Inventory_Item6.SetActive(true);
-        Text_Event.Money -= 100000;
-        Store_item6.interactable = false;
+        if (Text_Event.Money - 100000 < 0)
+        {
+
+        }
+        else
+        {
+            Inventory_Item6.SetActive(true);
+            Text_Event.Money -= 100000;
+            Store_item6.interactable = false;
+        }
     }
     public void Item7_Button()
     {
-        Inventory_Item7.SetActive(true);
-        Text_Event.Money -= 500000;
-        Store_item7.interactable = false;
+        if (Text_Event.Money - 500000 < 0)
+        {
+
+        }
+        else
+        {
+            Inventory_Item7.SetActive(true);
+            Text_Event.Money -= 500000;
+            Store_item7.interactable = false;
+        }
     }
 }
