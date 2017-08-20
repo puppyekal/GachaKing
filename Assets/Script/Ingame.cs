@@ -14,8 +14,6 @@ public class Ingame : MonoBehaviour
 
     public int Gacha_Tong_Level = 1;
 
-    public float timer;
-    public int waitingTime;
 
     //가챠통 남은수량%
     public Text Gacha_Tong_0_Text;
@@ -29,6 +27,7 @@ public class Ingame : MonoBehaviour
     public Text Gacha_Tong_8_Text;
     public Text Gacha_Tong_9_Text;
 
+    public Text Gacha_Automatic_Click_Text;
 
     //방꾸미기 구역
     public GameObject Area_0;
@@ -48,6 +47,8 @@ public class Ingame : MonoBehaviour
     public GameObject Gacha_Tong_7;
     public GameObject Gacha_Tong_8;
     public GameObject Gacha_Tong_9;
+
+    public GameObject Gacha_Automatic_Button;
 
 
     Image Gacha_Tong_0_Image;
@@ -77,6 +78,8 @@ public class Ingame : MonoBehaviour
     public bool Gacha_Tong_9_st = false;
 
     public bool Gacha_Automatic_Click = false;
+    public bool Gacha_Automatic_System = false;
+
     //가챠통 10개
     public int[] Gacha_Initial = new int[10];
     public int[] Gacha_Initial_Try = new int[10];
@@ -97,13 +100,27 @@ public class Ingame : MonoBehaviour
     //가챠볼 2번뽑기 스킬
     public int[] Gacha_Ball_Twice = new int[10];
 
+    public float timer;
+    public float waitingTime;
+
+    public float timer2;
+    public int waitingTime2;
+
+    public float timer3;
+    public int waitingTime3;
+
 
     // Use this for initialization
     void Start()
     {
 
         timer = 0.0f;
-        waitingTime = 1000;
+        timer2 = 0.0f;
+        timer3 = 0.0f;
+
+        waitingTime = 1000000f;
+        waitingTime2 = 1000000;
+        waitingTime3 = 1000000;
 
         Gacha_Tong_0.SetActive(false);
         Gacha_Tong_1.SetActive(false);
@@ -115,6 +132,7 @@ public class Ingame : MonoBehaviour
         Gacha_Tong_7.SetActive(false);
         Gacha_Tong_8.SetActive(false);
         Gacha_Tong_9.SetActive(false);
+
 
         Gacha_Tong_0_Image = Gacha_Tong_0.GetComponent<Image>();
         Gacha_Tong_1_Image = Gacha_Tong_1.GetComponent<Image>();
@@ -145,16 +163,16 @@ public class Ingame : MonoBehaviour
             Gacha_Initial_Zero[i] = 30000;
         }
 
-        Gacha_Ball_Num[0] = 9;
-        Gacha_Ball_Num[1] = 19;
-        Gacha_Ball_Num[2] = 29;
-        Gacha_Ball_Num[3] = 39;
-        Gacha_Ball_Num[4] = 49;
-        Gacha_Ball_Num[5] = 59;
-        Gacha_Ball_Num[6] = 69;
-        Gacha_Ball_Num[7] = 79;
-        Gacha_Ball_Num[8] = 89;
-        Gacha_Ball_Num[9] = 99;
+        Gacha_Ball_Num[0] = 10000;
+        Gacha_Ball_Num[1] = 20000;
+        Gacha_Ball_Num[2] = 40000;
+        Gacha_Ball_Num[3] = 80000;
+        Gacha_Ball_Num[4] = 160000;
+        Gacha_Ball_Num[5] = 320000;
+        Gacha_Ball_Num[6] = 640000;
+        Gacha_Ball_Num[7] = 1280000;
+        Gacha_Ball_Num[8] = 2560000;
+        Gacha_Ball_Num[9] = 2560000;
 
         Gacha_Ball_Try[0] = 1;
         Gacha_Ball_Try[1] = 4;
@@ -165,7 +183,7 @@ public class Ingame : MonoBehaviour
         Gacha_Ball_Try[6] = 512;
         Gacha_Ball_Try[7] = 1024;
         Gacha_Ball_Try[8] = 2048;
-        Gacha_Ball_Try[9] = 11111;
+        Gacha_Ball_Try[9] = 2048;
 
         Gacha_Ball_Zero[0] = 30000;
         Gacha_Ball_Zero[1] = 160000;
@@ -207,50 +225,159 @@ public class Ingame : MonoBehaviour
         //가챠 자동클릭 레벨
         if (Text_Event.Active_Skill == 1)
         {
-            waitingTime = 10;
+            waitingTime = 1;
         }
         else if (Text_Event.Active_Skill == 2)
         {
 
-            waitingTime = 9;
+            waitingTime = 0.9f;
         }
         else if (Text_Event.Active_Skill == 3)
         {
-            waitingTime = 8;
+            waitingTime = 0.8f;
         }
         else if (Text_Event.Active_Skill == 4)
         {
-            waitingTime = 7;
+            waitingTime = 0.7f;
 
         }
         else if (Text_Event.Active_Skill == 5)
         {
-            waitingTime = 6;
+            waitingTime = 0.6f;
         }
         else if (Text_Event.Active_Skill == 6)
         {
-            waitingTime = 5;
+            waitingTime = 0.5f;
         }
         else if (Text_Event.Active_Skill == 7)
         {
-            waitingTime = 4;
+            waitingTime = 0.4f;
         }
         else if (Text_Event.Active_Skill == 8)
         {
-            waitingTime = 3;
+            waitingTime = 0.3f;
         }
         else if (Text_Event.Active_Skill == 9)
         {
-            waitingTime = 2;
+            waitingTime = 0.2f;
         }
 
-        //가챠자동클릭 시스템
-        timer += Time.deltaTime;
-        if (timer > waitingTime)
+        //가챠 자동클릭2
+        if (Text_Event.Active_Skill == 1)
         {
-            Gacha_System();
-            timer = 0;
-           
+            waitingTime2 = 60;
+        }
+        else if (Text_Event.Active_Skill == 2)
+        {
+
+            waitingTime2 = 180;
+        }
+        else if (Text_Event.Active_Skill == 3)
+        {
+            waitingTime2 = 300;
+        }
+        else if (Text_Event.Active_Skill == 4)
+        {
+            waitingTime2 = 600;
+
+        }
+        else if (Text_Event.Active_Skill == 5)
+        {
+            waitingTime2 = 1200;
+        }
+        else if (Text_Event.Active_Skill == 6)
+        {
+            waitingTime2 = 1800;
+        }
+        else if (Text_Event.Active_Skill == 7)
+        {
+            waitingTime2 = 2400;
+        }
+        else if (Text_Event.Active_Skill == 8)
+        {
+            waitingTime2 = 2700;
+        }
+        else if (Text_Event.Active_Skill == 9)
+        {
+            waitingTime2 = 3000;
+        }
+
+        //가챠 자동클릭 3
+        if (Text_Event.Active_Skill == 1)
+        {
+            waitingTime3 = 180;
+        }
+        else if (Text_Event.Active_Skill == 2)
+        {
+
+            waitingTime3 = 300;
+        }
+        else if (Text_Event.Active_Skill == 3)
+        {
+            waitingTime3 = 600;
+        }
+        else if (Text_Event.Active_Skill == 4)
+        {
+            waitingTime3 = 900;
+
+        }
+        else if (Text_Event.Active_Skill == 5)
+        {
+            waitingTime3 = 1800;
+        }
+        else if (Text_Event.Active_Skill == 6)
+        {
+            waitingTime3 = 2400;
+        }
+        else if (Text_Event.Active_Skill == 7)
+        {
+            waitingTime3 = 2700;
+        }
+        else if (Text_Event.Active_Skill == 8)
+        {
+            waitingTime3 = 3000;
+        }
+        else if (Text_Event.Active_Skill == 9)
+        {
+            waitingTime3 = 3600;
+        }
+
+        if (Gacha_Automatic_Click == true && Text_Event.Active_Skill != 0)
+        {
+            //Gacha_Automatic_Click_Text.GetComponent<Text>().text = waitingTime3 + "";
+
+            if (Gacha_Automatic_System == true)
+            {
+                //가챠자동클릭 시스템
+                timer += Time.deltaTime;
+                if (timer > waitingTime)
+                {
+                    Gacha_System();
+                    timer = 0;
+                }
+            }
+
+            ////////////////////////////////
+
+            timer2 += Time.deltaTime;
+            if (timer2 > waitingTime2)
+            {
+                timer2 = 0;
+                Gacha_Automatic_System = false;
+                Debug.Log("Gacha_Automatic_System false");
+            }
+
+            ///////////////////////////////
+
+            timer3 += Time.deltaTime;
+            if (timer3 > waitingTime3)
+            {
+                timer3 = 0;
+                Gacha_Automatic_System = false;
+                Gacha_Automatic_Click = false;
+                Gacha_Automatic_Button.SetActive(true);
+                Debug.Log("Gacha_Automatic_Click false");
+            }
         }
         
     }
@@ -366,6 +493,15 @@ public class Ingame : MonoBehaviour
                 break;
             case 5:
                 Debug.Log(5000);
+                break;
+            case 9999:
+                Debug.Log(9999);
+                if (Text_Event.Active_Skill != 0)
+                {
+                    Gacha_Automatic_Click = true;
+                    Gacha_Automatic_System = true;
+                    Gacha_Automatic_Button.SetActive(false);
+                }
                 break;
             case 10000:
                 //방 눌렀을 때
@@ -923,7 +1059,6 @@ public class Ingame : MonoBehaviour
                 Text_Event.Money = Text_Event.Money + Gacha_Initial_Zero[9];
                 Gacha_Tong_9_st = false;
                 Gacha_Tong_9.SetActive(false);
-
             }
             //일정확률시 두번
             int Twice;
@@ -942,7 +1077,6 @@ public class Ingame : MonoBehaviour
                     Text_Event.Money = Text_Event.Money + Gacha_Initial_Zero[9];
                     Gacha_Tong_9_st = false;
                     Gacha_Tong_9.SetActive(false);
-
                 }
             }
             Gacha_Tong_9_Text.GetComponent<Text>().text = 100 * Gacha_Initial[9] / Gacha_Current_Level[9] + "%";
