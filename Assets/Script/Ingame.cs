@@ -315,44 +315,64 @@ public class Ingame : MonoBehaviour
         Gacha_Ball_Twice[8] = PlayerPrefs.GetInt("Gacha_Ball_Twice[8]", Gacha_Ball_Twice[8]);
         Gacha_Ball_Twice[9] = PlayerPrefs.GetInt("Gacha_Ball_Twice[9]", Gacha_Ball_Twice[9]);
 
-        if (Gacha_Tong_0_st == 1) {
+        if (Gacha_Tong_0_st == 1)
+        {
+            Gacha_Tong_0_Image.sprite = Gacha_Tomg_Image[Gacha_Current_Level[0]];
             Gacha_Tong_0.SetActive(true);
+       
         }
         if (Gacha_Tong_1_st == 1)
         {
+            Gacha_Tong_1_Image.sprite = Gacha_Tomg_Image[Gacha_Current_Level[1]];
             Gacha_Tong_1.SetActive(true);
+          
         }
         if (Gacha_Tong_2_st == 1)
         {
+            Gacha_Tong_2_Image.sprite = Gacha_Tomg_Image[Gacha_Current_Level[2]];
             Gacha_Tong_2.SetActive(true);
+            
         }
         if (Gacha_Tong_3_st == 1)
         {
+            Gacha_Tong_3_Image.sprite = Gacha_Tomg_Image[Gacha_Current_Level[3]];
             Gacha_Tong_3.SetActive(true);
+
         }
         if (Gacha_Tong_4_st == 1)
         {
+            Gacha_Tong_4_Image.sprite = Gacha_Tomg_Image[Gacha_Current_Level[4]];
             Gacha_Tong_4.SetActive(true);
         }
         if (Gacha_Tong_5_st == 1)
         {
+            Gacha_Tong_5_Image.sprite = Gacha_Tomg_Image[Gacha_Current_Level[5]];
             Gacha_Tong_5.SetActive(true);
+
         }
         if (Gacha_Tong_6_st == 1)
         {
+            Gacha_Tong_6_Image.sprite = Gacha_Tomg_Image[Gacha_Current_Level[6]];
             Gacha_Tong_6.SetActive(true);
+
         }
         if (Gacha_Tong_7_st == 1)
         {
+            Gacha_Tong_7_Image.sprite = Gacha_Tomg_Image[Gacha_Current_Level[7]];
             Gacha_Tong_7.SetActive(true);
+
         }
         if (Gacha_Tong_8_st == 1)
         {
+            Gacha_Tong_8_Image.sprite = Gacha_Tomg_Image[Gacha_Current_Level[8]];
             Gacha_Tong_8.SetActive(true);
+
         }
         if (Gacha_Tong_9_st == 1)
         {
+            Gacha_Tong_9_Image.sprite = Gacha_Tomg_Image[Gacha_Current_Level[9]];
             Gacha_Tong_9.SetActive(true);
+
         }
 
     }
