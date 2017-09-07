@@ -212,7 +212,9 @@ public class Ingame : MonoBehaviour
         Click_Num=PlayerPrefs.GetInt("Click_Num", Click_Num);
         Gacha_Tong_Twice= PlayerPrefs.GetInt("Gacha_Tong_Twice", Gacha_Tong_Twice);
 
-        Gacha_Tong_0_st=PlayerPrefs.GetInt("Gacha_Tong_0_st", Gacha_Tong_0_st);
+        Gacha_Tong_Level =  PlayerPrefs.GetInt("Gacha_Tong_Level", Gacha_Tong_Level);
+
+        Gacha_Tong_0_st =PlayerPrefs.GetInt("Gacha_Tong_0_st", Gacha_Tong_0_st);
         Gacha_Tong_1_st = PlayerPrefs.GetInt("Gacha_Tong_1_st", Gacha_Tong_1_st);
         Gacha_Tong_2_st = PlayerPrefs.GetInt("Gacha_Tong_2_st", Gacha_Tong_2_st);
         Gacha_Tong_3_st = PlayerPrefs.GetInt("Gacha_Tong_3_st", Gacha_Tong_3_st);
@@ -618,7 +620,8 @@ public class Ingame : MonoBehaviour
                 PlayerPrefs.SetInt("Gacha_Tong_Num", Gacha_Tong_Num);
                 PlayerPrefs.SetInt("Click_Num", Click_Num);
                 PlayerPrefs.SetInt("Gacha_Tong_Twice", Gacha_Tong_Twice);
-
+                PlayerPrefs.SetInt("Gacha_Tong_Level", Gacha_Tong_Level);
+  
                 PlayerPrefs.SetInt("Gacha_Tong_0_st", Gacha_Tong_0_st);
                 PlayerPrefs.SetInt("Gacha_Tong_1_st", Gacha_Tong_1_st);
                 PlayerPrefs.SetInt("Gacha_Tong_2_st", Gacha_Tong_2_st);
@@ -880,7 +883,7 @@ public class Ingame : MonoBehaviour
     }
     //가챠통 현재정보
     public void Gacha_Tong_Initial_Now()
-    {
+    {/*
         Gacha_Tong_0_Image.sprite = Gacha_Tong_Image[Gacha_Current_Level[0]-1];
         Gacha_Tong_1_Image.sprite = Gacha_Tong_Image[Gacha_Current_Level[1]-1];
         Gacha_Tong_2_Image.sprite = Gacha_Tong_Image[Gacha_Current_Level[2]-1];
@@ -891,7 +894,7 @@ public class Ingame : MonoBehaviour
         Gacha_Tong_7_Image.sprite = Gacha_Tong_Image[Gacha_Current_Level[7]-1];
         Gacha_Tong_8_Image.sprite = Gacha_Tong_Image[Gacha_Current_Level[8]-1];
         Gacha_Tong_9_Image.sprite = Gacha_Tong_Image[Gacha_Current_Level[9]-1];
-
+        */
         if (Gacha_Tong_0_st == 1)
         {
             Gacha_Tong_0.SetActive(true);
