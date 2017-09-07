@@ -314,6 +314,47 @@ public class Ingame : MonoBehaviour
         Gacha_Ball_Twice[7] = PlayerPrefs.GetInt("Gacha_Ball_Twice[7]", Gacha_Ball_Twice[7]);
         Gacha_Ball_Twice[8] = PlayerPrefs.GetInt("Gacha_Ball_Twice[8]", Gacha_Ball_Twice[8]);
         Gacha_Ball_Twice[9] = PlayerPrefs.GetInt("Gacha_Ball_Twice[9]", Gacha_Ball_Twice[9]);
+
+        if (Gacha_Tong_0_st == 1) {
+            Gacha_Tong_0.SetActive(true);
+        }
+        if (Gacha_Tong_1_st == 1)
+        {
+            Gacha_Tong_1.SetActive(true);
+        }
+        if (Gacha_Tong_2_st == 1)
+        {
+            Gacha_Tong_2.SetActive(true);
+        }
+        if (Gacha_Tong_3_st == 1)
+        {
+            Gacha_Tong_3.SetActive(true);
+        }
+        if (Gacha_Tong_4_st == 1)
+        {
+            Gacha_Tong_4.SetActive(true);
+        }
+        if (Gacha_Tong_5_st == 1)
+        {
+            Gacha_Tong_5.SetActive(true);
+        }
+        if (Gacha_Tong_6_st == 1)
+        {
+            Gacha_Tong_6.SetActive(true);
+        }
+        if (Gacha_Tong_7_st == 1)
+        {
+            Gacha_Tong_7.SetActive(true);
+        }
+        if (Gacha_Tong_8_st == 1)
+        {
+            Gacha_Tong_8.SetActive(true);
+        }
+        if (Gacha_Tong_9_st == 1)
+        {
+            Gacha_Tong_9.SetActive(true);
+        }
+
     }
 
     // Update is called once per frame
