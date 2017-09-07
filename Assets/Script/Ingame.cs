@@ -113,116 +113,6 @@ public class Ingame : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
-        PlayerPrefs.GetInt("Buy_Button", Buy_Button);
-        PlayerPrefs.GetInt("Gacha_Tong_Num", Gacha_Tong_Num);
-        PlayerPrefs.GetInt("Click_Num", Click_Num);
-        PlayerPrefs.GetInt("Gacha_Tong_Twice", Gacha_Tong_Twice);
-
-        PlayerPrefs.GetInt("Gacha_Tong_0_st", Gacha_Tong_0_st);
-        PlayerPrefs.GetInt("Gacha_Tong_1_st", Gacha_Tong_1_st);
-        PlayerPrefs.GetInt("Gacha_Tong_2_st", Gacha_Tong_2_st);
-        PlayerPrefs.GetInt("Gacha_Tong_3_st", Gacha_Tong_3_st);
-        PlayerPrefs.GetInt("Gacha_Tong_4_st", Gacha_Tong_4_st);
-        PlayerPrefs.GetInt("Gacha_Tong_5_st", Gacha_Tong_5_st);
-        PlayerPrefs.GetInt("Gacha_Tong_6_st", Gacha_Tong_6_st);
-        PlayerPrefs.GetInt("Gacha_Tong_7_st", Gacha_Tong_7_st);
-        PlayerPrefs.GetInt("Gacha_Tong_8_st", Gacha_Tong_8_st);
-        PlayerPrefs.GetInt("Gacha_Tong_9_st", Gacha_Tong_9_st);
-
-        PlayerPrefs.GetInt("Gacha_Automatic_Click", Gacha_Automatic_Click);
-        PlayerPrefs.GetInt("Gacha_Automatic_System", Gacha_Automatic_System);
-
-        PlayerPrefs.GetInt("Gacha_Initial[0]", Gacha_Initial[0]);
-        PlayerPrefs.GetInt("Gacha_Initial[1]", Gacha_Initial[1]);
-        PlayerPrefs.GetInt("Gacha_Initial[2]", Gacha_Initial[2]);
-        PlayerPrefs.GetInt("Gacha_Initial[3]", Gacha_Initial[3]);
-        PlayerPrefs.GetInt("Gacha_Initial[4]", Gacha_Initial[4]);
-        PlayerPrefs.GetInt("Gacha_Initial[5]", Gacha_Initial[5]);
-        PlayerPrefs.GetInt("Gacha_Initial[6]", Gacha_Initial[6]);
-        PlayerPrefs.GetInt("Gacha_Initial[7]", Gacha_Initial[7]);
-        PlayerPrefs.GetInt("Gacha_Initial[8]", Gacha_Initial[8]);
-        PlayerPrefs.GetInt("Gacha_Initial[9]", Gacha_Initial[9]);
-
-        PlayerPrefs.GetInt("Gacha_Initial_Try[0]", Gacha_Initial_Try[0]);
-        PlayerPrefs.GetInt("Gacha_Initial_Try[1]", Gacha_Initial_Try[1]);
-        PlayerPrefs.GetInt("Gacha_Initial_Try[2]", Gacha_Initial_Try[2]);
-        PlayerPrefs.GetInt("Gacha_Initial_Try[3]", Gacha_Initial_Try[3]);
-        PlayerPrefs.GetInt("Gacha_Initial_Try[4]", Gacha_Initial_Try[4]);
-        PlayerPrefs.GetInt("Gacha_Initial_Try[5]", Gacha_Initial_Try[5]);
-        PlayerPrefs.GetInt("Gacha_Initial_Try[6]", Gacha_Initial_Try[6]);
-        PlayerPrefs.GetInt("Gacha_Initial_Try[7]", Gacha_Initial_Try[7]);
-        PlayerPrefs.GetInt("Gacha_Initial_Try[8]", Gacha_Initial_Try[8]);
-        PlayerPrefs.GetInt("Gacha_Initial_Try[9]", Gacha_Initial_Try[9]);
-
-
-        PlayerPrefs.GetInt("Gacha_Initial_Zero[0]", Gacha_Initial_Zero[0]);
-        PlayerPrefs.GetInt("Gacha_Initial_Zero[1]", Gacha_Initial_Zero[1]);
-        PlayerPrefs.GetInt("Gacha_Initial_Zero[2]", Gacha_Initial_Zero[2]);
-        PlayerPrefs.GetInt("Gacha_Initial_Zero[3]", Gacha_Initial_Zero[3]);
-        PlayerPrefs.GetInt("Gacha_Initial_Zero[4]", Gacha_Initial_Zero[4]);
-        PlayerPrefs.GetInt("Gacha_Initial_Zero[5]", Gacha_Initial_Zero[5]);
-        PlayerPrefs.GetInt("Gacha_Initial_Zero[6]", Gacha_Initial_Zero[6]);
-        PlayerPrefs.GetInt("Gacha_Initial_Zero[7]", Gacha_Initial_Zero[7]);
-        PlayerPrefs.GetInt("Gacha_Initial_Zero[8]", Gacha_Initial_Zero[8]);
-        PlayerPrefs.GetInt("Gacha_Initial_Zero[9]", Gacha_Initial_Zero[9]);
-
-        PlayerPrefs.GetInt("Gacha_Current_Level[0]", Gacha_Current_Level[0]);
-        PlayerPrefs.GetInt("Gacha_Current_Level[1]", Gacha_Current_Level[1]);
-        PlayerPrefs.GetInt("Gacha_Current_Level[2]", Gacha_Current_Level[2]);
-        PlayerPrefs.GetInt("Gacha_Current_Level[3]", Gacha_Current_Level[3]);
-        PlayerPrefs.GetInt("Gacha_Current_Level[4]", Gacha_Current_Level[4]);
-        PlayerPrefs.GetInt("Gacha_Current_Level[5]", Gacha_Current_Level[5]);
-        PlayerPrefs.GetInt("Gacha_Current_Level[6]", Gacha_Current_Level[6]);
-        PlayerPrefs.GetInt("Gacha_Current_Level[7]", Gacha_Current_Level[7]);
-        PlayerPrefs.GetInt("Gacha_Current_Level[8]", Gacha_Current_Level[8]);
-        PlayerPrefs.GetInt("Gacha_Current_Level[9]", Gacha_Current_Level[9]);
-
-        PlayerPrefs.GetInt("Gacha_Ball_Num[0]", Gacha_Ball_Num[0]);
-        PlayerPrefs.GetInt("Gacha_Ball_Num[1]", Gacha_Ball_Num[1]);
-        PlayerPrefs.GetInt("Gacha_Ball_Num[2]", Gacha_Ball_Num[2]);
-        PlayerPrefs.GetInt("Gacha_Ball_Num[3]", Gacha_Ball_Num[3]);
-        PlayerPrefs.GetInt("Gacha_Ball_Num[4]", Gacha_Ball_Num[4]);
-        PlayerPrefs.GetInt("Gacha_Ball_Num[5]", Gacha_Ball_Num[5]);
-        PlayerPrefs.GetInt("Gacha_Ball_Num[6]", Gacha_Ball_Num[6]);
-        PlayerPrefs.GetInt("Gacha_Ball_Num[7]", Gacha_Ball_Num[7]);
-        PlayerPrefs.GetInt("Gacha_Ball_Num[8]", Gacha_Ball_Num[8]);
-        PlayerPrefs.GetInt("Gacha_Ball_Num[9]", Gacha_Ball_Num[9]);
-
-        PlayerPrefs.GetInt("Gacha_Ball_Try[0]", Gacha_Ball_Try[0]);
-        PlayerPrefs.GetInt("Gacha_Ball_Try[1]", Gacha_Ball_Try[1]);
-        PlayerPrefs.GetInt("Gacha_Ball_Try[2]", Gacha_Ball_Try[2]);
-        PlayerPrefs.GetInt("Gacha_Ball_Try[3]", Gacha_Ball_Try[3]);
-        PlayerPrefs.GetInt("Gacha_Ball_Try[4]", Gacha_Ball_Try[4]);
-        PlayerPrefs.GetInt("Gacha_Ball_Try[5]", Gacha_Ball_Try[5]);
-        PlayerPrefs.GetInt("Gacha_Ball_Try[6]", Gacha_Ball_Try[6]);
-        PlayerPrefs.GetInt("Gacha_Ball_Try[7]", Gacha_Ball_Try[7]);
-        PlayerPrefs.GetInt("Gacha_Ball_Try[8]", Gacha_Ball_Try[8]);
-        PlayerPrefs.GetInt("Gacha_Ball_Try[9]", Gacha_Ball_Try[9]);
-
-        PlayerPrefs.GetInt("Gacha_Ball_Zero[0]", Gacha_Ball_Zero[0]);
-        PlayerPrefs.GetInt("Gacha_Ball_Zero[1]", Gacha_Ball_Zero[1]);
-        PlayerPrefs.GetInt("Gacha_Ball_Zero[2]", Gacha_Ball_Zero[2]);
-        PlayerPrefs.GetInt("Gacha_Ball_Zero[3]", Gacha_Ball_Zero[3]);
-        PlayerPrefs.GetInt("Gacha_Ball_Zero[4]", Gacha_Ball_Zero[4]);
-        PlayerPrefs.GetInt("Gacha_Ball_Zero[5]", Gacha_Ball_Zero[5]);
-        PlayerPrefs.GetInt("Gacha_Ball_Zero[6]", Gacha_Ball_Zero[6]);
-        PlayerPrefs.GetInt("Gacha_Ball_Zero[7]", Gacha_Ball_Zero[7]);
-        PlayerPrefs.GetInt("Gacha_Ball_Zero[8]", Gacha_Ball_Zero[8]);
-        PlayerPrefs.GetInt("Gacha_Ball_Zero[9]", Gacha_Ball_Zero[9]);
-
-        PlayerPrefs.GetInt("Gacha_Ball_Twice[0]", Gacha_Ball_Twice[0]);
-        PlayerPrefs.GetInt("Gacha_Ball_Twice[1]", Gacha_Ball_Twice[1]);
-        PlayerPrefs.GetInt("Gacha_Ball_Twice[2]", Gacha_Ball_Twice[2]);
-        PlayerPrefs.GetInt("Gacha_Ball_Twice[3]", Gacha_Ball_Twice[3]);
-        PlayerPrefs.GetInt("Gacha_Ball_Twice[4]", Gacha_Ball_Twice[4]);
-        PlayerPrefs.GetInt("Gacha_Ball_Twice[5]", Gacha_Ball_Twice[5]);
-        PlayerPrefs.GetInt("Gacha_Ball_Twice[6]", Gacha_Ball_Twice[6]);
-        PlayerPrefs.GetInt("Gacha_Ball_Twice[7]", Gacha_Ball_Twice[7]);
-        PlayerPrefs.GetInt("Gacha_Ball_Twice[8]", Gacha_Ball_Twice[8]);
-        PlayerPrefs.GetInt("Gacha_Ball_Twice[9]", Gacha_Ball_Twice[9]);
-
-
         timer = 0.0f;
         timer2 = 0.0f;
         timer3 = 0.0f;
@@ -316,6 +206,114 @@ public class Ingame : MonoBehaviour
         Gacha_Ball_Twice[8] = 50;
         Gacha_Ball_Twice[9] = 50;
 
+
+        Buy_Button = PlayerPrefs.GetInt("Buy_Button", Buy_Button);
+        Gacha_Tong_Num=PlayerPrefs.GetInt("Gacha_Tong_Num", Gacha_Tong_Num);
+        Click_Num=PlayerPrefs.GetInt("Click_Num", Click_Num);
+        Gacha_Tong_Twice= PlayerPrefs.GetInt("Gacha_Tong_Twice", Gacha_Tong_Twice);
+
+        Gacha_Tong_0_st=PlayerPrefs.GetInt("Gacha_Tong_0_st", Gacha_Tong_0_st);
+        Gacha_Tong_1_st = PlayerPrefs.GetInt("Gacha_Tong_1_st", Gacha_Tong_1_st);
+        Gacha_Tong_2_st = PlayerPrefs.GetInt("Gacha_Tong_2_st", Gacha_Tong_2_st);
+        Gacha_Tong_3_st = PlayerPrefs.GetInt("Gacha_Tong_3_st", Gacha_Tong_3_st);
+        Gacha_Tong_4_st = PlayerPrefs.GetInt("Gacha_Tong_4_st", Gacha_Tong_4_st);
+        Gacha_Tong_5_st = PlayerPrefs.GetInt("Gacha_Tong_5_st", Gacha_Tong_5_st);
+        Gacha_Tong_6_st = PlayerPrefs.GetInt("Gacha_Tong_6_st", Gacha_Tong_6_st);
+        Gacha_Tong_7_st = PlayerPrefs.GetInt("Gacha_Tong_7_st", Gacha_Tong_7_st);
+        Gacha_Tong_8_st = PlayerPrefs.GetInt("Gacha_Tong_8_st", Gacha_Tong_8_st);
+        Gacha_Tong_9_st = PlayerPrefs.GetInt("Gacha_Tong_9_st", Gacha_Tong_9_st);
+
+        Gacha_Automatic_Click=PlayerPrefs.GetInt("Gacha_Automatic_Click", Gacha_Automatic_Click);
+        Gacha_Automatic_System=PlayerPrefs.GetInt("Gacha_Automatic_System", Gacha_Automatic_System);
+
+        Gacha_Initial[0] = PlayerPrefs.GetInt("Gacha_Initial[0]", Gacha_Initial[0]);
+        Gacha_Initial[1] = PlayerPrefs.GetInt("Gacha_Initial[1]", Gacha_Initial[1]);
+        Gacha_Initial[2] = PlayerPrefs.GetInt("Gacha_Initial[2]", Gacha_Initial[2]);
+        Gacha_Initial[3] = PlayerPrefs.GetInt("Gacha_Initial[3]", Gacha_Initial[3]);
+        Gacha_Initial[4] = PlayerPrefs.GetInt("Gacha_Initial[4]", Gacha_Initial[4]);
+        Gacha_Initial[5] = PlayerPrefs.GetInt("Gacha_Initial[5]", Gacha_Initial[5]);
+        Gacha_Initial[6] = PlayerPrefs.GetInt("Gacha_Initial[6]", Gacha_Initial[6]);
+        Gacha_Initial[7] = PlayerPrefs.GetInt("Gacha_Initial[7]", Gacha_Initial[7]);
+        Gacha_Initial[8] = PlayerPrefs.GetInt("Gacha_Initial[8]", Gacha_Initial[8]);
+        Gacha_Initial[9] = PlayerPrefs.GetInt("Gacha_Initial[9]", Gacha_Initial[9]);
+
+        Gacha_Initial_Try[0]= PlayerPrefs.GetInt("Gacha_Initial_Try[0]", Gacha_Initial_Try[0]);
+        Gacha_Initial_Try[1] = PlayerPrefs.GetInt("Gacha_Initial_Try[1]", Gacha_Initial_Try[1]);
+        Gacha_Initial_Try[2] = PlayerPrefs.GetInt("Gacha_Initial_Try[2]", Gacha_Initial_Try[2]);
+        Gacha_Initial_Try[3] = PlayerPrefs.GetInt("Gacha_Initial_Try[3]", Gacha_Initial_Try[3]);
+        Gacha_Initial_Try[4] = PlayerPrefs.GetInt("Gacha_Initial_Try[4]", Gacha_Initial_Try[4]);
+        Gacha_Initial_Try[5] = PlayerPrefs.GetInt("Gacha_Initial_Try[5]", Gacha_Initial_Try[5]);
+        Gacha_Initial_Try[6] = PlayerPrefs.GetInt("Gacha_Initial_Try[6]", Gacha_Initial_Try[6]);
+        Gacha_Initial_Try[7] = PlayerPrefs.GetInt("Gacha_Initial_Try[7]", Gacha_Initial_Try[7]);
+        Gacha_Initial_Try[8] = PlayerPrefs.GetInt("Gacha_Initial_Try[8]", Gacha_Initial_Try[8]);
+        Gacha_Initial_Try[9] = PlayerPrefs.GetInt("Gacha_Initial_Try[9]", Gacha_Initial_Try[9]);
+
+
+        Gacha_Initial_Zero[0]= PlayerPrefs.GetInt("Gacha_Initial_Zero[0]", Gacha_Initial_Zero[0]);
+        Gacha_Initial_Zero[1] = PlayerPrefs.GetInt("Gacha_Initial_Zero[1]", Gacha_Initial_Zero[1]);
+        Gacha_Initial_Zero[2] = PlayerPrefs.GetInt("Gacha_Initial_Zero[2]", Gacha_Initial_Zero[2]);
+        Gacha_Initial_Zero[3] = PlayerPrefs.GetInt("Gacha_Initial_Zero[3]", Gacha_Initial_Zero[3]);
+        Gacha_Initial_Zero[4] = PlayerPrefs.GetInt("Gacha_Initial_Zero[4]", Gacha_Initial_Zero[4]);
+        Gacha_Initial_Zero[5] = PlayerPrefs.GetInt("Gacha_Initial_Zero[5]", Gacha_Initial_Zero[5]);
+        Gacha_Initial_Zero[6] = PlayerPrefs.GetInt("Gacha_Initial_Zero[6]", Gacha_Initial_Zero[6]);
+        Gacha_Initial_Zero[7] = PlayerPrefs.GetInt("Gacha_Initial_Zero[7]", Gacha_Initial_Zero[7]);
+        Gacha_Initial_Zero[8] = PlayerPrefs.GetInt("Gacha_Initial_Zero[8]", Gacha_Initial_Zero[8]);
+        Gacha_Initial_Zero[9] = PlayerPrefs.GetInt("Gacha_Initial_Zero[9]", Gacha_Initial_Zero[9]);
+
+        Gacha_Current_Level[0]= PlayerPrefs.GetInt("Gacha_Current_Level[0]", Gacha_Current_Level[0]);
+        Gacha_Current_Level[1] = PlayerPrefs.GetInt("Gacha_Current_Level[1]", Gacha_Current_Level[1]);
+        Gacha_Current_Level[2] = PlayerPrefs.GetInt("Gacha_Current_Level[2]", Gacha_Current_Level[2]);
+        Gacha_Current_Level[3] = PlayerPrefs.GetInt("Gacha_Current_Level[3]", Gacha_Current_Level[3]);
+        Gacha_Current_Level[4] = PlayerPrefs.GetInt("Gacha_Current_Level[4]", Gacha_Current_Level[4]);
+        Gacha_Current_Level[5] = PlayerPrefs.GetInt("Gacha_Current_Level[5]", Gacha_Current_Level[5]);
+        Gacha_Current_Level[6] = PlayerPrefs.GetInt("Gacha_Current_Level[6]", Gacha_Current_Level[6]);
+        Gacha_Current_Level[7] = PlayerPrefs.GetInt("Gacha_Current_Level[7]", Gacha_Current_Level[7]);
+        Gacha_Current_Level[8] = PlayerPrefs.GetInt("Gacha_Current_Level[8]", Gacha_Current_Level[8]);
+        Gacha_Current_Level[9] = PlayerPrefs.GetInt("Gacha_Current_Level[9]", Gacha_Current_Level[9]);
+
+        Gacha_Ball_Num[0]= PlayerPrefs.GetInt("Gacha_Ball_Num[0]", Gacha_Ball_Num[0]);
+        Gacha_Ball_Num[1] = PlayerPrefs.GetInt("Gacha_Ball_Num[1]", Gacha_Ball_Num[1]);
+        Gacha_Ball_Num[2] = PlayerPrefs.GetInt("Gacha_Ball_Num[2]", Gacha_Ball_Num[2]);
+        Gacha_Ball_Num[3] = PlayerPrefs.GetInt("Gacha_Ball_Num[3]", Gacha_Ball_Num[3]);
+        Gacha_Ball_Num[4] = PlayerPrefs.GetInt("Gacha_Ball_Num[4]", Gacha_Ball_Num[4]);
+        Gacha_Ball_Num[5] = PlayerPrefs.GetInt("Gacha_Ball_Num[5]", Gacha_Ball_Num[5]);
+        Gacha_Ball_Num[6] = PlayerPrefs.GetInt("Gacha_Ball_Num[6]", Gacha_Ball_Num[6]);
+        Gacha_Ball_Num[7] = PlayerPrefs.GetInt("Gacha_Ball_Num[7]", Gacha_Ball_Num[7]);
+        Gacha_Ball_Num[8] = PlayerPrefs.GetInt("Gacha_Ball_Num[8]", Gacha_Ball_Num[8]);
+        Gacha_Ball_Num[9] = PlayerPrefs.GetInt("Gacha_Ball_Num[9]", Gacha_Ball_Num[9]);
+
+        Gacha_Ball_Try[0]= PlayerPrefs.GetInt("Gacha_Ball_Try[0]", Gacha_Ball_Try[0]);
+        Gacha_Ball_Try[1] = PlayerPrefs.GetInt("Gacha_Ball_Try[1]", Gacha_Ball_Try[1]);
+        Gacha_Ball_Try[2] = PlayerPrefs.GetInt("Gacha_Ball_Try[2]", Gacha_Ball_Try[2]);
+        Gacha_Ball_Try[3] = PlayerPrefs.GetInt("Gacha_Ball_Try[3]", Gacha_Ball_Try[3]);
+        Gacha_Ball_Try[4] = PlayerPrefs.GetInt("Gacha_Ball_Try[4]", Gacha_Ball_Try[4]);
+        Gacha_Ball_Try[5] = PlayerPrefs.GetInt("Gacha_Ball_Try[5]", Gacha_Ball_Try[5]);
+        Gacha_Ball_Try[6] = PlayerPrefs.GetInt("Gacha_Ball_Try[6]", Gacha_Ball_Try[6]);
+        Gacha_Ball_Try[7] = PlayerPrefs.GetInt("Gacha_Ball_Try[7]", Gacha_Ball_Try[7]);
+        Gacha_Ball_Try[8] = PlayerPrefs.GetInt("Gacha_Ball_Try[8]", Gacha_Ball_Try[8]);
+        Gacha_Ball_Try[9] = PlayerPrefs.GetInt("Gacha_Ball_Try[9]", Gacha_Ball_Try[9]);
+
+        Gacha_Ball_Zero[0]= PlayerPrefs.GetInt("Gacha_Ball_Zero[0]", Gacha_Ball_Zero[0]);
+        Gacha_Ball_Zero[1] = PlayerPrefs.GetInt("Gacha_Ball_Zero[1]", Gacha_Ball_Zero[1]);
+        Gacha_Ball_Zero[2] = PlayerPrefs.GetInt("Gacha_Ball_Zero[2]", Gacha_Ball_Zero[2]);
+        Gacha_Ball_Zero[3] = PlayerPrefs.GetInt("Gacha_Ball_Zero[3]", Gacha_Ball_Zero[3]);
+        Gacha_Ball_Zero[4] = PlayerPrefs.GetInt("Gacha_Ball_Zero[4]", Gacha_Ball_Zero[4]);
+        Gacha_Ball_Zero[5] = PlayerPrefs.GetInt("Gacha_Ball_Zero[5]", Gacha_Ball_Zero[5]);
+        Gacha_Ball_Zero[6] = PlayerPrefs.GetInt("Gacha_Ball_Zero[6]", Gacha_Ball_Zero[6]);
+        Gacha_Ball_Zero[7] = PlayerPrefs.GetInt("Gacha_Ball_Zero[7]", Gacha_Ball_Zero[7]);
+        Gacha_Ball_Zero[8] = PlayerPrefs.GetInt("Gacha_Ball_Zero[8]", Gacha_Ball_Zero[8]);
+        Gacha_Ball_Zero[9] = PlayerPrefs.GetInt("Gacha_Ball_Zero[9]", Gacha_Ball_Zero[9]);
+
+        Gacha_Ball_Twice[0]= PlayerPrefs.GetInt("Gacha_Ball_Twice[0]", Gacha_Ball_Twice[0]);
+        Gacha_Ball_Twice[1] = PlayerPrefs.GetInt("Gacha_Ball_Twice[1]", Gacha_Ball_Twice[1]);
+        Gacha_Ball_Twice[2] = PlayerPrefs.GetInt("Gacha_Ball_Twice[2]", Gacha_Ball_Twice[2]);
+        Gacha_Ball_Twice[3] = PlayerPrefs.GetInt("Gacha_Ball_Twice[3]", Gacha_Ball_Twice[3]);
+        Gacha_Ball_Twice[4] = PlayerPrefs.GetInt("Gacha_Ball_Twice[4]", Gacha_Ball_Twice[4]);
+        Gacha_Ball_Twice[5] = PlayerPrefs.GetInt("Gacha_Ball_Twice[5]", Gacha_Ball_Twice[5]);
+        Gacha_Ball_Twice[6] = PlayerPrefs.GetInt("Gacha_Ball_Twice[6]", Gacha_Ball_Twice[6]);
+        Gacha_Ball_Twice[7] = PlayerPrefs.GetInt("Gacha_Ball_Twice[7]", Gacha_Ball_Twice[7]);
+        Gacha_Ball_Twice[8] = PlayerPrefs.GetInt("Gacha_Ball_Twice[8]", Gacha_Ball_Twice[8]);
+        Gacha_Ball_Twice[9] = PlayerPrefs.GetInt("Gacha_Ball_Twice[9]", Gacha_Ball_Twice[9]);
     }
 
     // Update is called once per frame
