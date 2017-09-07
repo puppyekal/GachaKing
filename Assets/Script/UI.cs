@@ -80,10 +80,6 @@ public class UI : MonoBehaviour {
         {
             Active_Buy.interactable = false;
         }
-        if (Text_Event.Passive_Skill == 9) 
-        {
-            Passive_Buy.interactable = false;
-        }
         if (Ingame.Gacha_Tong_Num == 10) 
         {
             Gacha_Buy.interactable = false;
@@ -99,7 +95,6 @@ public class UI : MonoBehaviour {
         Gacha_Num.fillAmount = temp / 10;
         Gacha_Level.fillAmount = (float)Text_Event.Gacha_Level / 9;
         Active_Guage.fillAmount = (float)Text_Event.Active_Skill / 9;
-        Passive_Guage.fillAmount = (float)Text_Event.Passive_Skill / 9;
     }
     //메뉴
     public void Menu_Set_True()

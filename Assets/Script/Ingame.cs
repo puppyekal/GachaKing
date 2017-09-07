@@ -213,7 +213,6 @@ public class Ingame : MonoBehaviour
     void Update()
     {
         Gacha_Tong_Level = Text_Event.Gacha_Level;
-        Gacha_Tong_Twice = Text_Event.Passive_Skill;
 
         //Text_Event.Gacha_Level;
         Gacha_Tong_Initial();
