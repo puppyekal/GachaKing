@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Inventory_Home : MonoBehaviour {
+public class Home : MonoBehaviour {
 
     public Button Store_item1;
     public Button Store_item2;
@@ -23,8 +23,11 @@ public class Inventory_Home : MonoBehaviour {
 
     public Text Money_Text;
 
+    static public int Item_Cnt = 0;
+
     // Use this for initialization
     void Start() {
+        //업적 해금 전까지 버튼 비활성화
         Store_item1.interactable = false;
         Store_item2.interactable = false;
         Store_item3.interactable = false;
@@ -33,6 +36,8 @@ public class Inventory_Home : MonoBehaviour {
         Store_item6.interactable = false;
         Store_item7.interactable = false;
 
+    
+        //상점에서 구매 전까지 버튼 미생성 
         Inventory_Item1.SetActive(false);
         Inventory_Item2.SetActive(false);
         Inventory_Item3.SetActive(false);
@@ -44,7 +49,7 @@ public class Inventory_Home : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-
+        //업적 해금시 버튼 활성화
         if (Achivement.Achivement_EX_cnt == 1)
         {
             Store_item1.interactable = true;
@@ -71,6 +76,7 @@ public class Inventory_Home : MonoBehaviour {
             Inventory_Item1.SetActive(true);
             Text_Event.Money -= 33333;
             Store_item1.interactable = false;
+            Item_Cnt++;
         }
     }
     public void Item2_Button()
@@ -84,6 +90,7 @@ public class Inventory_Home : MonoBehaviour {
             Inventory_Item2.SetActive(true);
             Text_Event.Money -= 33333;
             Store_item2.interactable = false;
+            Item_Cnt++;
         }
     }
     public void Item3_Button()
@@ -97,6 +104,7 @@ public class Inventory_Home : MonoBehaviour {
             Inventory_Item3.SetActive(true);
             Text_Event.Money -= 33333;
             Store_item3.interactable = false;
+            Item_Cnt++;
         }
     }
     public void Item4_Button()
@@ -110,6 +118,7 @@ public class Inventory_Home : MonoBehaviour {
             Inventory_Item4.SetActive(true);
             Text_Event.Money -= 150000;
             Store_item4.interactable = false;
+            Item_Cnt++;
         }
     }
     public void Item5_Button()
@@ -123,6 +132,7 @@ public class Inventory_Home : MonoBehaviour {
             Inventory_Item5.SetActive(true);
             Text_Event.Money -= 4200;
             Store_item5.interactable = false;
+            Item_Cnt++;
         }
     }
     public void Item6_Button()
@@ -136,6 +146,7 @@ public class Inventory_Home : MonoBehaviour {
             Inventory_Item6.SetActive(true);
             Text_Event.Money -= 100000;
             Store_item6.interactable = false;
+            Item_Cnt++;
         }
     }
     public void Item7_Button()
@@ -149,6 +160,7 @@ public class Inventory_Home : MonoBehaviour {
             Inventory_Item7.SetActive(true);
             Text_Event.Money -= 500000;
             Store_item7.interactable = false;
+            Item_Cnt++;
         }
     }
 }

@@ -21,12 +21,10 @@ public class UI : MonoBehaviour {
     public Image Gacha_Num;//가챠통 수량 게이지
     public Image Gacha_Level;//가챠통 레벨 게이지
     public Image Active_Guage;
-    public Image Passive_Guage;
 
     public Button Gacha_Upgrade;
     public Button Gacha_Buy;
     public Button Active_Buy;
-    public Button Passive_Buy;
 
     int Check = 0;//0=메인, 1=업적, 2=상점, 3=인벤토리
     int Menu_Check = 0;//메뉴 확인
@@ -68,28 +66,29 @@ public class UI : MonoBehaviour {
                     Inventory.SetActive(false);
                     Check = 0;
                 }
-
             }
         }
-
+        //가챠통 만렙 찍으면 버튼 비활성화
         if (Text_Event.Gacha_Level == 9) 
         {
             Gacha_Upgrade.interactable = false;
         }
+        //액티브 만렙 찍으면 버튼 비활성화
         if (Text_Event.Active_Skill == 9) 
         {
             Active_Buy.interactable = false;
         }
+        //가챠통 개수 10개면 버튼 비활성화
         if (Ingame.Gacha_Tong_Num == 10) 
         {
             Gacha_Buy.interactable = false;
         }
-        else
+        else//다시 활성화
         {
             Gacha_Buy.interactable = true;
         }
     }
-
+    //게이지 채우는 코드 float으로 해야함
     public void SetGuage(float temp)
     {
         Gacha_Num.fillAmount = temp / 10;
@@ -231,11 +230,6 @@ public class UI : MonoBehaviour {
         Check = 0;
     }
     public void Active_Skill()
-    {
-        Store.SetActive(false);
-        Check = 0;
-    }
-    public void Passive_Skill()
     {
         Store.SetActive(false);
         Check = 0;

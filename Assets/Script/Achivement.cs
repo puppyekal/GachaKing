@@ -7,8 +7,7 @@ public class Achivement : MonoBehaviour
 {
     public Text Achivement_Class_Text;
     public Text Achivement_Class_Information;
-
-
+    
 
     public Text Achivement_EX_text;
     public Image Achivement_EX_Image;
@@ -53,10 +52,15 @@ public class Achivement : MonoBehaviour
     static public int Achivement_EX_cnt = 0;
     static public int Achivement_Time_EX_cnt = 0;
 
+    static public int Click_Cnt = 0;
+    static public int Buy_Item = 0;
     static public float Play_Time = 0f;
+    static public float Play_Time_NonStop = 0f;
+
     // Use this for initialization
     void Start()
     {
+        Play_Time_NonStop = 0f;
     }
 
     // Update is called once per frame
@@ -67,13 +71,69 @@ public class Achivement : MonoBehaviour
         Class(Achivement_Class);
 
         Play_Time += Time.deltaTime;
+        Play_Time_NonStop += Time.deltaTime;
 
         Play_Time_Ach(Play_Time);
+
+        Click_Cnt_Func(Ingame.Click_Num);
+        Buy_Item_Func(Home.Item_Cnt); 
     }
-    
+
+    public void Click_Cnt_Func(int Click)
+    {
+        if(Click<=100000)
+        {
+
+        }
+        else if(Click<=500000)
+        {
+
+        }
+        else if(Click<=1000000)
+        {
+
+        }
+        else if(Click<=5000000)
+        {
+
+        }
+
+        if(Click==100000)
+        {
+
+        }
+        if(Click==500000)
+        {
+
+        }
+        if(Click==1000000)
+        {
+
+        }
+        if(Click==5000000)
+        {
+
+        }
+    }
+
+    public void Buy_Item_Func(int Item_Cnt)
+    {
+        if (Item_Cnt==1)
+        {
+
+        }
+        if (Item_Cnt==5)
+        {
+
+        }
+        if(Item_Cnt==10)
+        {
+
+        }
+    }
+
     public void Acivement_EX(int click)
     {
-        
         if (click <= 30) 
         {
             Achivement_EX_text.GetComponent<Text>().text = click + " / 30";
@@ -93,10 +153,10 @@ public class Achivement : MonoBehaviour
         }
         if ((int)time == 15) 
         {
-            Debug.Log("--------------------");
             Achivement_Time_EX_cnt = 1;
         }
     }
+
     public void Class(int temp)
     {
         switch(temp)

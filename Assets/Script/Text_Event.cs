@@ -112,6 +112,8 @@ public class Text_Event : MonoBehaviour
                 break;
         }
     }
+    //내가 무슨 생각을 하고 코드를 이따위로 짰었을까
+    //소지한 돈보다 구매가가 큰경우 구매 못하게 막음
 
     public void Store_Gacha_Buy()//가챠 구매시 돈 감소
     {
