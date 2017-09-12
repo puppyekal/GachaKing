@@ -7,6 +7,9 @@ public class Ingame : MonoBehaviour
 {
     public Sprite[] Gacha_Tong_Image = new Sprite[10];
 
+
+    static public int Loading;
+
     static public int Buy_Button;
     static public int Gacha_Tong_Num = 0;
     static public int Click_Num = 0;
@@ -113,6 +116,8 @@ public class Ingame : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        Loading = 1;
+
         timer = 0.0f;
         timer2 = 0.0f;
         timer3 = 0.0f;
@@ -317,12 +322,16 @@ public class Ingame : MonoBehaviour
         Gacha_Ball_Twice[8] = PlayerPrefs.GetInt("Gacha_Ball_Twice[8]", Gacha_Ball_Twice[8]);
         Gacha_Ball_Twice[9] = PlayerPrefs.GetInt("Gacha_Ball_Twice[9]", Gacha_Ball_Twice[9]);
 
-        Gacha_Tong_Initial_Now();
+       
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (Loading == 1) {
+            Gacha_Tong_Initial_Now();
+            Loading = 0;
+        }
         Gacha_Tong_Level = Text_Event.Gacha_Level;
 
         //Text_Event.Gacha_Level;
