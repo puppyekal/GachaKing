@@ -32,7 +32,7 @@ public class Text_Event : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        Money = PlayerPrefs.GetInt("Money", Money);
+        
     }
 
     // Update is called once per frame

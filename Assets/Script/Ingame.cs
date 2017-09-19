@@ -14,8 +14,6 @@ public class Ingame : MonoBehaviour
     static public int Gacha_Tong_Num = 0;
     static public int Click_Num = 0;
     public int Gacha_Tong_Twice = 1;
-
-    public int Gacha_Tong_Level = 1;
     
 
     //가챠통 남은수량%
@@ -225,13 +223,14 @@ public class Ingame : MonoBehaviour
         Gacha_Current_Level[9] = 0;
 
         Text_Event.Money = PlayerPrefs.GetInt("Money", Text_Event.Money);
+        Text_Event.Gacha_Level = PlayerPrefs.GetInt("Gacha_Level", Text_Event.Gacha_Level);
 
         Buy_Button = PlayerPrefs.GetInt("Buy_Button", Buy_Button);
         Gacha_Tong_Num=PlayerPrefs.GetInt("Gacha_Tong_Num", Gacha_Tong_Num);
         Click_Num=PlayerPrefs.GetInt("Click_Num", Click_Num);
         Gacha_Tong_Twice= PlayerPrefs.GetInt("Gacha_Tong_Twice", Gacha_Tong_Twice);
 
-        Gacha_Tong_Level =  PlayerPrefs.GetInt("Gacha_Tong_Level", Gacha_Tong_Level);
+        Text_Event.Gacha_Level =  PlayerPrefs.GetInt("Text_Event.Gacha_Level", Text_Event.Gacha_Level);
 
         Gacha_Tong_0_st = PlayerPrefs.GetInt("Gacha_Tong_0_st", Gacha_Tong_0_st);
         Gacha_Tong_1_st = PlayerPrefs.GetInt("Gacha_Tong_1_st", Gacha_Tong_1_st);
@@ -356,7 +355,7 @@ public class Ingame : MonoBehaviour
     void Update()
     {
      
-        Gacha_Tong_Level = Text_Event.Gacha_Level;
+        Text_Event.Gacha_Level = Text_Event.Gacha_Level;
 
         //Text_Event.Gacha_Level;
         Gacha_Tong_Initial();
@@ -653,7 +652,7 @@ public class Ingame : MonoBehaviour
                 PlayerPrefs.SetInt("Gacha_Tong_Num", Gacha_Tong_Num);
                 PlayerPrefs.SetInt("Click_Num", Click_Num);
                 PlayerPrefs.SetInt("Gacha_Tong_Twice", Gacha_Tong_Twice);
-                PlayerPrefs.SetInt("Gacha_Tong_Level", Gacha_Tong_Level);
+                PlayerPrefs.SetInt("Text_Event.Gacha_Level", Text_Event.Gacha_Level);
   
                 PlayerPrefs.SetInt("Gacha_Tong_0_st", Gacha_Tong_0_st);
                 PlayerPrefs.SetInt("Gacha_Tong_1_st", Gacha_Tong_1_st);
@@ -770,6 +769,7 @@ public class Ingame : MonoBehaviour
                 PlayerPrefs.SetInt("Gacha_Ball_Twice[9]", Gacha_Ball_Twice[9]);
 
                 PlayerPrefs.SetInt("Money", Text_Event.Money);
+                PlayerPrefs.GetInt("Gacha_Level", Text_Event.Gacha_Level);
                 break;
 
         }
@@ -781,7 +781,7 @@ public class Ingame : MonoBehaviour
         {
             for (int i = 1; i <= 10; i++)
             {
-                if (Gacha_Tong_Level == i)
+                if (Text_Event.Gacha_Level == i)
                 {
                     Gacha_Current_Num[0] = Gacha_Ball_Num[i - 1];
                     Gacha_Current_Level[0] = i-1;
@@ -797,7 +797,7 @@ public class Ingame : MonoBehaviour
         {
             for (int i = 1; i <= 10; i++)
             {
-                if (Gacha_Tong_Level == i)
+                if (Text_Event.Gacha_Level == i)
                 {
                     Gacha_Current_Level[1] = i - 1;
                     Gacha_Current_Num[1] = Gacha_Ball_Num[i - 1];
@@ -813,7 +813,7 @@ public class Ingame : MonoBehaviour
         {
             for (int i = 1; i <= 10; i++)
             {
-                if (Gacha_Tong_Level == i)
+                if (Text_Event.Gacha_Level == i)
                 {
                     Gacha_Current_Level[2] = i - 1;
                     Gacha_Current_Num[2] = Gacha_Ball_Num[i - 1];
@@ -829,7 +829,7 @@ public class Ingame : MonoBehaviour
         {
             for (int i = 1; i <= 10; i++)
             {
-                if (Gacha_Tong_Level == i)
+                if (Text_Event.Gacha_Level == i)
                 {
                     Gacha_Current_Level[3] = i - 1;
                     Gacha_Current_Num[3] = Gacha_Ball_Num[i - 1];
@@ -845,7 +845,7 @@ public class Ingame : MonoBehaviour
         {
             for (int i = 1; i <= 10; i++)
             {
-                if (Gacha_Tong_Level == i)
+                if (Text_Event.Gacha_Level == i)
                 {
                     Gacha_Current_Level[4] = i - 1;
                     Gacha_Current_Num[4] = Gacha_Ball_Num[i - 1];
@@ -861,7 +861,7 @@ public class Ingame : MonoBehaviour
         {
             for (int i = 1; i <= 10; i++)
             {
-                if (Gacha_Tong_Level == i)
+                if (Text_Event.Gacha_Level == i)
                 {
                     Gacha_Current_Level[5] = i - 1;
                     Gacha_Current_Num[5] = Gacha_Ball_Num[i - 1];
@@ -877,7 +877,7 @@ public class Ingame : MonoBehaviour
         {
             for (int i = 1; i <= 10; i++)
             {
-                if (Gacha_Tong_Level == i)
+                if (Text_Event.Gacha_Level == i)
                 {
                     Gacha_Current_Level[6] = i - 1;
                     Gacha_Current_Num[6] = Gacha_Ball_Num[i - 1];
@@ -893,7 +893,7 @@ public class Ingame : MonoBehaviour
         {
             for (int i = 1; i <= 10; i++)
             {
-                if (Gacha_Tong_Level == i)
+                if (Text_Event.Gacha_Level == i)
                 {
                     Gacha_Current_Level[7] = i - 1;
                     Gacha_Current_Num[7] = Gacha_Ball_Num[i - 1];
@@ -909,7 +909,7 @@ public class Ingame : MonoBehaviour
         {
             for (int i = 1; i <= 10; i++)
             {
-                if (Gacha_Tong_Level == i)
+                if (Text_Event.Gacha_Level == i)
                 {
                     Gacha_Current_Level[8] = i - 1;
                     Gacha_Current_Num[8] = Gacha_Ball_Num[i - 1];
@@ -925,7 +925,7 @@ public class Ingame : MonoBehaviour
         {
             for (int i = 1; i <= 10; i++)
             {
-                if (Gacha_Tong_Level == i)
+                if (Text_Event.Gacha_Level == i)
                 {
                     Gacha_Current_Level[9] = i - 1;
                     Gacha_Current_Num[9] = Gacha_Ball_Num[i - 1];
