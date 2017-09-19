@@ -28,10 +28,11 @@ public class Text_Event : MonoBehaviour
 
     int Gacha_Price_Check = 0;//레벨에따른 판매가 변경 확인에 대한 체크
     long[] Gacha_Price = new long[] { 200, 800, 3200, 12800, 51200, 204000, 819200, 3276800, 13107200 };
-    //long[] Acive_Price = new long[] { 500000, 1000000, 5000000, 10000000, 50000000, 100000000, 500000000, 1000000000, 5000000000 };
+    long[] Acive_Price = new long[] { 1, 200000, 400000, 600000, 800000, 1000000, 3000000, 5000000, 7000000, 9000000 };
     // Use this for initialization
     void Start()
     {
+        Money = PlayerPrefs.GetInt("Money", Money);
     }
 
     // Update is called once per frame

@@ -224,6 +224,8 @@ public class Ingame : MonoBehaviour
         Gacha_Current_Level[8] = 0;
         Gacha_Current_Level[9] = 0;
 
+        Text_Event.Money = PlayerPrefs.GetInt("Money", Text_Event.Money);
+
         Buy_Button = PlayerPrefs.GetInt("Buy_Button", Buy_Button);
         Gacha_Tong_Num=PlayerPrefs.GetInt("Gacha_Tong_Num", Gacha_Tong_Num);
         Click_Num=PlayerPrefs.GetInt("Click_Num", Click_Num);
@@ -231,7 +233,7 @@ public class Ingame : MonoBehaviour
 
         Gacha_Tong_Level =  PlayerPrefs.GetInt("Gacha_Tong_Level", Gacha_Tong_Level);
 
-        Gacha_Tong_0_st =PlayerPrefs.GetInt("Gacha_Tong_0_st", Gacha_Tong_0_st);
+        Gacha_Tong_0_st = PlayerPrefs.GetInt("Gacha_Tong_0_st", Gacha_Tong_0_st);
         Gacha_Tong_1_st = PlayerPrefs.GetInt("Gacha_Tong_1_st", Gacha_Tong_1_st);
         Gacha_Tong_2_st = PlayerPrefs.GetInt("Gacha_Tong_2_st", Gacha_Tong_2_st);
         Gacha_Tong_3_st = PlayerPrefs.GetInt("Gacha_Tong_3_st", Gacha_Tong_3_st);
@@ -766,6 +768,8 @@ public class Ingame : MonoBehaviour
                 PlayerPrefs.SetInt("Gacha_Ball_Twice[7]", Gacha_Ball_Twice[7]);
                 PlayerPrefs.SetInt("Gacha_Ball_Twice[8]", Gacha_Ball_Twice[8]);
                 PlayerPrefs.SetInt("Gacha_Ball_Twice[9]", Gacha_Ball_Twice[9]);
+
+                PlayerPrefs.SetInt("Money", Text_Event.Money);
                 break;
 
         }
@@ -1289,7 +1293,7 @@ public class Ingame : MonoBehaviour
         }
         if (Gacha_Tong_7_st == 1)
         {
-            Text_Event.Money = Text_Event.Money - Gacha_Initial_Try[7];
+            
             int Gacha_Ball;
             Gacha_Ball = Random.Range(0, Gacha_Initial[7]);
             if (Gacha_Ball != 0)
