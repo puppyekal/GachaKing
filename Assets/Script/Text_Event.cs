@@ -27,8 +27,8 @@ public class Text_Event : MonoBehaviour
     public static int Active_Skill = 0;
 
     int Gacha_Price_Check = 0;//레벨에따른 판매가 변경 확인에 대한 체크
-    long[] Gacha_Price = new long[] { 20000, 80000, 320000, 1280000, 5120000, 20480000, 81920000, 327680000, 1310720000 };
-    long[] Acive_Price = new long[] { 500000, 1000000, 5000000, 10000000, 50000000, 100000000, 500000000, 1000000000, 5000000000 };
+    long[] Gacha_Price = new long[] { 200, 800, 3200, 12800, 51200, 204000, 819200, 3276800, 13107200 };
+    //long[] Acive_Price = new long[] { 500000, 1000000, 5000000, 10000000, 50000000, 100000000, 500000000, 1000000000, 5000000000 };
     // Use this for initialization
     void Start()
     {
