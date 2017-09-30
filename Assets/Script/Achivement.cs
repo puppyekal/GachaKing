@@ -143,6 +143,11 @@ public class Achivement : MonoBehaviour
         {
             Achivement_EX_cnt = 1;
         }
+        if (click >= 30) {
+            Achivement_EX_text.GetComponent<Text>().text = "30" + " / 30";
+            Achivement_EX_Image.fillAmount = (float)click / 30;
+            Achivement_EX_cnt = 1;
+        }
     }
     public void Play_Time_Ach(float time)
     {
@@ -153,6 +158,9 @@ public class Achivement : MonoBehaviour
         }
         if ((int)time == 15) 
         {
+            Achivement_Time_EX_cnt = 1;
+        }
+        if ((int)time > 15) {
             Achivement_Time_EX_cnt = 1;
         }
     }

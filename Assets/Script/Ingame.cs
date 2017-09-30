@@ -222,6 +222,7 @@ public class Ingame : MonoBehaviour
         Gacha_Current_Level[8] = 0;
         Gacha_Current_Level[9] = 0;
 
+        Achivement.Play_Time = PlayerPrefs.GetFloat("Play_Time", Achivement.Play_Time);
         Text_Event.Money = PlayerPrefs.GetInt("Money", Text_Event.Money);
         Text_Event.Gacha_Level = PlayerPrefs.GetInt("Gacha_Level", Text_Event.Gacha_Level);
 
@@ -769,7 +770,9 @@ public class Ingame : MonoBehaviour
                 PlayerPrefs.SetInt("Gacha_Ball_Twice[9]", Gacha_Ball_Twice[9]);
 
                 PlayerPrefs.SetInt("Money", Text_Event.Money);
-                PlayerPrefs.GetInt("Gacha_Level", Text_Event.Gacha_Level);
+                PlayerPrefs.SetInt("Gacha_Level", Text_Event.Gacha_Level);
+
+                PlayerPrefs.SetFloat("Play_Time", Achivement.Play_Time);
                 break;
 
         }
