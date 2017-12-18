@@ -12,14 +12,19 @@ public class Home : MonoBehaviour {
     public Button Store_item5;
     public Button Store_item6;
     public Button Store_item7;
+    public Button Store_item8;
+    public Button Store_item9;
+    public Button Store_item10;
+    public Button Store_item11;
+    public Button Store_item12;
+    public Button Store_item13;
+    public Button Store_item14;
+    public Button Store_item15;
+    public Button Store_item16;
 
     public GameObject Inventory_Item1;
     public GameObject Inventory_Item2;
     public GameObject Inventory_Item3;
-    public GameObject Inventory_Item4;
-    public GameObject Inventory_Item5;
-    public GameObject Inventory_Item6;
-    public GameObject Inventory_Item7;
 
     public Text Money_Text;
 
@@ -27,6 +32,7 @@ public class Home : MonoBehaviour {
 
     // Use this for initialization
     void Start() {
+        /*
         //업적 해금 전까지 버튼 비활성화
         Store_item1.interactable = false;
         Store_item2.interactable = false;
@@ -45,11 +51,13 @@ public class Home : MonoBehaviour {
         Inventory_Item5.SetActive(false);
         Inventory_Item6.SetActive(false);
         Inventory_Item7.SetActive(false);
+        */
     }
 
     // Update is called once per frame
     void Update() {
         //업적 해금시 버튼 활성화
+        /*
         if (Achivement.Achivement_EX_cnt == 1)
         {
             Store_item1.interactable = true;
@@ -62,9 +70,64 @@ public class Home : MonoBehaviour {
 
             Achivement.Achivement_EX_cnt = 2;
         }
-
+        */
         Money_Text.GetComponent<Text>().text = "" + Text_Event.Money;
     }
+    public void PressKey(int nKey)
+    {
+        switch (nKey)
+        {
+            case 1:
+                Debug.Log(1);
+                break;
+            case 2:
+                Debug.Log(2);
+                break;
+            case 3:
+                Debug.Log(3);
+                break;
+            case 4:
+                Debug.Log(4);
+                break;
+            case 5:
+                Debug.Log(5);
+                break;
+            case 6:
+                Debug.Log(6);
+                break;
+            case 7:
+                Debug.Log(7);
+                break;
+            case 8:
+                Debug.Log(8);
+                break;
+            case 9:
+                Debug.Log(9);
+                break;
+            case 10:
+                Debug.Log(10);
+                break;
+            case 11:
+                Debug.Log(11);
+                break;
+            case 12:
+                Debug.Log(12);
+                break;
+            case 13:
+                Debug.Log(13);
+                break;
+            case 14:
+                Debug.Log(14);
+                break;
+            case 15:
+                Debug.Log(15);
+                break;
+            case 16:
+                Debug.Log(16);
+                break;
+        }
+    }
+    /*
     public void Item1_Button()
     {
         if (Text_Event.Money - 33333 < 0)
@@ -163,4 +226,6 @@ public class Home : MonoBehaviour {
             Item_Cnt++;
         }
     }
+    */
+
 }
