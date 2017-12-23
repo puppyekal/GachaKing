@@ -22,13 +22,14 @@ public class Home : MonoBehaviour {
     public Button Store_item15;
     public Button Store_item16;
 
-    public GameObject Inventory_Item1;
-    public GameObject Inventory_Item2;
-    public GameObject Inventory_Item3;
+    public GameObject[] Inventory_Item = new GameObject[21];
+    public int[] Inventory_Item_data = new int[21];
+    public Sprite[] Store_item_Image = new Sprite[16];
 
     public Text Money_Text;
 
-    static public int Item_Cnt = 0;
+    static public int Item_Cnt = -1;
+    public int s;//상점에서 눌린 번호
 
     // Use this for initialization
     void Start() {
@@ -52,10 +53,15 @@ public class Home : MonoBehaviour {
         Inventory_Item6.SetActive(false);
         Inventory_Item7.SetActive(false);
         */
+       
     }
 
     // Update is called once per frame
     void Update() {
+        s = -1;
+        for (int i = 0; i < 21; i++) {
+            Inventory_Item_data[i] = -1;
+        }
         //업적 해금시 버튼 활성화
         /*
         if (Achivement.Achivement_EX_cnt == 1)
@@ -77,53 +83,133 @@ public class Home : MonoBehaviour {
     {
         switch (nKey)
         {
+         
             case 1:
-                Debug.Log(1);
+                s = 1;
+                Item_Cnt++;
+                Inventory_Item[Item_Cnt].GetComponent<Image>().sprite = Store_item_Image[s-1];
+                Inventory_Item_data[Item_Cnt] = s-1;
+                Debug.Log(Inventory_Item_data[Item_Cnt]+1);
+                Inventory_Item[Item_Cnt].SetActive(true);
                 break;
             case 2:
-                Debug.Log(2);
+                s = 2;
+                Item_Cnt++;
+                Inventory_Item[Item_Cnt].GetComponent<Image>().sprite = Store_item_Image[s - 1];
+                Inventory_Item_data[Item_Cnt] = s - 1;
+                Inventory_Item[Item_Cnt].SetActive(true);
+                Debug.Log(Inventory_Item_data[Item_Cnt] + 1);
                 break;
             case 3:
-                Debug.Log(3);
+                s = 3;
+                Item_Cnt++;
+                Inventory_Item[Item_Cnt].GetComponent<Image>().sprite = Store_item_Image[s - 1];
+                Inventory_Item_data[Item_Cnt] = s - 1;
+                Inventory_Item[Item_Cnt].SetActive(true);
+                Debug.Log(Inventory_Item_data[Item_Cnt] + 1);
                 break;
             case 4:
-                Debug.Log(4);
+                s = 4;
+                Item_Cnt++;
+                Inventory_Item[Item_Cnt].GetComponent<Image>().sprite = Store_item_Image[s - 1];
+                Inventory_Item_data[Item_Cnt] = s - 1;
+                Inventory_Item[Item_Cnt].SetActive(true);
+                Debug.Log(Inventory_Item_data[Item_Cnt] + 1);
                 break;
             case 5:
-                Debug.Log(5);
+                s = 5;
+                Item_Cnt++;
+                Inventory_Item[Item_Cnt].GetComponent<Image>().sprite = Store_item_Image[s - 1];
+                Inventory_Item_data[Item_Cnt] = s - 1;
+                Inventory_Item[Item_Cnt].SetActive(true); Debug.Log(Inventory_Item_data[Item_Cnt] + 1);
                 break;
             case 6:
-                Debug.Log(6);
+                s = 6;
+                Item_Cnt++;
+                Inventory_Item[Item_Cnt].GetComponent<Image>().sprite = Store_item_Image[s - 1];
+                Inventory_Item_data[Item_Cnt] = s - 1;
+                Inventory_Item[Item_Cnt].SetActive(true);
+                Debug.Log(Inventory_Item_data[Item_Cnt] + 1);
                 break;
             case 7:
-                Debug.Log(7);
+                s = 7;
+                Item_Cnt++;
+                Inventory_Item[Item_Cnt].GetComponent<Image>().sprite = Store_item_Image[s - 1];
+                Inventory_Item_data[Item_Cnt] = s - 1;
+                Inventory_Item[Item_Cnt].SetActive(true);
+                Debug.Log(Inventory_Item_data[Item_Cnt] + 1);
                 break;
             case 8:
-                Debug.Log(8);
+                s = 8;
+                Item_Cnt++;
+                Inventory_Item[Item_Cnt].GetComponent<Image>().sprite = Store_item_Image[s - 1];
+                Inventory_Item_data[Item_Cnt] = s - 1;
+                Inventory_Item[Item_Cnt].SetActive(true);
+                Debug.Log(Inventory_Item_data[Item_Cnt] + 1);
                 break;
             case 9:
-                Debug.Log(9);
+                s = 9;
+                Item_Cnt++;
+                Inventory_Item[Item_Cnt].GetComponent<Image>().sprite = Store_item_Image[s - 1];
+                Inventory_Item_data[Item_Cnt] = s - 1;
+                Inventory_Item[Item_Cnt].SetActive(true);
+                Debug.Log(Inventory_Item_data[Item_Cnt] + 1);
                 break;
             case 10:
-                Debug.Log(10);
+                s = 10;
+                Item_Cnt++;
+                Inventory_Item[Item_Cnt].GetComponent<Image>().sprite = Store_item_Image[s - 1];
+                Inventory_Item_data[Item_Cnt] = s - 1;
+                Inventory_Item[Item_Cnt].SetActive(true);
+                Debug.Log(Inventory_Item_data[Item_Cnt] + 1);
                 break;
             case 11:
-                Debug.Log(11);
+                s = 11;
+                Item_Cnt++;
+                Inventory_Item[Item_Cnt].GetComponent<Image>().sprite = Store_item_Image[s - 1];
+                Inventory_Item_data[Item_Cnt] = s - 1;
+                Inventory_Item[Item_Cnt].SetActive(true);
+                Debug.Log(Inventory_Item_data[Item_Cnt] + 1);
                 break;
             case 12:
-                Debug.Log(12);
+                s = 12;
+                Item_Cnt++;
+                Inventory_Item[Item_Cnt].GetComponent<Image>().sprite = Store_item_Image[s - 1];
+                Inventory_Item_data[Item_Cnt] = s - 1;
+                Inventory_Item[Item_Cnt].SetActive(true);
+                Debug.Log(Inventory_Item_data[Item_Cnt] + 1);
                 break;
             case 13:
-                Debug.Log(13);
+                s = 13;
+                Item_Cnt++;
+                Inventory_Item[Item_Cnt].GetComponent<Image>().sprite = Store_item_Image[s - 1];
+                Inventory_Item_data[Item_Cnt] = s - 1;
+                Inventory_Item[Item_Cnt].SetActive(true);
+                Debug.Log(Inventory_Item_data[Item_Cnt] + 1);
                 break;
             case 14:
-                Debug.Log(14);
+                s = 14;
+                Item_Cnt++;
+                Inventory_Item[Item_Cnt].GetComponent<Image>().sprite = Store_item_Image[s - 1];
+                Inventory_Item_data[Item_Cnt] = s - 1;
+                Inventory_Item[Item_Cnt].SetActive(true);
+                Debug.Log(Inventory_Item_data[Item_Cnt] + 1);
                 break;
             case 15:
-                Debug.Log(15);
+                s = 15;
+                Item_Cnt++;
+                Inventory_Item[Item_Cnt].GetComponent<Image>().sprite = Store_item_Image[s - 1];
+                Inventory_Item_data[Item_Cnt] = s - 1;
+                Inventory_Item[Item_Cnt].SetActive(true);
+                Debug.Log(Inventory_Item_data[Item_Cnt] + 1);
                 break;
             case 16:
-                Debug.Log(16);
+                s = 16;
+                Item_Cnt++;
+                Inventory_Item[Item_Cnt].GetComponent<Image>().sprite = Store_item_Image[s - 1];
+                Inventory_Item_data[Item_Cnt] = s - 1;
+                Inventory_Item[Item_Cnt].SetActive(true);
+                Debug.Log(Inventory_Item_data[Item_Cnt] + 1);
                 break;
         }
     }
