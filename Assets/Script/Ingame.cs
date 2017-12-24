@@ -648,6 +648,7 @@ public class Ingame : MonoBehaviour
                 break;
             case 10000:
                 //방 눌렀을 때
+
                 Gacha_System();
                 PlayerPrefs.SetInt( "Buy_Button", Buy_Button);
                 PlayerPrefs.SetInt("Gacha_Tong_Num", Gacha_Tong_Num);
