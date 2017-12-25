@@ -104,132 +104,197 @@ public class Home : MonoBehaviour {
         {
          
             case 1:
-                s = 1;
-                Item_Cnt++;
-                Inventory_Item[Item_Cnt].GetComponent<Image>().sprite = Store_item_Image[s-1];
-                Inventory_Item_data[Item_Cnt] = s-1;
-                Debug.Log(Item_Cnt+"___"+Inventory_Item_data[Item_Cnt]);
-                Inventory_Item[Item_Cnt].SetActive(true);
+                if (Text_Event.Money > 3333)
+                {
+
+                    s = 1;
+                    Item_Cnt++;
+                    Inventory_Item[Item_Cnt].GetComponent<Image>().sprite = Store_item_Image[s - 1];
+                    Inventory_Item_data[Item_Cnt] = s - 1;
+                    Debug.Log(Item_Cnt + "___" + Inventory_Item_data[Item_Cnt]);
+                    Inventory_Item[Item_Cnt].SetActive(true);
+                    Text_Event.Money -= 3333;
+                }
                 break;
             case 2:
-                s = 2;
-                Item_Cnt++;
-                Inventory_Item[Item_Cnt].GetComponent<Image>().sprite = Store_item_Image[s - 1];
-                Inventory_Item_data[Item_Cnt] = s - 1;
-                Inventory_Item[Item_Cnt].SetActive(true);
-                Debug.Log(Item_Cnt + "___" + Inventory_Item_data[Item_Cnt]);
+                if (Text_Event.Money > 3333)
+                {
+                    s = 2;
+                    Item_Cnt++;
+                    Inventory_Item[Item_Cnt].GetComponent<Image>().sprite = Store_item_Image[s - 1];
+                    Inventory_Item_data[Item_Cnt] = s - 1;
+                    Inventory_Item[Item_Cnt].SetActive(true);
+                    Debug.Log(Item_Cnt + "___" + Inventory_Item_data[Item_Cnt]);
+                    Text_Event.Money -= 3333;
+                }
                 break;
             case 3:
-                s = 3;
-                Item_Cnt++;
-                Inventory_Item[Item_Cnt].GetComponent<Image>().sprite = Store_item_Image[s - 1];
-                Inventory_Item_data[Item_Cnt] = s - 1;
-                Inventory_Item[Item_Cnt].SetActive(true);
-                Debug.Log(Item_Cnt + "___" + Inventory_Item_data[Item_Cnt]);
+                if (Text_Event.Money > 3333)
+                {
+                    s = 3;
+                    Item_Cnt++;
+                    Inventory_Item[Item_Cnt].GetComponent<Image>().sprite = Store_item_Image[s - 1];
+                    Inventory_Item_data[Item_Cnt] = s - 1;
+                    Inventory_Item[Item_Cnt].SetActive(true);
+                    Debug.Log(Item_Cnt + "___" + Inventory_Item_data[Item_Cnt]);
+                    Text_Event.Money -= 3333;
+                }
                 break;
             case 4:
-                s = 4;
-                Item_Cnt++;
-                Inventory_Item[Item_Cnt].GetComponent<Image>().sprite = Store_item_Image[s - 1];
-                Inventory_Item_data[Item_Cnt] = s - 1;
-                Inventory_Item[Item_Cnt].SetActive(true);
-                Debug.Log(Item_Cnt + "___" + Inventory_Item_data[Item_Cnt]);
+                if (Text_Event.Money > 15000)
+                {
+                    s = 4;
+                    Item_Cnt++;
+                    Inventory_Item[Item_Cnt].GetComponent<Image>().sprite = Store_item_Image[s - 1];
+                    Inventory_Item_data[Item_Cnt] = s - 1;
+                    Inventory_Item[Item_Cnt].SetActive(true);
+                    Debug.Log(Item_Cnt + "___" + Inventory_Item_data[Item_Cnt]);
+                    Text_Event.Money -= 15000;
+                }
                 break;
             case 5:
-                s = 5;
-                Item_Cnt++;
-                Inventory_Item[Item_Cnt].GetComponent<Image>().sprite = Store_item_Image[s - 1];
-                Inventory_Item_data[Item_Cnt] = s - 1;
-                Inventory_Item[Item_Cnt].SetActive(true);
-                Debug.Log(Item_Cnt + "___" + Inventory_Item_data[Item_Cnt]);
+                if (Text_Event.Money > 42000)
+                {
+                    s = 5;
+                    Item_Cnt++;
+                    Inventory_Item[Item_Cnt].GetComponent<Image>().sprite = Store_item_Image[s - 1];
+                    Inventory_Item_data[Item_Cnt] = s - 1;
+                    Inventory_Item[Item_Cnt].SetActive(true);
+                    Debug.Log(Item_Cnt + "___" + Inventory_Item_data[Item_Cnt]);
+                    Text_Event.Money -= 42000;
+                }
                 break;
             case 6:
-                s = 6;
-                Item_Cnt++;
-                Inventory_Item[Item_Cnt].GetComponent<Image>().sprite = Store_item_Image[s - 1];
-                Inventory_Item_data[Item_Cnt] = s - 1;
-                Inventory_Item[Item_Cnt].SetActive(true);
-                Debug.Log(Item_Cnt + "___" + Inventory_Item_data[Item_Cnt]);
+                if (Text_Event.Money > 100000)
+                {
+                    s = 6;
+                    Item_Cnt++;
+                    Inventory_Item[Item_Cnt].GetComponent<Image>().sprite = Store_item_Image[s - 1];
+                    Inventory_Item_data[Item_Cnt] = s - 1;
+                    Inventory_Item[Item_Cnt].SetActive(true);
+                    Debug.Log(Item_Cnt + "___" + Inventory_Item_data[Item_Cnt]);
+                    Text_Event.Money -= 100000;
+                }
                 break;
             case 7:
-                s = 7;
-                Item_Cnt++;
-                Inventory_Item[Item_Cnt].GetComponent<Image>().sprite = Store_item_Image[s - 1];
-                Inventory_Item_data[Item_Cnt] = s - 1;
-                Inventory_Item[Item_Cnt].SetActive(true);
-                Debug.Log(Item_Cnt + "___" + Inventory_Item_data[Item_Cnt]);
+                if (Text_Event.Money > 500000)
+                {
+                    s = 7;
+                    Item_Cnt++;
+                    Inventory_Item[Item_Cnt].GetComponent<Image>().sprite = Store_item_Image[s - 1];
+                    Inventory_Item_data[Item_Cnt] = s - 1;
+                    Inventory_Item[Item_Cnt].SetActive(true);
+                    Debug.Log(Item_Cnt + "___" + Inventory_Item_data[Item_Cnt]);
+                    Text_Event.Money -= 500000;
+                }
                 break;
             case 8:
-                s = 8;
-                Item_Cnt++;
-                Inventory_Item[Item_Cnt].GetComponent<Image>().sprite = Store_item_Image[s - 1];
-                Inventory_Item_data[Item_Cnt] = s - 1;
-                Inventory_Item[Item_Cnt].SetActive(true);
-                Debug.Log(Item_Cnt + "___" + Inventory_Item_data[Item_Cnt]);
+                if (Text_Event.Money > 120000)
+                {
+                    s = 8;
+                    Item_Cnt++;
+                    Inventory_Item[Item_Cnt].GetComponent<Image>().sprite = Store_item_Image[s - 1];
+                    Inventory_Item_data[Item_Cnt] = s - 1;
+                    Inventory_Item[Item_Cnt].SetActive(true);
+                    Debug.Log(Item_Cnt + "___" + Inventory_Item_data[Item_Cnt]);
+                    Text_Event.Money -= 120000;
+                }
                 break;
             case 9:
-                s = 9;
-                Item_Cnt++;
-                Inventory_Item[Item_Cnt].GetComponent<Image>().sprite = Store_item_Image[s - 1];
-                Inventory_Item_data[Item_Cnt] = s - 1;
-                Inventory_Item[Item_Cnt].SetActive(true);
-                Debug.Log(Item_Cnt + "___" + Inventory_Item_data[Item_Cnt]);
+                if (Text_Event.Money > 200000)
+                {
+                    s = 9;
+                    Item_Cnt++;
+                    Inventory_Item[Item_Cnt].GetComponent<Image>().sprite = Store_item_Image[s - 1];
+                    Inventory_Item_data[Item_Cnt] = s - 1;
+                    Inventory_Item[Item_Cnt].SetActive(true);
+                    Debug.Log(Item_Cnt + "___" + Inventory_Item_data[Item_Cnt]);
+                    Text_Event.Money -= 200000;
+                }
                 break;
             case 10:
-                s = 10;
-                Item_Cnt++;
-                Inventory_Item[Item_Cnt].GetComponent<Image>().sprite = Store_item_Image[s - 1];
-                Inventory_Item_data[Item_Cnt] = s - 1;
-                Inventory_Item[Item_Cnt].SetActive(true);
-                Debug.Log(Item_Cnt + "___" + Inventory_Item_data[Item_Cnt]);
+                if (Text_Event.Money > 360000)
+                {
+                    s = 10;
+                    Item_Cnt++;
+                    Inventory_Item[Item_Cnt].GetComponent<Image>().sprite = Store_item_Image[s - 1];
+                    Inventory_Item_data[Item_Cnt] = s - 1;
+                    Inventory_Item[Item_Cnt].SetActive(true);
+                    Debug.Log(Item_Cnt + "___" + Inventory_Item_data[Item_Cnt]);
+                    Text_Event.Money -= 360000;
+                }
                 break;
             case 11:
-                s = 11;
-                Item_Cnt++;
-                Inventory_Item[Item_Cnt].GetComponent<Image>().sprite = Store_item_Image[s - 1];
-                Inventory_Item_data[Item_Cnt] = s - 1;
-                Inventory_Item[Item_Cnt].SetActive(true);
-                Debug.Log(Item_Cnt + "___" + Inventory_Item_data[Item_Cnt]);
+                if (Text_Event.Money > 500000)
+                {
+                    s = 11;
+                    Item_Cnt++;
+                    Inventory_Item[Item_Cnt].GetComponent<Image>().sprite = Store_item_Image[s - 1];
+                    Inventory_Item_data[Item_Cnt] = s - 1;
+                    Inventory_Item[Item_Cnt].SetActive(true);
+                    Debug.Log(Item_Cnt + "___" + Inventory_Item_data[Item_Cnt]);
+                    Text_Event.Money -= 500000;
+                }
                 break;
             case 12:
-                s = 12;
-                Item_Cnt++;
-                Inventory_Item[Item_Cnt].GetComponent<Image>().sprite = Store_item_Image[s - 1];
-                Inventory_Item_data[Item_Cnt] = s - 1;
-                Inventory_Item[Item_Cnt].SetActive(true);
-                Debug.Log(Item_Cnt + "___" + Inventory_Item_data[Item_Cnt]);
+                if (Text_Event.Money > 700000)
+                {
+                    s = 12;
+                    Item_Cnt++;
+                    Inventory_Item[Item_Cnt].GetComponent<Image>().sprite = Store_item_Image[s - 1];
+                    Inventory_Item_data[Item_Cnt] = s - 1;
+                    Inventory_Item[Item_Cnt].SetActive(true);
+                    Debug.Log(Item_Cnt + "___" + Inventory_Item_data[Item_Cnt]);
+                    Text_Event.Money -= 700000;
+                }
                 break;
             case 13:
-                s = 13;
-                Item_Cnt++;
-                Inventory_Item[Item_Cnt].GetComponent<Image>().sprite = Store_item_Image[s - 1];
-                Inventory_Item_data[Item_Cnt] = s - 1;
-                Inventory_Item[Item_Cnt].SetActive(true);
-                Debug.Log(Item_Cnt + "___" + Inventory_Item_data[Item_Cnt]);
+                if (Text_Event.Money > 900000)
+                {
+                    s = 13;
+                    Item_Cnt++;
+                    Inventory_Item[Item_Cnt].GetComponent<Image>().sprite = Store_item_Image[s - 1];
+                    Inventory_Item_data[Item_Cnt] = s - 1;
+                    Inventory_Item[Item_Cnt].SetActive(true);
+                    Debug.Log(Item_Cnt + "___" + Inventory_Item_data[Item_Cnt]);
+                    Text_Event.Money -= 900000;
+                }
                 break;
             case 14:
-                s = 14;
-                Item_Cnt++;
-                Inventory_Item[Item_Cnt].GetComponent<Image>().sprite = Store_item_Image[s - 1];
-                Inventory_Item_data[Item_Cnt] = s - 1;
-                Inventory_Item[Item_Cnt].SetActive(true);
-                Debug.Log(Item_Cnt + "___" + Inventory_Item_data[Item_Cnt]);
+                if (Text_Event.Money > 1000000)
+                {
+                    s = 14;
+                    Item_Cnt++;
+                    Inventory_Item[Item_Cnt].GetComponent<Image>().sprite = Store_item_Image[s - 1];
+                    Inventory_Item_data[Item_Cnt] = s - 1;
+                    Inventory_Item[Item_Cnt].SetActive(true);
+                    Debug.Log(Item_Cnt + "___" + Inventory_Item_data[Item_Cnt]);
+                    Text_Event.Money -= 1000000;
+                }
                 break;
             case 15:
-                s = 15;
-                Item_Cnt++;
-                Inventory_Item[Item_Cnt].GetComponent<Image>().sprite = Store_item_Image[s - 1];
-                Inventory_Item_data[Item_Cnt] = s - 1;
-                Inventory_Item[Item_Cnt].SetActive(true);
-                Debug.Log(Item_Cnt + "___" + Inventory_Item_data[Item_Cnt]);
+                if (Text_Event.Money > 500)
+                {
+                    s = 15;
+                    Item_Cnt++;
+                    Inventory_Item[Item_Cnt].GetComponent<Image>().sprite = Store_item_Image[s - 1];
+                    Inventory_Item_data[Item_Cnt] = s - 1;
+                    Inventory_Item[Item_Cnt].SetActive(true);
+                    Debug.Log(Item_Cnt + "___" + Inventory_Item_data[Item_Cnt]);
+                    Text_Event.Money -= 500;
+                }
                 break;
             case 16:
-                s = 16;
-                Item_Cnt++;
-                Inventory_Item[Item_Cnt].GetComponent<Image>().sprite = Store_item_Image[s - 1];
-                Inventory_Item_data[Item_Cnt] = s - 1;
-                Inventory_Item[Item_Cnt].SetActive(true);
-                Debug.Log(Item_Cnt + "___" + Inventory_Item_data[Item_Cnt]);
+                if (Text_Event.Money > 3500000)
+                {
+                    s = 16;
+                    Item_Cnt++;
+                    Inventory_Item[Item_Cnt].GetComponent<Image>().sprite = Store_item_Image[s - 1];
+                    Inventory_Item_data[Item_Cnt] = s - 1;
+                    Inventory_Item[Item_Cnt].SetActive(true);
+                    Debug.Log(Item_Cnt + "___" + Inventory_Item_data[Item_Cnt]);
+                    Text_Event.Money -= 3500000;
+                }
                 break;
         }
     }
