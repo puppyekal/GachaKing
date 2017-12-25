@@ -24,18 +24,37 @@ public class Home : MonoBehaviour {
 
     public GameObject Room;
     public GameObject[] Area = new GameObject[30];
+    public int[] Area_data = new int[30];
+    public int[] Area_Inven_data = new int[30];
     public GameObject[] Inventory_Item = new GameObject[21];
     public int[] Inventory_Item_data = new int[21];
     public Sprite[] Store_item_Image = new Sprite[16];
 
+    public Sprite gachaball;
     public Text Money_Text;
 
-    static public int Item_Cnt = -1;
+    static public int Item_Cnt;
     public int s;//상점에서 눌린 번호
     public int iv;//인벤에서 눌린 번호
+    public int Si;//바꾸려는 이미지 번호
+    public int Im;//인벤번호
 
     // Use this for initialization
     void Start() {
+        Item_Cnt = -1;
+        s = -1;
+        for (int i = 0; i < 21; i++)
+        {
+            Inventory_Item_data[i] = -1;
+        }
+        for (int i = 0; i < 30; i++)
+        {
+            Area_data[i] = -1;
+        }
+        for (int i = 0; i < 30; i++)
+        {
+            Area_Inven_data[i] = -1;
+        }
         /*
         //업적 해금 전까지 버튼 비활성화
         Store_item1.interactable = false;
@@ -56,15 +75,12 @@ public class Home : MonoBehaviour {
         Inventory_Item6.SetActive(false);
         Inventory_Item7.SetActive(false);
         */
-       
+
     }
 
     // Update is called once per frame
     void Update() {
-        s = -1;
-        for (int i = 0; i < 21; i++) {
-            Inventory_Item_data[i] = -1;
-        }
+        
         //업적 해금시 버튼 활성화
         /*
         if (Achivement.Achivement_EX_cnt == 1)
@@ -92,7 +108,7 @@ public class Home : MonoBehaviour {
                 Item_Cnt++;
                 Inventory_Item[Item_Cnt].GetComponent<Image>().sprite = Store_item_Image[s-1];
                 Inventory_Item_data[Item_Cnt] = s-1;
-                Debug.Log(Inventory_Item_data[Item_Cnt]+1);
+                Debug.Log(Item_Cnt+"___"+Inventory_Item_data[Item_Cnt]);
                 Inventory_Item[Item_Cnt].SetActive(true);
                 break;
             case 2:
@@ -101,7 +117,7 @@ public class Home : MonoBehaviour {
                 Inventory_Item[Item_Cnt].GetComponent<Image>().sprite = Store_item_Image[s - 1];
                 Inventory_Item_data[Item_Cnt] = s - 1;
                 Inventory_Item[Item_Cnt].SetActive(true);
-                Debug.Log(Inventory_Item_data[Item_Cnt] + 1);
+                Debug.Log(Item_Cnt + "___" + Inventory_Item_data[Item_Cnt]);
                 break;
             case 3:
                 s = 3;
@@ -109,7 +125,7 @@ public class Home : MonoBehaviour {
                 Inventory_Item[Item_Cnt].GetComponent<Image>().sprite = Store_item_Image[s - 1];
                 Inventory_Item_data[Item_Cnt] = s - 1;
                 Inventory_Item[Item_Cnt].SetActive(true);
-                Debug.Log(Inventory_Item_data[Item_Cnt] + 1);
+                Debug.Log(Item_Cnt + "___" + Inventory_Item_data[Item_Cnt]);
                 break;
             case 4:
                 s = 4;
@@ -117,14 +133,15 @@ public class Home : MonoBehaviour {
                 Inventory_Item[Item_Cnt].GetComponent<Image>().sprite = Store_item_Image[s - 1];
                 Inventory_Item_data[Item_Cnt] = s - 1;
                 Inventory_Item[Item_Cnt].SetActive(true);
-                Debug.Log(Inventory_Item_data[Item_Cnt] + 1);
+                Debug.Log(Item_Cnt + "___" + Inventory_Item_data[Item_Cnt]);
                 break;
             case 5:
                 s = 5;
                 Item_Cnt++;
                 Inventory_Item[Item_Cnt].GetComponent<Image>().sprite = Store_item_Image[s - 1];
                 Inventory_Item_data[Item_Cnt] = s - 1;
-                Inventory_Item[Item_Cnt].SetActive(true); Debug.Log(Inventory_Item_data[Item_Cnt] + 1);
+                Inventory_Item[Item_Cnt].SetActive(true);
+                Debug.Log(Item_Cnt + "___" + Inventory_Item_data[Item_Cnt]);
                 break;
             case 6:
                 s = 6;
@@ -132,7 +149,7 @@ public class Home : MonoBehaviour {
                 Inventory_Item[Item_Cnt].GetComponent<Image>().sprite = Store_item_Image[s - 1];
                 Inventory_Item_data[Item_Cnt] = s - 1;
                 Inventory_Item[Item_Cnt].SetActive(true);
-                Debug.Log(Inventory_Item_data[Item_Cnt] + 1);
+                Debug.Log(Item_Cnt + "___" + Inventory_Item_data[Item_Cnt]);
                 break;
             case 7:
                 s = 7;
@@ -140,7 +157,7 @@ public class Home : MonoBehaviour {
                 Inventory_Item[Item_Cnt].GetComponent<Image>().sprite = Store_item_Image[s - 1];
                 Inventory_Item_data[Item_Cnt] = s - 1;
                 Inventory_Item[Item_Cnt].SetActive(true);
-                Debug.Log(Inventory_Item_data[Item_Cnt] + 1);
+                Debug.Log(Item_Cnt + "___" + Inventory_Item_data[Item_Cnt]);
                 break;
             case 8:
                 s = 8;
@@ -148,7 +165,7 @@ public class Home : MonoBehaviour {
                 Inventory_Item[Item_Cnt].GetComponent<Image>().sprite = Store_item_Image[s - 1];
                 Inventory_Item_data[Item_Cnt] = s - 1;
                 Inventory_Item[Item_Cnt].SetActive(true);
-                Debug.Log(Inventory_Item_data[Item_Cnt] + 1);
+                Debug.Log(Item_Cnt + "___" + Inventory_Item_data[Item_Cnt]);
                 break;
             case 9:
                 s = 9;
@@ -156,7 +173,7 @@ public class Home : MonoBehaviour {
                 Inventory_Item[Item_Cnt].GetComponent<Image>().sprite = Store_item_Image[s - 1];
                 Inventory_Item_data[Item_Cnt] = s - 1;
                 Inventory_Item[Item_Cnt].SetActive(true);
-                Debug.Log(Inventory_Item_data[Item_Cnt] + 1);
+                Debug.Log(Item_Cnt + "___" + Inventory_Item_data[Item_Cnt]);
                 break;
             case 10:
                 s = 10;
@@ -164,7 +181,7 @@ public class Home : MonoBehaviour {
                 Inventory_Item[Item_Cnt].GetComponent<Image>().sprite = Store_item_Image[s - 1];
                 Inventory_Item_data[Item_Cnt] = s - 1;
                 Inventory_Item[Item_Cnt].SetActive(true);
-                Debug.Log(Inventory_Item_data[Item_Cnt] + 1);
+                Debug.Log(Item_Cnt + "___" + Inventory_Item_data[Item_Cnt]);
                 break;
             case 11:
                 s = 11;
@@ -172,7 +189,7 @@ public class Home : MonoBehaviour {
                 Inventory_Item[Item_Cnt].GetComponent<Image>().sprite = Store_item_Image[s - 1];
                 Inventory_Item_data[Item_Cnt] = s - 1;
                 Inventory_Item[Item_Cnt].SetActive(true);
-                Debug.Log(Inventory_Item_data[Item_Cnt] + 1);
+                Debug.Log(Item_Cnt + "___" + Inventory_Item_data[Item_Cnt]);
                 break;
             case 12:
                 s = 12;
@@ -180,7 +197,7 @@ public class Home : MonoBehaviour {
                 Inventory_Item[Item_Cnt].GetComponent<Image>().sprite = Store_item_Image[s - 1];
                 Inventory_Item_data[Item_Cnt] = s - 1;
                 Inventory_Item[Item_Cnt].SetActive(true);
-                Debug.Log(Inventory_Item_data[Item_Cnt] + 1);
+                Debug.Log(Item_Cnt + "___" + Inventory_Item_data[Item_Cnt]);
                 break;
             case 13:
                 s = 13;
@@ -188,7 +205,7 @@ public class Home : MonoBehaviour {
                 Inventory_Item[Item_Cnt].GetComponent<Image>().sprite = Store_item_Image[s - 1];
                 Inventory_Item_data[Item_Cnt] = s - 1;
                 Inventory_Item[Item_Cnt].SetActive(true);
-                Debug.Log(Inventory_Item_data[Item_Cnt] + 1);
+                Debug.Log(Item_Cnt + "___" + Inventory_Item_data[Item_Cnt]);
                 break;
             case 14:
                 s = 14;
@@ -196,7 +213,7 @@ public class Home : MonoBehaviour {
                 Inventory_Item[Item_Cnt].GetComponent<Image>().sprite = Store_item_Image[s - 1];
                 Inventory_Item_data[Item_Cnt] = s - 1;
                 Inventory_Item[Item_Cnt].SetActive(true);
-                Debug.Log(Inventory_Item_data[Item_Cnt] + 1);
+                Debug.Log(Item_Cnt + "___" + Inventory_Item_data[Item_Cnt]);
                 break;
             case 15:
                 s = 15;
@@ -204,7 +221,7 @@ public class Home : MonoBehaviour {
                 Inventory_Item[Item_Cnt].GetComponent<Image>().sprite = Store_item_Image[s - 1];
                 Inventory_Item_data[Item_Cnt] = s - 1;
                 Inventory_Item[Item_Cnt].SetActive(true);
-                Debug.Log(Inventory_Item_data[Item_Cnt] + 1);
+                Debug.Log(Item_Cnt + "___" + Inventory_Item_data[Item_Cnt]);
                 break;
             case 16:
                 s = 16;
@@ -212,7 +229,7 @@ public class Home : MonoBehaviour {
                 Inventory_Item[Item_Cnt].GetComponent<Image>().sprite = Store_item_Image[s - 1];
                 Inventory_Item_data[Item_Cnt] = s - 1;
                 Inventory_Item[Item_Cnt].SetActive(true);
-                Debug.Log(Inventory_Item_data[Item_Cnt] + 1);
+                Debug.Log(Item_Cnt + "___" + Inventory_Item_data[Item_Cnt]);
                 break;
         }
     }
@@ -223,89 +240,184 @@ public class Home : MonoBehaviour {
 
             case 1:
                 iv = 0;
-               // Room.SetActive(false);
+                Im = iv;
+                Si = Inventory_Item_data[iv];
+                Debug.Log(Inventory_Item_data[iv]);
                 Areasetactive();
+                Inven_data_check(iv);
                 break;
             case 2:
                 iv = 1;
+                Im = iv;
+                Si = Inventory_Item_data[iv];
+                Debug.Log(Inventory_Item_data[iv]);
                 Areasetactive();
+                Inven_data_check(iv);
                 break;
             case 3:
                 iv = 2;
+                Im = iv;
+                Si = Inventory_Item_data[iv];
+                Debug.Log(Inventory_Item_data[iv]);
                 Areasetactive();
+                Inven_data_check(iv);
                 break;
             case 4:
                 iv = 3;
+                Im = iv;
+                Si = Inventory_Item_data[iv];
+                Debug.Log(Inventory_Item_data[iv]);
                 Areasetactive();
+                Inven_data_check(iv);
                 break;
             case 5:
                 iv = 4;
+                Im = iv;
+                Si = Inventory_Item_data[iv];
+                Debug.Log(Inventory_Item_data[iv]);
                 Areasetactive();
+                Inven_data_check(iv);
                 break;
             case 6:
                 iv = 5;
+                Im = iv;
+                Si = Inventory_Item_data[iv];
+                Debug.Log(Inventory_Item_data[iv]);
                 Areasetactive();
+                Inven_data_check(iv);
                 break;
             case 7:
                 iv = 6;
+                Im = iv;
+                Si = Inventory_Item_data[iv];
+                Debug.Log(Inventory_Item_data[iv]);
                 Areasetactive();
+                Inven_data_check(iv);
                 break;
             case 8:
                 iv = 7;
+                Im = iv;
+                Si = Inventory_Item_data[iv];
+                Debug.Log(Inventory_Item_data[iv]);
                 Areasetactive();
+                Inven_data_check(iv);
                 break;
             case 9:
                 iv = 8;
+                Im = iv;
+                Si = Inventory_Item_data[iv];
+                Debug.Log(Inventory_Item_data[iv]);
                 Areasetactive();
+                Inven_data_check(iv);
                 break;
             case 10:
                 iv = 9;
+                Im = iv;
+                Si = Inventory_Item_data[iv];
+                Debug.Log(Inventory_Item_data[iv]);
                 Areasetactive();
+                Inven_data_check(iv);
                 break;
             case 11:
                 iv = 10;
+                Im = iv;
+                Si = Inventory_Item_data[iv];
+                Debug.Log(Inventory_Item_data[iv]);
                 Areasetactive();
+                Inven_data_check(iv);
                 break;
             case 12:
                 iv =11;
+                Im = iv;
+                Si = Inventory_Item_data[iv];
+                Debug.Log(Inventory_Item_data[iv]);
                 Areasetactive();
+                Inven_data_check(iv);
                 break;
             case 13:
                 iv = 12;
+                Im = iv;
+                Si = Inventory_Item_data[iv];
+                Debug.Log(Inventory_Item_data[iv]);
                 Areasetactive();
+                Inven_data_check(iv);
                 break;
             case 14:
                 iv = 13;
+                Im = iv;
+                Si = Inventory_Item_data[iv];
+                Debug.Log(Inventory_Item_data[iv]);
                 Areasetactive();
+                Inven_data_check(iv);
                 break;
             case 15:
                 iv = 14;
+                Im = iv;
+                Si = Inventory_Item_data[iv];
+                Debug.Log(Inventory_Item_data[iv]);
                 Areasetactive();
+                Inven_data_check(iv);
                 break;
             case 16:
                 iv = 15;
+                Im = iv;
+                Si = Inventory_Item_data[iv];
+                Debug.Log(Inventory_Item_data[iv]);
                 Areasetactive();
+                Inven_data_check(iv);
                 break;
             case 17:
                 iv = 16;
+                Im = iv;
+                Si = Inventory_Item_data[iv];
+                Debug.Log(Inventory_Item_data[iv]);
                 Areasetactive();
+                Inven_data_check(iv);
                 break;
             case 18:
                 iv = 17;
+                Im = iv;
+                Si = Inventory_Item_data[iv];
+                Debug.Log(Inventory_Item_data[iv]);
                 Areasetactive();
+                Inven_data_check(iv);
                 break;
             case 19:
                 iv = 18;
+                Im = iv;
+                Si = Inventory_Item_data[iv];
+                Debug.Log(Inventory_Item_data[iv]);
                 Areasetactive();
+                Inven_data_check(iv);
                 break;
             case 20:
                 iv = 19;
+                Im = iv;
+                Si = Inventory_Item_data[iv];
+                Debug.Log(Inventory_Item_data[iv]);
                 Areasetactive();
+                Inven_data_check(iv);
                 break;
             case 21:
                 iv = 20;
+                Im = iv;
+                Si = Inventory_Item_data[iv];
+                Debug.Log(Inventory_Item_data[iv]);
                 Areasetactive();
+                Inven_data_check(iv);
                 break;
+        }
+    }
+    public void Inven_data_check(int k)
+    {
+        int i;
+        for (i = 0; i < 30; i++)
+        {
+            if (Area_Inven_data[i] == k) {
+                Area_Inven_data[i] = -1;
+                Area_data[i] = -1;
+                Area[i].GetComponent<Image>().sprite = gachaball;
+            }
         }
     }
     public void Areasetactive() {
@@ -314,132 +426,381 @@ public class Home : MonoBehaviour {
             Area[i].SetActive(true);
         }
     }
+    public void Areasetactivefalse()
+    {
+        int i;
+        for (i = 0; i < 30; i++)
+        {
+            if (Area_data[i] == -1)
+            {
+                Area[i].SetActive(false);
+            }
+        }
+    }
     public void PressArea(int nKey)
     {
         switch (nKey)
         {
 
             case 1:
-                Debug.Log(123123123123123123);
-                
                 iv = 0;
-                Areasetactive();
+                if (Si != -1)
+                {
+                    Area[iv].GetComponent<Image>().sprite = Store_item_Image[Si];
+                    Area_data[iv] = Si;
+                    Area_Inven_data[iv] = Im;
+                    Si = -1;
+                    Debug.Log(Area_data[iv]);
+                }
+                Areasetactivefalse();
                 break;
             case 2:
                 iv = 1;
-                Areasetactive();
+                if (Si != -1)
+                {
+                    Area[iv].GetComponent<Image>().sprite = Store_item_Image[Si];
+                    Area_data[iv] = Si;
+                    Area_Inven_data[iv] = Im;
+                    Si = -1;
+                    Debug.Log(Area_data[iv]);
+                }
+                Areasetactivefalse();
                 break;
             case 3:
                 iv = 2;
-                Areasetactive();
+                if (Si != -1)
+                {
+                    Area[iv].GetComponent<Image>().sprite = Store_item_Image[Si];
+                    Area_data[iv] = Si;
+                    Area_Inven_data[iv] = Im;
+                    Si = -1;
+                    Debug.Log(Area_data[iv]);
+                }
+                Areasetactivefalse();
                 break;
             case 4:
                 iv = 3;
-                Areasetactive();
+                if (Si != -1)
+                {
+                    Area[iv].GetComponent<Image>().sprite = Store_item_Image[Si];
+                    Area_data[iv] = Si;
+                    Area_Inven_data[iv] = Im;
+                    Si = -1;
+                    Debug.Log(Area_data[iv]);
+                }
+                Areasetactivefalse();
                 break;
             case 5:
                 iv = 4;
-                Areasetactive();
+                if (Si != -1)
+                {
+                    Area[iv].GetComponent<Image>().sprite = Store_item_Image[Si];
+                    Area_data[iv] = Si;
+                    Area_Inven_data[iv] = Im;
+                    Si = -1;
+                    Debug.Log(Area_data[iv]);
+                }
+                Areasetactivefalse();
                 break;
             case 6:
                 iv = 5;
-                Areasetactive();
+                if (Si != -1)
+                {
+                    Area[iv].GetComponent<Image>().sprite = Store_item_Image[Si];
+                    Area_data[iv] = Si;
+                    Area_Inven_data[iv] = Im;
+                    Si = -1;
+                    Debug.Log(Area_data[iv]);
+                }
+                Areasetactivefalse();
                 break;
             case 7:
                 iv = 6;
-                Areasetactive();
+                if (Si != -1)
+                {
+                    Area[iv].GetComponent<Image>().sprite = Store_item_Image[Si];
+                    Area_data[iv] = Si;
+                    Area_Inven_data[iv] = Im;
+                    Si = -1;
+                    Debug.Log(Area_data[iv]);
+                }
+                Areasetactivefalse();
                 break;
             case 8:
                 iv = 7;
-                Areasetactive();
+                if (Si != -1)
+                {
+                    Area[iv].GetComponent<Image>().sprite = Store_item_Image[Si];
+                    Area_data[iv] = Si;
+                    Area_Inven_data[iv] = Im;
+                    Si = -1;
+                    Debug.Log(Area_data[iv]);
+                }
+                Areasetactivefalse();
                 break;
             case 9:
                 iv = 8;
-                Areasetactive();
+                if (Si != -1)
+                {
+                    Area[iv].GetComponent<Image>().sprite = Store_item_Image[Si];
+                    Area_data[iv] = Si;
+                    Area_Inven_data[iv] = Im;
+                    Si = -1;
+                    Debug.Log(Area_data[iv]);
+                }
+                Areasetactivefalse();
                 break;
             case 10:
                 iv = 9;
-                Areasetactive();
+                if (Si != -1)
+                {
+                    Area[iv].GetComponent<Image>().sprite = Store_item_Image[Si];
+                    Area_data[iv] = Si;
+                    Area_Inven_data[iv] = Im;
+                    Si = -1;
+                    Debug.Log(Area_data[iv]);
+                }
+                Areasetactivefalse();
                 break;
             case 11:
                 iv = 10;
-                Areasetactive();
+                if (Si != -1)
+                {
+                    Area[iv].GetComponent<Image>().sprite = Store_item_Image[Si];
+                    Area_data[iv] = Si;
+                    Area_Inven_data[iv] = Im;
+                    Si = -1;
+                    Debug.Log(Area_data[iv]);
+                }
+                Areasetactivefalse();
                 break;
             case 12:
                 iv = 11;
-                Areasetactive();
+                if (Si != -1)
+                {
+                    Area[iv].GetComponent<Image>().sprite = Store_item_Image[Si];
+                    Area_data[iv] = Si;
+                    Area_Inven_data[iv] = Im;
+                    Si = -1;
+                    Debug.Log(Area_data[iv]);
+                }
+                Areasetactivefalse();
                 break;
             case 13:
                 iv = 12;
-                Areasetactive();
+                if (Si != -1)
+                {
+                    Area[iv].GetComponent<Image>().sprite = Store_item_Image[Si];
+                    Area_data[iv] = Si;
+                    Area_Inven_data[iv] = Im;
+                    Si = -1;
+                    Debug.Log(Area_data[iv]);
+                }
+                Areasetactivefalse();
                 break;
             case 14:
                 iv = 13;
-                Areasetactive();
+                if (Si != -1)
+                {
+                    Area[iv].GetComponent<Image>().sprite = Store_item_Image[Si];
+                    Area_data[iv] = Si;
+                    Area_Inven_data[iv] = Im;
+                    Si = -1;
+                    Debug.Log(Area_data[iv]);
+                }
+                Areasetactivefalse();
                 break;
             case 15:
                 iv = 14;
-                Areasetactive();
+                if (Si != -1)
+                {
+                    Area[iv].GetComponent<Image>().sprite = Store_item_Image[Si];
+                    Area_data[iv] = Si;
+                    Area_Inven_data[iv] = Im;
+                    Si = -1;
+                    Debug.Log(Area_data[iv]);
+                }
+                Areasetactivefalse();
                 break;
             case 16:
                 iv = 15;
-                Areasetactive();
+                if (Si != -1)
+                {
+                    Area[iv].GetComponent<Image>().sprite = Store_item_Image[Si];
+                    Area_data[iv] = Si;
+                    Area_Inven_data[iv] = Im;
+                    Si = -1;
+                    Debug.Log(Area_data[iv]);
+                }
+                Areasetactivefalse();
                 break;
             case 17:
                 iv = 16;
-                Areasetactive();
+                if (Si != -1)
+                {
+                    Area[iv].GetComponent<Image>().sprite = Store_item_Image[Si];
+                    Area_data[iv] = Si;
+                    Area_Inven_data[iv] = Im;
+                    Si = -1;
+                    Debug.Log(Area_data[iv]);
+                }
+                Areasetactivefalse();
                 break;
             case 18:
                 iv = 17;
-                Areasetactive();
+                if (Si != -1)
+                {
+                    Area[iv].GetComponent<Image>().sprite = Store_item_Image[Si];
+                    Area_data[iv] = Si;
+                    Area_Inven_data[iv] = Im;
+                    Si = -1;
+                    Debug.Log(Area_data[iv]);
+                }
+                Areasetactivefalse();
                 break;
             case 19:
                 iv = 18;
-                Areasetactive();
+                if (Si != -1)
+                {
+                    Area[iv].GetComponent<Image>().sprite = Store_item_Image[Si];
+                    Area_data[iv] = Si;
+                    Area_Inven_data[iv] = Im;
+                    Si = -1;
+                    Debug.Log(Area_data[iv]);
+                }
+                Areasetactivefalse();
                 break;
             case 20:
                 iv = 19;
-                Areasetactive();
+                if (Si != -1)
+                {
+                    Area[iv].GetComponent<Image>().sprite = Store_item_Image[Si];
+                    Area_data[iv] = Si;
+                    Area_Inven_data[iv] = Im;
+                    Si = -1;
+                    Debug.Log(Area_data[iv]);
+                }
+                Areasetactivefalse();
                 break;
             case 21:
                 iv = 20;
-                Areasetactive();
+                if (Si != -1)
+                {
+                    Area[iv].GetComponent<Image>().sprite = Store_item_Image[Si];
+                    Area_data[iv] = Si;
+                    Area_Inven_data[iv] = Im;
+                    Si = -1;
+                    Debug.Log(Area_data[iv]);
+                }
+                Areasetactivefalse();
                 break;
             case 22:
-                iv = 11;
-                Areasetactive();
+                iv = 21;
+                if (Si != -1)
+                {
+                    Area[iv].GetComponent<Image>().sprite = Store_item_Image[Si];
+                    Area_data[iv] = Si;
+                    Area_Inven_data[iv] = Im;
+                    Si = -1;
+                    Debug.Log(Area_data[iv]);
+                }
+                Areasetactivefalse();
                 break;
             case 23:
-                iv = 12;
-                Areasetactive();
+                iv = 22;
+                if (Si != -1)
+                {
+                    Area[iv].GetComponent<Image>().sprite = Store_item_Image[Si];
+                    Area_data[iv] = Si;
+                    Area_Inven_data[iv] = Im;
+                    Si = -1;
+                    Debug.Log(Area_data[iv]);
+                }
+                Areasetactivefalse();
                 break;
             case 24:
-                iv = 13;
-                Areasetactive();
+                iv = 23;
+                if (Si != -1)
+                {
+                    Area[iv].GetComponent<Image>().sprite = Store_item_Image[Si];
+                    Area_data[iv] = Si;
+                    Area_Inven_data[iv] = Im;
+                    Si = -1;
+                    Debug.Log(Area_data[iv]);
+                }
+                Areasetactivefalse();
                 break;
             case 25:
-                iv = 14;
-                Areasetactive();
+                iv = 24;
+                if (Si != -1)
+                {
+                    Area[iv].GetComponent<Image>().sprite = Store_item_Image[Si];
+                    Area_data[iv] = Si;
+                    Area_Inven_data[iv] = Im;
+                    Si = -1;
+                    Debug.Log(Area_data[iv]);
+                }
+                Areasetactivefalse();
                 break;
             case 26:
-                iv = 15;
-                Areasetactive();
+                iv = 25;
+                if (Si != -1)
+                {
+                    Area[iv].GetComponent<Image>().sprite = Store_item_Image[Si];
+                    Area_data[iv] = Si;
+                    Area_Inven_data[iv] = Im;
+                    Si = -1;
+                    Debug.Log(Area_data[iv]);
+                }
+                Areasetactivefalse();
                 break;
             case 27:
-                iv = 16;
-                Areasetactive();
+                iv = 26;
+                if (Si != -1)
+                {
+                    Area[iv].GetComponent<Image>().sprite = Store_item_Image[Si];
+                    Area_data[iv] = Si;
+                    Area_Inven_data[iv] = Im;
+                    Si = -1;
+                    Debug.Log(Area_data[iv]);
+                }
+                Areasetactivefalse();
                 break;
             case 28:
-                iv = 17;
-                Areasetactive();
+                iv = 27;
+                if (Si != -1)
+                {
+                    Area[iv].GetComponent<Image>().sprite = Store_item_Image[Si];
+                    Area_data[iv] = Si;
+                    Area_Inven_data[iv] = Im;
+                    Si = -1;
+                    Debug.Log(Area_data[iv]);
+                }
+                Areasetactivefalse();
                 break;
             case 29:
-                iv = 18;
-                Areasetactive();
+                iv = 28;
+                if (Si != -1)
+                {
+                    Area[iv].GetComponent<Image>().sprite = Store_item_Image[Si];
+                    Area_data[iv] = Si;
+                    Area_Inven_data[iv] = Im;
+                    Si = -1;
+                    Debug.Log(Area_data[iv]);
+                }
+                Areasetactivefalse();
                 break;
             case 30:
-                iv = 19;
-                Areasetactive();
+                iv = 29;
+                if (Si != -1)
+                {
+                    Area[iv].GetComponent<Image>().sprite = Store_item_Image[Si];
+                    Area_data[iv] = Si;
+                    Area_Inven_data[iv] = Im;
+                    Si = -1;
+                    Debug.Log(Area_data[iv]);
+                }
+                Areasetactivefalse();
                 break;
         }
     }
